@@ -424,12 +424,12 @@ if (typeof window !== 'undefined') {
 // Indicate to webpack that this file can be concatenated
 /* harmony default export */ var setPublicPath = (null);
 
-// CONCATENATED MODULE: /Users/fisigma/.nvm/versions/node/v12.16.1/lib/node_modules/@vue/cli-service-global/node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"941e22d0-vue-loader-template"}!/Users/fisigma/.nvm/versions/node/v12.16.1/lib/node_modules/@vue/cli-service-global/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!/Users/fisigma/.nvm/versions/node/v12.16.1/lib/node_modules/@vue/cli-service-global/node_modules/cache-loader/dist/cjs.js??ref--0-0!/Users/fisigma/.nvm/versions/node/v12.16.1/lib/node_modules/@vue/cli-service-global/node_modules/vue-loader/lib??vue-loader-options!./vue-airbnb-admin-calendar.vue?vue&type=template&id=5e720374&scoped=true&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticStyle:{"position":"relative"}},[_c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.monthyear_header_visible),expression:"monthyear_header_visible"}],staticClass:" month-year"},[_c('div',{style:({'visibility':_vm.navprevious_visible?'visible':'hidden','display':'inline-block','box-sizing':'border-box','width':'10%','text-align':'left'}),on:{"click":_vm.previous_month}},[_c('i',{staticClass:"fas fa-chevron-circle-left"})]),_c('div',{style:({'visibility':_vm.monthyear_visible?'visible':'hidden','display':'inline-block','box-sizing':'border-box','width':'80%','text-align':'center'})},[_vm._v(" "+_vm._s(_vm.monthNames[_vm.month])+" / "+_vm._s(_vm.year)+" ")]),_c('div',{style:({'visibility':_vm.navnext_visible?'visible':'hidden','display':'inline-block','box-sizing':'border-box','width':'10%','text-align':'right'}),on:{"click":_vm.next_month}},[_c('i',{staticClass:"fas fa-chevron-circle-right"})])]),_c('div',{staticClass:"daynames"},_vm._l((_vm.dayShortNames),function(dayname,index){return _c('div',{key:'dayname-'+index,style:({'display':'inline-block','width':'14.28%','text-align':_vm.dayNameCellAlign,'border-style':'solid','border-width':'1px','border-color':_vm.dayNameCellBorderColor,'box-sizing':'border-box'})},[_vm._v(" "+_vm._s(dayname)+" ")])}),0),_c('div',{staticClass:" days display-table"},_vm._l((_vm.days),function(day,index){return _c('div',{key:'dayday'+index,class:{'display-table-cell':true},style:({'background-color':_vm.isSelected(day)?_vm.selected_cell_bg:'','color':_vm.isSelected(day)?_vm.selected_cell_fg:'', 'width':'14.28%','display':'inline-block'}),attrs:{"data-selected":_vm.isSelected(day)?1:0,"data-day":day},on:{"mouseover":function($event){return _vm.cell_hover($event)},"mouseleave":function($event){return _vm.cell_leave($event)},"click":function($event){return _vm.cell_clicked($event)}}},[(day>0?true:false)?[_c('span',{staticClass:"daynumber",style:({'text-align':_vm.daynumber_position,'width':'100%','position':'relative'})},[_c('span',[_vm._v(_vm._s(day))])]),_c('div',{domProps:{"innerHTML":_vm._s(_vm.renderTemplate(day))}})]:_vm._e()],2)}),0),_c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.loading),expression:"loading"}],staticClass:"ratesmonthlycalendar-loader",staticStyle:{"position":"absolute","top":"0px","left":"0px","width":"100%","bottom":"0px","vertical-align":"middle","text-align":"center","background-color":"rgb(255,255,255,0.3)"}},[_c('div',{staticClass:"loader",staticStyle:{"position":"relative","top":"45%","margin":"0 auto"}})])])}
+// CONCATENATED MODULE: /Users/fisigma/.nvm/versions/node/v12.16.1/lib/node_modules/@vue/cli-service-global/node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"941e22d0-vue-loader-template"}!/Users/fisigma/.nvm/versions/node/v12.16.1/lib/node_modules/@vue/cli-service-global/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!/Users/fisigma/.nvm/versions/node/v12.16.1/lib/node_modules/@vue/cli-service-global/node_modules/cache-loader/dist/cjs.js??ref--0-0!/Users/fisigma/.nvm/versions/node/v12.16.1/lib/node_modules/@vue/cli-service-global/node_modules/vue-loader/lib??vue-loader-options!./vue-airbnb-admin-calendar.vue?vue&type=template&id=be418254&scoped=true&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticStyle:{"position":"relative"}},[_c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.monthyear_header_visible),expression:"monthyear_header_visible"}],staticClass:" month-year"},[_c('div',{style:({'visibility':_vm.navprevious_year_visible?'visible':'hidden','display':'inline-block','box-sizing':'border-box','width':'10%','text-align':'center','cursor':'pointer'}),on:{"click":_vm.previous_year}},[_c('span',{attrs:{"slot":"previous_year"},slot:"previous_year"},[_c('span',{staticStyle:{"transform":"rotate(180deg)","display":"inline-block"}},[_vm._v("▸▸")])])]),_c('div',{style:({'visibility':_vm.navprevious_month_visible?'visible':'hidden','display':'inline-block','box-sizing':'border-box','width':'10%','text-align':'center','cursor':'pointer'}),on:{"click":_vm.previous_month}},[_c('span',{attrs:{"slot":"previous_month"},slot:"previous_month"},[_vm._v("◀")])]),_c('div',{style:({'visibility':_vm.monthyear_visible?'visible':'hidden','display':'inline-block','box-sizing':'border-box','width':_vm.month_year_width,'text-align':'center'})},[(_vm.month_dropdown)?[_c('select',{on:{"change":_vm.monthDropdown_changed}},_vm._l((_vm.monthDropdown),function(option){return _c('option',{key:option.key,domProps:{"value":option.index,"selected":option.selected}},[_vm._v(" "+_vm._s(option.name)+" ")])}),0)]:_vm._e(),(!_vm.month_dropdown)?[_vm._v(_vm._s(_vm.monthNames[_vm.month_selected]))]:_vm._e(),_vm._v(" / "),(_vm.year_dropdown)?[_c('select',{on:{"change":_vm.yearDropdown_changed}},_vm._l((_vm.yearDropdown),function(option){return _c('option',{key:option.key,domProps:{"value":option.index,"selected":option.selected}},[_vm._v(" "+_vm._s(option.name)+" ")])}),0)]:_vm._e(),(!_vm.year_dropdown)?[_vm._v(_vm._s(_vm.year_selected))]:_vm._e()],2),_c('div',{style:({'visibility':_vm.navnext_month_visible?'visible':'hidden','display':'inline-block','box-sizing':'border-box','width':'10%','text-align':'center','cursor':'pointer'}),on:{"click":_vm.next_month}},[_c('span',{attrs:{"slot":"next_month"},slot:"next_month"},[_vm._v("▶")])]),_c('div',{style:({'visibility':_vm.navnext_year_visible?'visible':'hidden','display':'inline-block','box-sizing':'border-box','width':'10%','text-align':'center','cursor':'pointer'}),on:{"click":_vm.next_year}},[_c('span',{attrs:{"slot":"next_year"},slot:"next_year"},[_vm._v("▸▸")])])]),_c('div',{staticClass:"daynames"},_vm._l((_vm.dayShortNames),function(dayname,index){return _c('div',{key:'dayname-'+index,style:({'display':'inline-block','width':'14.28%','text-align':_vm.dayNameCellAlign,'border-style':'solid','border-width':'1px','border-color':_vm.dayNameCellBorderColor,'box-sizing':'border-box'})},[_vm._v(" "+_vm._s(dayname)+" ")])}),0),_c('div',{key:'days-view-'+_vm.days_view_counter,staticClass:" days display-table",staticStyle:{"display":"flex","flex-wrap":"wrap"}},_vm._l((_vm.days),function(day,index){return _c('div',{key:'dayday'+index,class:{'display-table-cell':true},style:({'background-color':_vm.isSelected(day)?_vm.selected_cell_bg:'','color':_vm.isSelected(day)?_vm.selected_cell_fg:'', 'width':'14.28%','display':'inline-block'}),attrs:{"data-selected":_vm.isSelected(day)?1:0,"data-day":day},on:{"mouseover":function($event){return _vm.cell_hover($event,day)},"mouseleave":function($event){return _vm.cell_leave($event,day)},"click":function($event){return _vm.cell_clicked($event,day)}}},[(day>0?true:false)?[_c('span',{staticClass:"daynumber",style:({'text-align':_vm.daynumber_position,'width':'100%','position':'relative','display':'inline-block'})},[_c('span',{style:({backgroundColor:_vm.is_today(day)?_vm.todayNameNumberBackgroundColor:_vm.dayNameNumberBackgroundColor,color:_vm.is_today(day)?_vm.todayNameNumberColor:_vm.dayNameNumberColor,padding:_vm.dayNameNumberPadding,'border-radius':_vm.dayNameNumberRadius,'font-size':_vm.dayNameNumberFontSize,'display':'inline-block','width':_vm.dayNameNumberSize,'height':_vm.dayNameNumberSize,'text-align':'center','vertical-align':'middle','line-height':_vm.dayNameNumberSize})},[_vm._v(_vm._s(day))])]),_c('div',{domProps:{"innerHTML":_vm._s(_vm.renderTemplate(day))}})]:_vm._e(),(day==0?true:false)?[_c('span',{style:({'text-align':_vm.daynumber_position,'width':'100%','position':'relative','display':'inline-block','visibility':'hidden'})},[_c('span',[_vm._v(_vm._s(day))])])]:_vm._e()],2)}),0),_c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.loading),expression:"loading"}],staticStyle:{"position":"absolute","top":"0px","left":"0px","width":"100%","bottom":"0px","vertical-align":"middle","text-align":"center","background-color":"rgb(255,255,255,0.5)"}},[_c('div',{staticStyle:{"position":"relative","top":"45%","margin":"0 auto","font-size":"32px"}},[_c('div',{ref:"spinner",staticStyle:{"display":"inline-block"},attrs:{"slot":"loader"},slot:"loader"},[_vm._v("↻")])])])])}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./vue-airbnb-admin-calendar.vue?vue&type=template&id=5e720374&scoped=true&
+// CONCATENATED MODULE: ./vue-airbnb-admin-calendar.vue?vue&type=template&id=be418254&scoped=true&
 
 // EXTERNAL MODULE: /Users/fisigma/.nvm/versions/node/v12.16.1/lib/node_modules/@vue/cli-service-global/node_modules/core-js/modules/es.date.to-string.js
 var es_date_to_string = __webpack_require__("5f5d");
@@ -440,10 +440,45 @@ var es_number_constructor = __webpack_require__("3685");
 // EXTERNAL MODULE: /Users/fisigma/.nvm/versions/node/v12.16.1/lib/node_modules/@vue/cli-service-global/node_modules/core-js/modules/es.parse-int.js
 var es_parse_int = __webpack_require__("2195");
 
+// EXTERNAL MODULE: /Users/fisigma/.nvm/versions/node/v12.16.1/lib/node_modules/@vue/cli-service-global/node_modules/core-js/modules/web.timers.js
+var web_timers = __webpack_require__("a11f");
+
 // CONCATENATED MODULE: /Users/fisigma/.nvm/versions/node/v12.16.1/lib/node_modules/@vue/cli-service-global/node_modules/thread-loader/dist/cjs.js!/Users/fisigma/.nvm/versions/node/v12.16.1/lib/node_modules/@vue/cli-service-global/node_modules/babel-loader/lib??ref--12-1!/Users/fisigma/.nvm/versions/node/v12.16.1/lib/node_modules/@vue/cli-service-global/node_modules/cache-loader/dist/cjs.js??ref--0-0!/Users/fisigma/.nvm/versions/node/v12.16.1/lib/node_modules/@vue/cli-service-global/node_modules/vue-loader/lib??vue-loader-options!./vue-airbnb-admin-calendar.vue?vue&type=script&lang=js&
 
 
 
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -490,24 +525,44 @@ var es_parse_int = __webpack_require__("2195");
     loading: {
       required: false,
       type: Boolean,
-      "default": false
+      "default": true
     },
     loader_bg: {
       required: false,
       type: String,
       "default": '#f1f1f1'
     },
-    navprevious_visible: {
+    navprevious_year_visible: {
       required: false,
       type: Boolean,
       "default": true
     },
-    navnext_visible: {
+    navprevious_month_visible: {
+      required: false,
+      type: Boolean,
+      "default": true
+    },
+    navnext_month_visible: {
+      required: false,
+      type: Boolean,
+      "default": true
+    },
+    navnext_year_visible: {
       required: false,
       type: Boolean,
       "default": true
     },
     monthyear_visible: {
+      required: false,
+      type: Boolean,
+      "default": true
+    },
+    month_dropdown: {
+      required: false,
+      type: Boolean,
+      "default": true
+    },
+    year_dropdown: {
       required: false,
       type: Boolean,
       "default": true
@@ -560,6 +615,56 @@ var es_parse_int = __webpack_require__("2195");
       "default": function _default() {
         return 'transparent';
       }
+    },
+    todayNameNumberBackgroundColor: {
+      required: false,
+      type: String,
+      "default": '#000'
+    },
+    todayNameNumberColor: {
+      required: false,
+      type: String,
+      "default": '#fff'
+    },
+    dayNameNumberBackgroundColor: {
+      required: false,
+      type: String,
+      "default": '#000'
+    },
+    dayNameNumberColor: {
+      required: false,
+      type: String,
+      "default": '#fff'
+    },
+    dayNameNumberRadius: {
+      required: false,
+      type: String,
+      "default": '50%'
+    },
+    dayNameNumberPadding: {
+      required: false,
+      type: String,
+      "default": '5px 5px'
+    },
+    dayNameNumberWidth: {
+      required: false,
+      type: String,
+      "default": 'auto'
+    },
+    dayNameNumberHeight: {
+      required: false,
+      type: String,
+      "default": 'auto'
+    },
+    dayNameNumberSize: {
+      required: false,
+      type: String,
+      "default": '18px'
+    },
+    dayNameNumberFontSize: {
+      required: false,
+      type: String,
+      "default": '12px'
     },
     dayCellBorderColor: {
       required: false,
@@ -622,8 +727,12 @@ var es_parse_int = __webpack_require__("2195");
   },
   data: function data() {
     return {
+      days_view_counter: 0,
       cell_day_first_selected: -1,
-      cell_day_last_selected: -1
+      cell_day_last_selected: -1,
+      loading_interval: 0,
+      month_selected: this.month,
+      year_selected: this.year
     };
   },
   watch: {
@@ -635,11 +744,73 @@ var es_parse_int = __webpack_require__("2195");
     month: function month() {
       this.cell_day_first_selected = -1;
       this.cell_day_last_selected = -1;
+    },
+    loading: function loading(newval, oldval) {
+      if (newval) {
+        //start spinning
+        this.start_loader(); //this.$emit('start_loader',{})
+      } else {
+        this.stop_loader(); //this.$emit('',{})
+      }
+
+      console.log(newval, oldval);
     }
   },
   computed: {
+    month_year_width: function month_year_width() {
+      var total = 0;
+
+      if (this.navprevious_year_visible) {
+        total += 10;
+      }
+
+      if (this.navprevious_month_visible) {
+        total += 10;
+      }
+
+      if (this.navnext_year_visible) {
+        total += 10;
+      }
+
+      if (this.navnext_month_visible) {
+        total += 10;
+      }
+
+      return 100 - total + '%';
+    },
+    yearDropdown: function yearDropdown() {
+      var options = [];
+      var currentYear = new Date().getFullYear();
+      var start = currentYear - 100;
+      var end = currentYear + 50;
+
+      for (var i = start; i <= end; i++) {
+        options.push({
+          key: 'yeardropdown-name-' + i,
+          name: i,
+          index: i,
+          selected: i == this.year_selected ? true : false
+        });
+      }
+
+      return options;
+    },
+    monthDropdown: function monthDropdown() {
+      var options = [];
+
+      for (var i = 0; i <= 11; i++) {
+        options.push({
+          key: 'monthdropdown-name-' + i,
+          name: this.monthNames[i],
+          index: i,
+          selected: i == this.month_selected ? true : false
+        });
+      }
+
+      return options;
+    },
     totalDaysOfMonth: function totalDaysOfMonth() {
-      return new Date(this.year, this.month + 1, 0).getDate();
+      return new Date(this.year_selected, this.month_selected + 1, 0).getDate();
     },
     days_selected: function days_selected() {
       var selected_ar = [];
@@ -667,7 +838,7 @@ var es_parse_int = __webpack_require__("2195");
     days: function days() {
       //fix the array here 
       //get the first day of the month what day it is
-      var day = new Date(this.year, this.month, 1).getDay();
+      var day = new Date(this.year_selected, this.month_selected, 1).getDay();
       var diff = day - 0;
       var days_ar = [];
 
@@ -681,7 +852,7 @@ var es_parse_int = __webpack_require__("2195");
         days_ar.push(i + 1);
       }
 
-      var last_day = new Date(this.year, this.month, month_days).getDay();
+      var last_day = new Date(this.year_selected, this.month_selected, month_days).getDay();
       var last_diff = 6 - last_day;
 
       for (var iii = 0; iii < last_diff; iii++) {
@@ -692,9 +863,182 @@ var es_parse_int = __webpack_require__("2195");
     }
   },
   methods: {
-    previous_month: function previous_month() {},
-    next_month: function next_month() {},
-    cell_hover: function cell_hover(event) {
+    update_view: function update_view() {
+      this.days_view_counter++;
+    },
+    start_loader: function start_loader() {
+      var _this = this;
+
+      var radius = 0;
+
+      if (this.$refs['spinner'] != null) {
+        this.loading_interval = setInterval(function () {
+          _this.$refs['spinner'].style.transform = 'rotate(' + radius + 'deg)';
+          radius += 10;
+
+          if (radius > 360) {
+            radius = 0;
+          }
+        }, 24);
+        this.$emit('loaderStarted');
+      }
+    },
+    stop_loader: function stop_loader() {
+      if (this.$refs['spinner'] != null) {
+        clearInterval(this.loading_interval);
+        this.$refs['spinner'].style.transform = 'rotate(0deg)';
+        this.$emit('loaderEnded');
+      }
+    },
+    get_month: function get_month() {
+      return this.month_selected;
+    },
+    set_month: function set_month(month) {
+      if (month >= 0 && month <= 11) {
+        this.month_selected = month;
+        this.$emit('monthChanged', {
+          instance: this,
+          month: this.month_selected
+        });
+        this.$emit('dateChanged', {
+          instance: this,
+          month: this.month_selected,
+          year: this.year_selected
+        });
+      }
+    },
+    monthDropdown_changed: function monthDropdown_changed() {
+      var pmonth = this.month_selected;
+      this.month_selected = event.currentTarget.value;
+      this.$emit('monthChanged', {
+        instance: this,
+        month: this.month_selected,
+        pmonth: pmonth
+      });
+      this.$emit('dateChanged', {
+        instance: this,
+        month: this.month_selected,
+        year: this.year_selected
+      });
+    },
+    get_year: function get_year() {
+      return this.year_selected;
+    },
+    set_year: function set_year(year) {
+      this.year_selected = year;
+      this.$emit('yearChanged', {
+        instance: this,
+        year: this.year_selected
+      });
+      this.$emit('dateChanged', {
+        instance: this,
+        month: this.month_selected,
+        year: this.year_selected
+      });
+    },
+    yearDropdown_changed: function yearDropdown_changed() {
+      var pyear = this.year_selected;
+      this.year_selected = event.currentTarget.value;
+      this.$emit('yearChanged', {
+        instance: this,
+        year: this.year_selected,
+        pyear: pyear
+      });
+      this.$emit('dateChanged', {
+        instance: this,
+        year: this.year_selected,
+        month: this.month_selected
+      });
+    },
+    previous_year: function previous_year() {
+      var cmonth = this.month_selected;
+      var cyear = this.year_selected;
+      var date = new Date();
+      date.setFullYear(cyear, cmonth, 1);
+      date.setFullYear(date.getFullYear() - 1, date.getMonth(), 1);
+      this.month_selected = date.getMonth();
+      this.year_selected = date.getFullYear();
+      this.$emit('previousYear', {
+        instance: this,
+        month: this.month_selected,
+        year: this.year_selected,
+        pmonth: cmonth,
+        pyear: cyear
+      });
+      this.$emit('dateChanged', {
+        instance: this,
+        month: this.month_selected,
+        year: this.year_selected
+      });
+    },
+    previous_month: function previous_month() {
+      var cmonth = this.month_selected;
+      var cyear = this.year_selected;
+      var date = new Date();
+      date.setFullYear(cyear, cmonth, 1);
+      date.setFullYear(date.getFullYear(), date.getMonth() - 1, 1);
+      this.month_selected = date.getMonth();
+      this.year_selected = date.getFullYear();
+      this.$emit('previousMonth', {
+        instance: this,
+        month: this.month_selected,
+        year: this.year_selected,
+        pmonth: cmonth,
+        pyear: cyear
+      });
+      this.$emit('dateChanged', {
+        instance: this,
+        month: this.month_selected,
+        year: this.year_selected
+      });
+    },
+    next_month: function next_month() {
+      var cmonth = this.month_selected;
+      var cyear = this.year_selected;
+      var date = new Date();
+      date.setFullYear(cyear, cmonth, 1);
+      date.setFullYear(date.getFullYear(), date.getMonth() + 1, 1);
+      this.month_selected = date.getMonth();
+      this.year_selected = date.getFullYear();
+      this.$emit('nextMonth', {
+        instance: this,
+        month: this.month_selected,
+        year: this.year_selected,
+        pmonth: cmonth,
+        pyear: cyear
+      });
+      this.$emit('dateChanged', {
+        instance: this,
+        month: this.month_selected,
+        year: this.year_selected
+      });
+    },
+    next_year: function next_year() {
+      var cmonth = this.month_selected;
+      var cyear = this.year_selected;
+      var date = new Date();
+      date.setFullYear(cyear, cmonth, 1);
+      date.setFullYear(date.getFullYear() + 1, date.getMonth(), 1);
+      this.month_selected = date.getMonth();
+      this.year_selected = date.getFullYear();
+      this.$emit('nextYear', {
+        instance: this,
+        month: this.month_selected,
+        year: this.year_selected,
+        pmonth: cmonth,
+        pyear: cyear
+      });
+      this.$emit('dateChanged', {
+        instance: this,
+        month: this.month_selected,
+        year: this.year_selected
+      });
+    },
+    cell_hover: function cell_hover(event, day) {
+      if (day == 0) {
+        return;
+      }
+
       var t = event.currentTarget;
 
       if (parseInt(t.getAttribute('data-selected')) == 0) {
@@ -702,7 +1046,11 @@ var es_parse_int = __webpack_require__("2195");
         t.style.color = this.hover_cell_fg;
       }
     },
-    cell_leave: function cell_leave(event) {
+    cell_leave: function cell_leave(event, day) {
+      if (day == 0) {
+        return;
+      }
+
       var t = event.currentTarget;
 
       if (parseInt(t.getAttribute('data-selected')) == 0) {
@@ -717,6 +1065,18 @@ var es_parse_int = __webpack_require__("2195");
       }
 
       return false;
+    },
+    is_today: function is_today(day) {
+      var today = this.get_today();
+      return day == today.date && this.month_selected == today.month && this.year_selected == today.year ? true : false;
+    },
+    get_today: function get_today() {
+      var d = new Date();
+      return {
+        date: d.getDate(),
+        month: d.getMonth(),
+        year: d.getFullYear()
+      };
     },
     isSelected: function isSelected(day) {
       if (day > 0) {
@@ -733,7 +1093,11 @@ var es_parse_int = __webpack_require__("2195");
 
       return false;
     },
-    cell_clicked: function cell_clicked(event) {
+    cell_clicked: function cell_clicked(event, dayindex) {
+      if (dayindex == 0) {
+        return;
+      }
+
       if (this.selection == 'none') {
         return;
       }
@@ -768,17 +1132,19 @@ var es_parse_int = __webpack_require__("2195");
         }
 
         console.log(this.cell_day_first_selected, this.cell_day_last_selected);
-        this.$emit('day-clicked', {
+        this.$emit('dayClicked', {
+          instance: this,
           month: this.month,
           //zero based
-          year: this.year,
+          year: this.year_selected,
           day: day
         });
 
         if (this.cell_day_first_selected > -1 && this.cell_day_last_selected > -1 && this.selection == 'range') {
-          this.$emit('range-selected', {
-            month: this.month,
-            year: this.year,
+          this.$emit('rangeSelected', {
+            instance: this,
+            month: this.month_selected,
+            year: this.year_selected,
             from: this.cell_day_first_selected,
             to: this.cell_day_last_selected
           });
@@ -786,11 +1152,19 @@ var es_parse_int = __webpack_require__("2195");
       }
     },
     clearSelection: function clearSelection() {
+      var first_selected = this.cell_day_first_selected;
+      var last_selected = this.cell_day_last_selected;
       this.cell_day_first_selected = -1;
       this.cell_day_last_selected = -1;
+      this.$emit('selectionReset', {
+        from: first_selected,
+        to: last_selected,
+        month: this.month_selected,
+        year: this.year_selected
+      });
     },
     getDaysOfPreviousMonth: function getDaysOfPreviousMonth() {
-      return new Date(this.year, this.month - 1, 0).getDate();
+      return new Date(this.year_selected, this.month_selected - 1, 0).getDate();
     }
   },
   mounted: function mounted() {
@@ -802,8 +1176,8 @@ var es_parse_int = __webpack_require__("2195");
 });
 // CONCATENATED MODULE: ./vue-airbnb-admin-calendar.vue?vue&type=script&lang=js&
  /* harmony default export */ var vue_airbnb_admin_calendarvue_type_script_lang_js_ = (lib_vue_loader_options_vue_airbnb_admin_calendarvue_type_script_lang_js_); 
-// EXTERNAL MODULE: ./vue-airbnb-admin-calendar.vue?vue&type=style&index=0&id=5e720374&scoped=true&lang=css&
-var vue_airbnb_admin_calendarvue_type_style_index_0_id_5e720374_scoped_true_lang_css_ = __webpack_require__("83bd");
+// EXTERNAL MODULE: ./vue-airbnb-admin-calendar.vue?vue&type=style&index=0&id=be418254&scoped=true&lang=css&
+var vue_airbnb_admin_calendarvue_type_style_index_0_id_be418254_scoped_true_lang_css_ = __webpack_require__("83e3");
 
 // CONCATENATED MODULE: /Users/fisigma/.nvm/versions/node/v12.16.1/lib/node_modules/@vue/cli-service-global/node_modules/vue-loader/lib/runtime/componentNormalizer.js
 /* globals __VUE_SSR_CONTEXT__ */
@@ -920,7 +1294,7 @@ var component = normalizeComponent(
   staticRenderFns,
   false,
   null,
-  "5e720374",
+  "be418254",
   null
   
 )
@@ -1403,6 +1777,16 @@ module.exports = [
 
 /***/ }),
 
+/***/ "7ff3":
+/***/ (function(module, exports, __webpack_require__) {
+
+var getBuiltIn = __webpack_require__("3964");
+
+module.exports = getBuiltIn('navigator', 'userAgent') || '';
+
+
+/***/ }),
+
 /***/ "8065":
 /***/ (function(module, exports) {
 
@@ -1411,12 +1795,12 @@ module.exports = {};
 
 /***/ }),
 
-/***/ "83bd":
+/***/ "83e3":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var _nvm_versions_node_v12_16_1_lib_node_modules_vue_cli_service_global_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_nvm_versions_node_v12_16_1_lib_node_modules_vue_cli_service_global_node_modules_css_loader_dist_cjs_js_ref_6_oneOf_1_1_nvm_versions_node_v12_16_1_lib_node_modules_vue_cli_service_global_node_modules_vue_loader_lib_loaders_stylePostLoader_js_nvm_versions_node_v12_16_1_lib_node_modules_vue_cli_service_global_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_nvm_versions_node_v12_16_1_lib_node_modules_vue_cli_service_global_node_modules_cache_loader_dist_cjs_js_ref_0_0_nvm_versions_node_v12_16_1_lib_node_modules_vue_cli_service_global_node_modules_vue_loader_lib_index_js_vue_loader_options_vue_airbnb_admin_calendar_vue_vue_type_style_index_0_id_5e720374_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("db8e");
-/* harmony import */ var _nvm_versions_node_v12_16_1_lib_node_modules_vue_cli_service_global_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_nvm_versions_node_v12_16_1_lib_node_modules_vue_cli_service_global_node_modules_css_loader_dist_cjs_js_ref_6_oneOf_1_1_nvm_versions_node_v12_16_1_lib_node_modules_vue_cli_service_global_node_modules_vue_loader_lib_loaders_stylePostLoader_js_nvm_versions_node_v12_16_1_lib_node_modules_vue_cli_service_global_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_nvm_versions_node_v12_16_1_lib_node_modules_vue_cli_service_global_node_modules_cache_loader_dist_cjs_js_ref_0_0_nvm_versions_node_v12_16_1_lib_node_modules_vue_cli_service_global_node_modules_vue_loader_lib_index_js_vue_loader_options_vue_airbnb_admin_calendar_vue_vue_type_style_index_0_id_5e720374_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_nvm_versions_node_v12_16_1_lib_node_modules_vue_cli_service_global_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_nvm_versions_node_v12_16_1_lib_node_modules_vue_cli_service_global_node_modules_css_loader_dist_cjs_js_ref_6_oneOf_1_1_nvm_versions_node_v12_16_1_lib_node_modules_vue_cli_service_global_node_modules_vue_loader_lib_loaders_stylePostLoader_js_nvm_versions_node_v12_16_1_lib_node_modules_vue_cli_service_global_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_nvm_versions_node_v12_16_1_lib_node_modules_vue_cli_service_global_node_modules_cache_loader_dist_cjs_js_ref_0_0_nvm_versions_node_v12_16_1_lib_node_modules_vue_cli_service_global_node_modules_vue_loader_lib_index_js_vue_loader_options_vue_airbnb_admin_calendar_vue_vue_type_style_index_0_id_5e720374_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _nvm_versions_node_v12_16_1_lib_node_modules_vue_cli_service_global_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_nvm_versions_node_v12_16_1_lib_node_modules_vue_cli_service_global_node_modules_css_loader_dist_cjs_js_ref_6_oneOf_1_1_nvm_versions_node_v12_16_1_lib_node_modules_vue_cli_service_global_node_modules_vue_loader_lib_loaders_stylePostLoader_js_nvm_versions_node_v12_16_1_lib_node_modules_vue_cli_service_global_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_nvm_versions_node_v12_16_1_lib_node_modules_vue_cli_service_global_node_modules_cache_loader_dist_cjs_js_ref_0_0_nvm_versions_node_v12_16_1_lib_node_modules_vue_cli_service_global_node_modules_vue_loader_lib_index_js_vue_loader_options_vue_airbnb_admin_calendar_vue_vue_type_style_index_0_id_be418254_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("fc65");
+/* harmony import */ var _nvm_versions_node_v12_16_1_lib_node_modules_vue_cli_service_global_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_nvm_versions_node_v12_16_1_lib_node_modules_vue_cli_service_global_node_modules_css_loader_dist_cjs_js_ref_6_oneOf_1_1_nvm_versions_node_v12_16_1_lib_node_modules_vue_cli_service_global_node_modules_vue_loader_lib_loaders_stylePostLoader_js_nvm_versions_node_v12_16_1_lib_node_modules_vue_cli_service_global_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_nvm_versions_node_v12_16_1_lib_node_modules_vue_cli_service_global_node_modules_cache_loader_dist_cjs_js_ref_0_0_nvm_versions_node_v12_16_1_lib_node_modules_vue_cli_service_global_node_modules_vue_loader_lib_index_js_vue_loader_options_vue_airbnb_admin_calendar_vue_vue_type_style_index_0_id_be418254_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_nvm_versions_node_v12_16_1_lib_node_modules_vue_cli_service_global_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_nvm_versions_node_v12_16_1_lib_node_modules_vue_cli_service_global_node_modules_css_loader_dist_cjs_js_ref_6_oneOf_1_1_nvm_versions_node_v12_16_1_lib_node_modules_vue_cli_service_global_node_modules_vue_loader_lib_loaders_stylePostLoader_js_nvm_versions_node_v12_16_1_lib_node_modules_vue_cli_service_global_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_nvm_versions_node_v12_16_1_lib_node_modules_vue_cli_service_global_node_modules_cache_loader_dist_cjs_js_ref_0_0_nvm_versions_node_v12_16_1_lib_node_modules_vue_cli_service_global_node_modules_vue_loader_lib_index_js_vue_loader_options_vue_airbnb_admin_calendar_vue_vue_type_style_index_0_id_be418254_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
 /* unused harmony reexport * */
 
 
@@ -1532,6 +1916,41 @@ module.exports = !fails(function () {
 var global = __webpack_require__("55f2");
 
 module.exports = global;
+
+
+/***/ }),
+
+/***/ "a11f":
+/***/ (function(module, exports, __webpack_require__) {
+
+var $ = __webpack_require__("017d");
+var global = __webpack_require__("55f2");
+var userAgent = __webpack_require__("7ff3");
+
+var slice = [].slice;
+var MSIE = /MSIE .\./.test(userAgent); // <- dirty ie9- check
+
+var wrap = function (scheduler) {
+  return function (handler, timeout /* , ...arguments */) {
+    var boundArgs = arguments.length > 2;
+    var args = boundArgs ? slice.call(arguments, 2) : undefined;
+    return scheduler(boundArgs ? function () {
+      // eslint-disable-next-line no-new-func
+      (typeof handler == 'function' ? handler : Function(handler)).apply(this, args);
+    } : handler, timeout);
+  };
+};
+
+// ie9- setTimeout & setInterval additional parameters fix
+// https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#timers
+$({ global: true, bind: true, forced: MSIE }, {
+  // `setTimeout` method
+  // https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#dom-settimeout
+  setTimeout: wrap(global.setTimeout),
+  // `setInterval` method
+  // https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#dom-setinterval
+  setInterval: wrap(global.setInterval)
+});
 
 
 /***/ }),
@@ -1763,13 +2182,6 @@ module.exports = function (target, source) {
   }
 };
 
-
-/***/ }),
-
-/***/ "db8e":
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
 
 /***/ }),
 
@@ -2007,6 +2419,13 @@ module.exports = getBuiltIn('Reflect', 'ownKeys') || function ownKeys(it) {
   return getOwnPropertySymbols ? keys.concat(getOwnPropertySymbols(it)) : keys;
 };
 
+
+/***/ }),
+
+/***/ "fc65":
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
 
 /***/ })
 
