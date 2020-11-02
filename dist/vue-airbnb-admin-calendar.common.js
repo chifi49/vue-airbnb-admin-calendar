@@ -319,6 +319,17 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
 /***/ }),
 
+/***/ "22ba":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var _nvm_versions_node_v12_16_1_lib_node_modules_vue_cli_service_global_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_nvm_versions_node_v12_16_1_lib_node_modules_vue_cli_service_global_node_modules_css_loader_dist_cjs_js_ref_6_oneOf_1_1_nvm_versions_node_v12_16_1_lib_node_modules_vue_cli_service_global_node_modules_vue_loader_lib_loaders_stylePostLoader_js_nvm_versions_node_v12_16_1_lib_node_modules_vue_cli_service_global_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_nvm_versions_node_v12_16_1_lib_node_modules_vue_cli_service_global_node_modules_cache_loader_dist_cjs_js_ref_0_0_nvm_versions_node_v12_16_1_lib_node_modules_vue_cli_service_global_node_modules_vue_loader_lib_index_js_vue_loader_options_vue_airbnb_admin_calendar_vue_vue_type_style_index_0_id_5b0c753b_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("5e3a");
+/* harmony import */ var _nvm_versions_node_v12_16_1_lib_node_modules_vue_cli_service_global_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_nvm_versions_node_v12_16_1_lib_node_modules_vue_cli_service_global_node_modules_css_loader_dist_cjs_js_ref_6_oneOf_1_1_nvm_versions_node_v12_16_1_lib_node_modules_vue_cli_service_global_node_modules_vue_loader_lib_loaders_stylePostLoader_js_nvm_versions_node_v12_16_1_lib_node_modules_vue_cli_service_global_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_nvm_versions_node_v12_16_1_lib_node_modules_vue_cli_service_global_node_modules_cache_loader_dist_cjs_js_ref_0_0_nvm_versions_node_v12_16_1_lib_node_modules_vue_cli_service_global_node_modules_vue_loader_lib_index_js_vue_loader_options_vue_airbnb_admin_calendar_vue_vue_type_style_index_0_id_5b0c753b_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_nvm_versions_node_v12_16_1_lib_node_modules_vue_cli_service_global_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_nvm_versions_node_v12_16_1_lib_node_modules_vue_cli_service_global_node_modules_css_loader_dist_cjs_js_ref_6_oneOf_1_1_nvm_versions_node_v12_16_1_lib_node_modules_vue_cli_service_global_node_modules_vue_loader_lib_loaders_stylePostLoader_js_nvm_versions_node_v12_16_1_lib_node_modules_vue_cli_service_global_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_nvm_versions_node_v12_16_1_lib_node_modules_vue_cli_service_global_node_modules_cache_loader_dist_cjs_js_ref_0_0_nvm_versions_node_v12_16_1_lib_node_modules_vue_cli_service_global_node_modules_vue_loader_lib_index_js_vue_loader_options_vue_airbnb_admin_calendar_vue_vue_type_style_index_0_id_5b0c753b_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* unused harmony reexport * */
+
+
+/***/ }),
+
 /***/ "243a":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -415,12 +426,12 @@ if (typeof window !== 'undefined') {
 // Indicate to webpack that this file can be concatenated
 /* harmony default export */ var setPublicPath = (null);
 
-// CONCATENATED MODULE: /Users/fisigma/.nvm/versions/node/v12.16.1/lib/node_modules/@vue/cli-service-global/node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"941e22d0-vue-loader-template"}!/Users/fisigma/.nvm/versions/node/v12.16.1/lib/node_modules/@vue/cli-service-global/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!/Users/fisigma/.nvm/versions/node/v12.16.1/lib/node_modules/@vue/cli-service-global/node_modules/cache-loader/dist/cjs.js??ref--0-0!/Users/fisigma/.nvm/versions/node/v12.16.1/lib/node_modules/@vue/cli-service-global/node_modules/vue-loader/lib??vue-loader-options!./vue-airbnb-admin-calendar.vue?vue&type=template&id=be418254&scoped=true&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticStyle:{"position":"relative"}},[_c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.monthyear_header_visible),expression:"monthyear_header_visible"}],staticClass:" month-year"},[_c('div',{style:({'visibility':_vm.navprevious_year_visible?'visible':'hidden','display':'inline-block','box-sizing':'border-box','width':'10%','text-align':'center','cursor':'pointer'}),on:{"click":_vm.previous_year}},[_c('span',{attrs:{"slot":"previous_year"},slot:"previous_year"},[_c('span',{staticStyle:{"transform":"rotate(180deg)","display":"inline-block"}},[_vm._v("▸▸")])])]),_c('div',{style:({'visibility':_vm.navprevious_month_visible?'visible':'hidden','display':'inline-block','box-sizing':'border-box','width':'10%','text-align':'center','cursor':'pointer'}),on:{"click":_vm.previous_month}},[_c('span',{attrs:{"slot":"previous_month"},slot:"previous_month"},[_vm._v("◀")])]),_c('div',{style:({'visibility':_vm.monthyear_visible?'visible':'hidden','display':'inline-block','box-sizing':'border-box','width':_vm.month_year_width,'text-align':'center'})},[(_vm.month_dropdown)?[_c('select',{on:{"change":_vm.monthDropdown_changed}},_vm._l((_vm.monthDropdown),function(option){return _c('option',{key:option.key,domProps:{"value":option.index,"selected":option.selected}},[_vm._v(" "+_vm._s(option.name)+" ")])}),0)]:_vm._e(),(!_vm.month_dropdown)?[_vm._v(_vm._s(_vm.monthNames[_vm.month_selected]))]:_vm._e(),_vm._v(" / "),(_vm.year_dropdown)?[_c('select',{on:{"change":_vm.yearDropdown_changed}},_vm._l((_vm.yearDropdown),function(option){return _c('option',{key:option.key,domProps:{"value":option.index,"selected":option.selected}},[_vm._v(" "+_vm._s(option.name)+" ")])}),0)]:_vm._e(),(!_vm.year_dropdown)?[_vm._v(_vm._s(_vm.year_selected))]:_vm._e()],2),_c('div',{style:({'visibility':_vm.navnext_month_visible?'visible':'hidden','display':'inline-block','box-sizing':'border-box','width':'10%','text-align':'center','cursor':'pointer'}),on:{"click":_vm.next_month}},[_c('span',{attrs:{"slot":"next_month"},slot:"next_month"},[_vm._v("▶")])]),_c('div',{style:({'visibility':_vm.navnext_year_visible?'visible':'hidden','display':'inline-block','box-sizing':'border-box','width':'10%','text-align':'center','cursor':'pointer'}),on:{"click":_vm.next_year}},[_c('span',{attrs:{"slot":"next_year"},slot:"next_year"},[_vm._v("▸▸")])])]),_c('div',{staticClass:"daynames"},_vm._l((_vm.dayShortNames),function(dayname,index){return _c('div',{key:'dayname-'+index,style:({'display':'inline-block','width':'14.28%','text-align':_vm.dayNameCellAlign,'border-style':'solid','border-width':'1px','border-color':_vm.dayNameCellBorderColor,'box-sizing':'border-box'})},[_vm._v(" "+_vm._s(dayname)+" ")])}),0),_c('div',{key:'days-view-'+_vm.days_view_counter,staticClass:" days display-table",staticStyle:{"display":"flex","flex-wrap":"wrap"}},_vm._l((_vm.days),function(day,index){return _c('div',{key:'dayday'+index,class:{'display-table-cell':true},style:({'background-color':_vm.isSelected(day)?_vm.selected_cell_bg:'','color':_vm.isSelected(day)?_vm.selected_cell_fg:'', 'width':'14.28%','display':'inline-block'}),attrs:{"data-selected":_vm.isSelected(day)?1:0,"data-day":day},on:{"mouseover":function($event){return _vm.cell_hover($event,day)},"mouseleave":function($event){return _vm.cell_leave($event,day)},"click":function($event){return _vm.cell_clicked($event,day)}}},[(day>0?true:false)?[_c('span',{staticClass:"daynumber",style:({'text-align':_vm.daynumber_position,'width':'100%','position':'relative','display':'inline-block'})},[_c('span',{style:({backgroundColor:_vm.is_today(day)?_vm.todayNameNumberBackgroundColor:_vm.dayNameNumberBackgroundColor,color:_vm.is_today(day)?_vm.todayNameNumberColor:_vm.dayNameNumberColor,padding:_vm.dayNameNumberPadding,'border-radius':_vm.dayNameNumberRadius,'font-size':_vm.dayNameNumberFontSize,'display':'inline-block','width':_vm.dayNameNumberSize,'height':_vm.dayNameNumberSize,'text-align':'center','vertical-align':'middle','line-height':_vm.dayNameNumberSize})},[_vm._v(_vm._s(day))])]),_c('div',{domProps:{"innerHTML":_vm._s(_vm.renderTemplate(day))}})]:_vm._e(),(day==0?true:false)?[_c('span',{style:({'text-align':_vm.daynumber_position,'width':'100%','position':'relative','display':'inline-block','visibility':'hidden'})},[_c('span',[_vm._v(_vm._s(day))])])]:_vm._e()],2)}),0),_c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.loading),expression:"loading"}],staticStyle:{"position":"absolute","top":"0px","left":"0px","width":"100%","bottom":"0px","vertical-align":"middle","text-align":"center","background-color":"rgb(255,255,255,0.5)"}},[_c('div',{staticStyle:{"position":"relative","top":"45%","margin":"0 auto","font-size":"32px"}},[_c('div',{ref:"spinner",staticStyle:{"display":"inline-block"},attrs:{"slot":"loader"},slot:"loader"},[_vm._v("↻")])])])])}
+// CONCATENATED MODULE: /Users/fisigma/.nvm/versions/node/v12.16.1/lib/node_modules/@vue/cli-service-global/node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"941e22d0-vue-loader-template"}!/Users/fisigma/.nvm/versions/node/v12.16.1/lib/node_modules/@vue/cli-service-global/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!/Users/fisigma/.nvm/versions/node/v12.16.1/lib/node_modules/@vue/cli-service-global/node_modules/cache-loader/dist/cjs.js??ref--0-0!/Users/fisigma/.nvm/versions/node/v12.16.1/lib/node_modules/@vue/cli-service-global/node_modules/vue-loader/lib??vue-loader-options!./vue-airbnb-admin-calendar.vue?vue&type=template&id=5b0c753b&scoped=true&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticStyle:{"position":"relative"}},[_c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.monthyear_header_visible),expression:"monthyear_header_visible"}],staticClass:" month-year"},[_c('div',{style:({'visibility':_vm.navprevious_year_visible?'visible':'hidden','display':'inline-block','box-sizing':'border-box','width':'10%','text-align':'center','cursor':'pointer'}),on:{"click":_vm.previous_year}},[_c('span',{attrs:{"slot":"previous_year"},slot:"previous_year"},[_c('span',{staticStyle:{"transform":"rotate(180deg)","display":"inline-block"}},[_vm._v("▸▸")])])]),_c('div',{style:({'visibility':_vm.navprevious_month_visible?'visible':'hidden','display':'inline-block','box-sizing':'border-box','width':'10%','text-align':'center','cursor':'pointer'}),on:{"click":_vm.previous_month}},[_c('span',{attrs:{"slot":"previous_month"},slot:"previous_month"},[_vm._v("◀")])]),_c('div',{style:({'visibility':_vm.monthyear_visible?'visible':'hidden','display':'inline-block','box-sizing':'border-box','width':_vm.month_year_width,'text-align':'center'})},[(_vm.month_dropdown)?[_c('select',{on:{"change":_vm.monthDropdown_changed}},_vm._l((_vm.monthDropdown),function(option){return _c('option',{key:option.key,domProps:{"value":option.index,"selected":option.selected}},[_vm._v(" "+_vm._s(option.name)+" ")])}),0)]:_vm._e(),(!_vm.month_dropdown)?[_vm._v(_vm._s(_vm.month_names[_vm.month_selected]))]:_vm._e(),_vm._v(" / "),(_vm.year_dropdown)?[_c('select',{on:{"change":_vm.yearDropdown_changed}},_vm._l((_vm.yearDropdown),function(option){return _c('option',{key:option.key,domProps:{"value":option.index,"selected":option.selected}},[_vm._v(" "+_vm._s(option.name)+" ")])}),0)]:_vm._e(),(!_vm.year_dropdown)?[_vm._v(_vm._s(_vm.year_selected))]:_vm._e()],2),_c('div',{style:({'visibility':_vm.navnext_month_visible?'visible':'hidden','display':'inline-block','box-sizing':'border-box','width':'10%','text-align':'center','cursor':'pointer'}),on:{"click":_vm.next_month}},[_c('span',{attrs:{"slot":"next_month"},slot:"next_month"},[_vm._v("▶")])]),_c('div',{style:({'visibility':_vm.navnext_year_visible?'visible':'hidden','display':'inline-block','box-sizing':'border-box','width':'10%','text-align':'center','cursor':'pointer'}),on:{"click":_vm.next_year}},[_c('span',{attrs:{"slot":"next_year"},slot:"next_year"},[_vm._v("▸▸")])])]),_c('div',{staticClass:"daynames"},_vm._l((_vm.day_short_names),function(dayname,index){return _c('div',{key:'dayname-'+index,style:({'display':'inline-block','width':'14.28%','text-align':_vm.day_name_cell_align,'border-style':'solid','border-width':'1px','border-color':_vm.day_name_cell_border_color,'box-sizing':'border-box'})},[_vm._v(" "+_vm._s(dayname)+" ")])}),0),_c('div',{key:'days-view-'+_vm.days_view_counter,staticClass:" days display-table",staticStyle:{"display":"flex","flex-wrap":"wrap"}},[(_vm.show_other_month_days)?_vm._l((_vm.previous_days),function(day,index){return _c('div',{key:'previousday'+index,class:{'display-table-cell':true},style:({'background-color':_vm.isSelected(day)?_vm.selected_cell_bg:'','color':_vm.isSelected(day)?_vm.selected_cell_fg:'', 'width':'14.28%','display':'inline-block'})},[_c('span',{staticClass:"daynumber",style:({'text-align':_vm.daynumber_position,'width':'100%','position':'relative','display':'inline-block'})},[_c('span',{style:({backgroundColor:_vm.is_today(day,_vm.previousMonth,_vm.previousYear)?_vm.today_name_number_background_color:_vm.other_month_day_background_color,color:_vm.is_today(day,_vm.previousMonth,_vm.previousYear)?_vm.today_name_number_color:_vm.other_month_day_color,padding:_vm.day_name_number_padding,'border-radius':_vm.day_name_number_radius,'font-size':_vm.day_name_number_font_size,'display':'inline-block','width':_vm.day_name_number_size,'height':_vm.day_name_number_size,'text-align':'center','vertical-align':'middle','line-height':_vm.day_name_number_size})},[_vm._v(_vm._s(day))])]),_c('div',{domProps:{"innerHTML":_vm._s(_vm.renderTemplate(day,_vm.month_selected,_vm.year_selected))}})])}):_vm._e(),_vm._l((_vm.days),function(day,index){return _c('div',{key:'dayday'+index,class:{'display-table-cell':true},style:({'background-color':_vm.isSelected(day)?_vm.selected_cell_bg:'','color':_vm.isSelected(day)?_vm.selected_cell_fg:'', 'width':'14.28%','display':'inline-block'}),attrs:{"data-selected":_vm.isSelected(day)?1:0,"data-day":day},on:{"mouseover":function($event){return _vm.cell_hover($event,day)},"mouseleave":function($event){return _vm.cell_leave($event,day)},"click":function($event){return _vm.cell_clicked($event,day)}}},[(day>0?true:false)?[_c('span',{staticClass:"daynumber",style:({'text-align':_vm.daynumber_position,'width':'100%','position':'relative','display':'inline-block'})},[_c('span',{style:({backgroundColor:_vm.is_today(day,_vm.month_selected,_vm.year_selected)?_vm.today_name_number_background_color:_vm.day_name_number_background_color,color:_vm.is_today(day,_vm.month_selected,_vm.year_selected)?_vm.today_name_number_color:_vm.day_name_number_color,padding:_vm.day_name_number_padding,'border-radius':_vm.day_name_number_radius,'font-size':_vm.day_name_number_font_size,'display':'inline-block','width':_vm.day_name_number_size,'height':_vm.day_name_number_size,'text-align':'center','vertical-align':'middle','line-height':_vm.day_name_number_size})},[_vm._v(_vm._s(day))])]),_c('div',{domProps:{"innerHTML":_vm._s(_vm.renderTemplate(day,_vm.month_selected,_vm.year_selected))}})]:_vm._e(),(day==0?true:false)?[_c('span',{style:({'text-align':_vm.daynumber_position,'width':'100%','position':'relative','display':'inline-block','visibility':'hidden'})},[_c('span',[_vm._v(_vm._s(day))])])]:_vm._e()],2)}),(_vm.show_other_month_days)?_vm._l((_vm.next_days),function(day,index){return _c('div',{key:'nextday'+index,class:{'display-table-cell':true},style:({'background-color':_vm.isSelected(day)?_vm.selected_cell_bg:'','color':_vm.isSelected(day)?_vm.selected_cell_fg:'', 'width':'14.28%','display':'inline-block'})},[_c('span',{staticClass:"daynumber",style:({'text-align':_vm.daynumber_position,'width':'100%','position':'relative','display':'inline-block'})},[_c('span',{style:({backgroundColor:_vm.is_today(day,_vm.nextMonth,_vm.nextYear)?_vm.today_name_number_background_color:_vm.other_month_day_background_color,color:_vm.is_today(day,_vm.nextMonth,_vm.nextYear)?_vm.today_name_number_color:_vm.other_month_day_color,padding:_vm.day_name_number_padding,'border-radius':_vm.day_name_number_radius,'font-size':_vm.day_name_number_font_size,'display':'inline-block','width':_vm.day_name_number_size,'height':_vm.day_name_number_size,'text-align':'center','vertical-align':'middle','line-height':_vm.day_name_number_size})},[_vm._v(_vm._s(day))])]),_c('div',{domProps:{"innerHTML":_vm._s(_vm.renderTemplate(day,_vm.month_selected,_vm.year_selected))}})])}):_vm._e()],2),_c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.loading),expression:"loading"}],staticStyle:{"position":"absolute","top":"0px","left":"0px","width":"100%","bottom":"0px","vertical-align":"middle","text-align":"center","background-color":"rgb(255,255,255,0.5)"}},[_c('div',{staticStyle:{"position":"relative","top":"45%","margin":"0 auto","font-size":"32px"}},[_c('div',{ref:"spinner",staticStyle:{"display":"inline-block"},attrs:{"slot":"loader"},slot:"loader"},[_vm._v("↻")])])])])}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./vue-airbnb-admin-calendar.vue?vue&type=template&id=be418254&scoped=true&
+// CONCATENATED MODULE: ./vue-airbnb-admin-calendar.vue?vue&type=template&id=5b0c753b&scoped=true&
 
 // EXTERNAL MODULE: /Users/fisigma/.nvm/versions/node/v12.16.1/lib/node_modules/@vue/cli-service-global/node_modules/core-js/modules/es.date.to-string.js
 var es_date_to_string = __webpack_require__("5f5d");
@@ -503,6 +514,54 @@ var web_timers = __webpack_require__("a11f");
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ var lib_vue_loader_options_vue_airbnb_admin_calendarvue_type_script_lang_js_ = ({
   name: 'vue-airbnb-admin-calendar',
   props: {
@@ -512,6 +571,11 @@ var web_timers = __webpack_require__("a11f");
       "default": function _default() {
         return '';
       }
+    },
+    show_other_month_days: {
+      required: false,
+      type: Boolean,
+      "default": false
     },
     loading: {
       required: false,
@@ -593,66 +657,76 @@ var web_timers = __webpack_require__("a11f");
       type: String,
       "default": ''
     },
-    dayNameCellAlign: {
+    day_name_cell_align: {
       required: false,
       type: String,
       "default": function _default() {
         return 'center';
       }
     },
-    dayNameCellBorderColor: {
+    day_name_cell_border_color: {
       required: false,
       type: String,
       "default": function _default() {
         return 'transparent';
       }
     },
-    todayNameNumberBackgroundColor: {
+    other_month_day_background_color: {
+      required: false,
+      type: String,
+      "default": '#efefef'
+    },
+    other_month_day_color: {
       required: false,
       type: String,
       "default": '#000'
     },
-    todayNameNumberColor: {
+    today_name_number_background_color: {
+      required: false,
+      type: String,
+      "default": '#888'
+    },
+    today_name_number_color: {
       required: false,
       type: String,
       "default": '#fff'
     },
-    dayNameNumberBackgroundColor: {
+    day_name_number_background_color: {
       required: false,
       type: String,
       "default": '#000'
     },
-    dayNameNumberColor: {
+    day_name_number_color: {
       required: false,
       type: String,
       "default": '#fff'
     },
-    dayNameNumberRadius: {
+    day_name_number_radius: {
       required: false,
       type: String,
       "default": '50%'
     },
-    dayNameNumberPadding: {
+    day_name_number_padding: {
       required: false,
       type: String,
       "default": '5px 5px'
     },
-    dayNameNumberWidth: {
+    day_name_number_width: {
       required: false,
       type: String,
       "default": 'auto'
     },
-    dayNameNumberHeight: {
+    day_name_number_height: {
       required: false,
       type: String,
       "default": 'auto'
     },
-    dayNameNumberSize: {
+    day_name_number_size: {
       required: false,
       type: String,
       "default": '18px'
     },
-    dayNameNumberFontSize: {
+    day_name_number_font_size: {
       required: false,
       type: String,
       "default": '12px'
@@ -671,28 +745,28 @@ var web_timers = __webpack_require__("a11f");
         return [];
       }
     },
-    monthNames: {
+    month_names: {
       required: false,
       type: Array,
       "default": function _default() {
         return ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
       }
     },
-    monthShortNames: {
+    month_short_names: {
       required: false,
       type: Array,
       "default": function _default() {
         return ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
       }
     },
-    dayNames: {
+    day_names: {
       required: false,
       type: Array,
       "default": function _default() {
         return ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
       }
     },
-    dayShortNames: {
+    day_short_names: {
       required: false,
       type: Array,
       "default": function _default() {
@@ -728,11 +802,11 @@ var web_timers = __webpack_require__("a11f");
   },
   watch: {
     dataContainer: function dataContainer() {},
-    year: function year() {
+    year_selected: function year_selected() {
       this.cell_day_first_selected = -1;
       this.cell_day_last_selected = -1;
     },
-    month: function month() {
+    month_selected: function month_selected() {
       this.cell_day_first_selected = -1;
       this.cell_day_last_selected = -1;
     },
@@ -748,6 +822,11 @@ var web_timers = __webpack_require__("a11f");
     }
   },
   computed: {
+    /**
+    showOtherMonthDays:function(){
+        return this.show_other_month_days;
+    },
+    **/
     month_year_width: function month_year_width() {
       var total = 0;
 
@@ -792,7 +871,7 @@ var web_timers = __webpack_require__("a11f");
       for (var i = 0; i <= 11; i++) {
         options.push({
           key: 'monthdropdown-name-' + i,
-          name: this.monthNames[i],
+          name: this.month_names[i],
           index: i,
           selected: i == this.month_selected ? true : false
         });
@@ -802,6 +881,9 @@ var web_timers = __webpack_require__("a11f");
     },
     totalDaysOfMonth: function totalDaysOfMonth() {
       return new Date(this.year_selected, this.month_selected + 1, 0).getDate();
+    },
+    totalDaysOfPreviousMonth: function totalDaysOfPreviousMonth() {
+      return new Date(this.year_selected, this.month_selected, 0).getDate();
     },
     days_selected: function days_selected() {
       var selected_ar = [];
@@ -826,6 +908,28 @@ var web_timers = __webpack_require__("a11f");
 
       return selected_ar;
     },
+    //the previous month days (if 1st day of current month does not start on sunday)
+    previousMonth: function previousMonth() {
+      var now = new Date(this.year_selected, this.month_selected - 1, 1);
+      return now.getMonth();
+    },
+    //the year of the previous month (because if current month is january than previous month december has another year)
+    previousYear: function previousYear() {
+      var now = new Date(this.year_selected, this.month_selected - 1, 1);
+      return now.getFullYear();
+    },
+    previous_days: function previous_days() {
+      var day = new Date(this.year_selected, this.month_selected, 1).getDay();
+      var previousLastDay = this.totalDaysOfPreviousMonth;
+      var diff = day - 0;
+      var days_ar = []; //for(var ii=0;ii<diff;ii++){
+
+      for (var ii = diff - 1; ii >= 0; ii--) {
+        days_ar.push(previousLastDay - ii);
+      }
+
+      return days_ar;
+    },
     days: function days() {
       //fix the array here 
       //get the first day of the month what day it is
@@ -833,8 +937,10 @@ var web_timers = __webpack_require__("a11f");
       var diff = day - 0;
       var days_ar = [];
 
-      for (var ii = 0; ii < diff; ii++) {
-        days_ar.push(0);
+      if (!this.show_other_month_days) {
+        for (var ii = 0; ii < diff; ii++) {
+          days_ar.push(0);
+        }
       }
 
       var month_days = this.totalDaysOfMonth;
@@ -844,13 +950,37 @@ var web_timers = __webpack_require__("a11f");
       }
 
       var last_day = new Date(this.year_selected, this.month_selected, month_days).getDay();
-      var last_diff = 6 - last_day;
 
-      for (var iii = 0; iii < last_diff; iii++) {
-        days_ar.push(0);
+      if (!this.show_other_month_days) {
+        var last_diff = 6 - last_day;
+
+        for (var iii = 0; iii < last_diff; iii++) {
+          days_ar.push(0);
+        }
       }
 
       return days_ar;
+    },
+    next_days: function next_days() {
+      var month_days = this.totalDaysOfMonth;
+      var last_day = new Date(this.year_selected, this.month_selected, month_days).getDay();
+      var days_ar = [];
+      var last_diff = 6 - last_day;
+
+      for (var iii = 0; iii < last_diff; iii++) {
+        days_ar.push(iii + 1);
+      }
+
+      return days_ar;
+    },
+    nextMonth: function nextMonth() {
+      var now = new Date(this.year_selected, this.month_selected + 1, 1);
+      return now.getMonth();
+    },
+    //the year of the month (because if the current month is december, than the january as next month will have another year)
+    nextYear: function nextYear() {
+      var now = new Date(this.year_selected, this.month_selected + 1, 1);
+      return now.getFullYear();
     }
   },
   methods: {
@@ -880,6 +1010,24 @@ var web_timers = __webpack_require__("a11f");
         this.$refs['spinner'].style.transform = 'rotate(0deg)';
         this.$emit('loaderEnded');
       }
+    },
+    get_previous_month: function get_previous_month() {
+      var date = new Date();
+      date.setFullYear(this.year_selected, this.month_selected, 1);
+      date.setFullYear(date.getFullYear(), date.getMonth() - 1, 1);
+      return {
+        month: date.getMonth(),
+        year: date.getFullYear()
+      };
+    },
+    get_next_month: function get_next_month() {
+      var date = new Date();
+      date.setFullYear(this.year_selected, this.month_selected, 1);
+      date.setFullYear(date.getFullYear(), date.getMonth() + 1, 1);
+      return {
+        month: date.getMonth(),
+        year: date.getFullYear()
+      };
     },
     get_month: function get_month() {
       return this.month_selected;
@@ -1057,9 +1205,9 @@ var web_timers = __webpack_require__("a11f");
 
       return false;
     },
-    is_today: function is_today(day) {
+    is_today: function is_today(day, month, year) {
       var today = this.get_today();
-      return day == today.date && this.month_selected == today.month && this.year_selected == today.year ? true : false;
+      return day == today.date && month == today.month && year == today.year ? true : false;
     },
     get_today: function get_today() {
       var d = new Date();
@@ -1167,8 +1315,8 @@ var web_timers = __webpack_require__("a11f");
 });
 // CONCATENATED MODULE: ./vue-airbnb-admin-calendar.vue?vue&type=script&lang=js&
  /* harmony default export */ var vue_airbnb_admin_calendarvue_type_script_lang_js_ = (lib_vue_loader_options_vue_airbnb_admin_calendarvue_type_script_lang_js_); 
-// EXTERNAL MODULE: ./vue-airbnb-admin-calendar.vue?vue&type=style&index=0&id=be418254&scoped=true&lang=css&
-var vue_airbnb_admin_calendarvue_type_style_index_0_id_be418254_scoped_true_lang_css_ = __webpack_require__("83e3");
+// EXTERNAL MODULE: ./vue-airbnb-admin-calendar.vue?vue&type=style&index=0&id=5b0c753b&scoped=true&lang=css&
+var vue_airbnb_admin_calendarvue_type_style_index_0_id_5b0c753b_scoped_true_lang_css_ = __webpack_require__("22ba");
 
 // CONCATENATED MODULE: /Users/fisigma/.nvm/versions/node/v12.16.1/lib/node_modules/@vue/cli-service-global/node_modules/vue-loader/lib/runtime/componentNormalizer.js
 /* globals __VUE_SSR_CONTEXT__ */
@@ -1285,7 +1433,7 @@ var component = normalizeComponent(
   staticRenderFns,
   false,
   null,
-  "be418254",
+  "5b0c753b",
   null
   
 )
@@ -1713,6 +1861,13 @@ module.exports = {
 
 /***/ }),
 
+/***/ "5e3a":
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+
 /***/ "5f5d":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1782,17 +1937,6 @@ module.exports = getBuiltIn('navigator', 'userAgent') || '';
 /***/ (function(module, exports) {
 
 module.exports = {};
-
-
-/***/ }),
-
-/***/ "83e3":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var _nvm_versions_node_v12_16_1_lib_node_modules_vue_cli_service_global_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_nvm_versions_node_v12_16_1_lib_node_modules_vue_cli_service_global_node_modules_css_loader_dist_cjs_js_ref_6_oneOf_1_1_nvm_versions_node_v12_16_1_lib_node_modules_vue_cli_service_global_node_modules_vue_loader_lib_loaders_stylePostLoader_js_nvm_versions_node_v12_16_1_lib_node_modules_vue_cli_service_global_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_nvm_versions_node_v12_16_1_lib_node_modules_vue_cli_service_global_node_modules_cache_loader_dist_cjs_js_ref_0_0_nvm_versions_node_v12_16_1_lib_node_modules_vue_cli_service_global_node_modules_vue_loader_lib_index_js_vue_loader_options_vue_airbnb_admin_calendar_vue_vue_type_style_index_0_id_be418254_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("fc65");
-/* harmony import */ var _nvm_versions_node_v12_16_1_lib_node_modules_vue_cli_service_global_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_nvm_versions_node_v12_16_1_lib_node_modules_vue_cli_service_global_node_modules_css_loader_dist_cjs_js_ref_6_oneOf_1_1_nvm_versions_node_v12_16_1_lib_node_modules_vue_cli_service_global_node_modules_vue_loader_lib_loaders_stylePostLoader_js_nvm_versions_node_v12_16_1_lib_node_modules_vue_cli_service_global_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_nvm_versions_node_v12_16_1_lib_node_modules_vue_cli_service_global_node_modules_cache_loader_dist_cjs_js_ref_0_0_nvm_versions_node_v12_16_1_lib_node_modules_vue_cli_service_global_node_modules_vue_loader_lib_index_js_vue_loader_options_vue_airbnb_admin_calendar_vue_vue_type_style_index_0_id_be418254_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_nvm_versions_node_v12_16_1_lib_node_modules_vue_cli_service_global_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_nvm_versions_node_v12_16_1_lib_node_modules_vue_cli_service_global_node_modules_css_loader_dist_cjs_js_ref_6_oneOf_1_1_nvm_versions_node_v12_16_1_lib_node_modules_vue_cli_service_global_node_modules_vue_loader_lib_loaders_stylePostLoader_js_nvm_versions_node_v12_16_1_lib_node_modules_vue_cli_service_global_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_nvm_versions_node_v12_16_1_lib_node_modules_vue_cli_service_global_node_modules_cache_loader_dist_cjs_js_ref_0_0_nvm_versions_node_v12_16_1_lib_node_modules_vue_cli_service_global_node_modules_vue_loader_lib_index_js_vue_loader_options_vue_airbnb_admin_calendar_vue_vue_type_style_index_0_id_be418254_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
-/* unused harmony reexport * */
 
 
 /***/ }),
@@ -2410,13 +2554,6 @@ module.exports = getBuiltIn('Reflect', 'ownKeys') || function ownKeys(it) {
   return getOwnPropertySymbols ? keys.concat(getOwnPropertySymbols(it)) : keys;
 };
 
-
-/***/ }),
-
-/***/ "fc65":
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
 
 /***/ })
 

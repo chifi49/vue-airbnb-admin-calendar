@@ -15,7 +15,7 @@
                         </option>
                     </select>
                 </template>
-                <template v-if="!month_dropdown">{{monthNames[month_selected]}}</template>
+                <template v-if="!month_dropdown">{{month_names[month_selected]}}</template>
                  / 
                  <template v-if="year_dropdown">
                      <select v-on:change="yearDropdown_changed">
@@ -34,18 +34,48 @@
             </div>
         </div>
         <div class="daynames" >
-            <div v-for="(dayname,index) in dayShortNames" v-bind:key="'dayname-'+index" :style="{'display':'inline-block','width':'14.28%','text-align':dayNameCellAlign,'border-style':'solid','border-width':'1px','border-color':dayNameCellBorderColor,'box-sizing':'border-box'}">
+            <div v-for="(dayname,index) in day_short_names" v-bind:key="'dayname-'+index" :style="{'display':'inline-block','width':'14.28%','text-align':day_name_cell_align,'border-style':'solid','border-width':'1px','border-color':day_name_cell_border_color,'box-sizing':'border-box'}">
                 {{dayname}}
             </div>
         </div>
         <div class=" days display-table" style="display:flex;flex-wrap:wrap;" v-bind:key="'days-view-'+days_view_counter">
-            <div :data-selected="isSelected(day)?1:0" @mouseover="cell_hover($event,day)" @mouseleave="cell_leave($event,day)" :style="{'background-color':isSelected(day)?selected_cell_bg:'','color':isSelected(day)?selected_cell_fg:'', 'width':'14.28%','display':'inline-block'}" :class="{'display-table-cell':true}" v-bind:key="'dayday'+index" v-for="(day,index) in days" @click="cell_clicked($event,day)" :data-day="day">
-                <template v-if="day>0?true:false">
+
+            <template v-if="show_other_month_days">
+                <div v-for="(day,index) in previous_days"
+                v-bind:key="'previousday'+index"
+                
+                :style="{'background-color':isSelected(day)?selected_cell_bg:'','color':isSelected(day)?selected_cell_fg:'', 'width':'14.28%','display':'inline-block'}" 
+            :class="{'display-table-cell':true}" 
+                >
                     <span class="daynumber" :style="{'text-align':daynumber_position,'width':'100%','position':'relative','display':'inline-block'}">
-                        <span :style="{backgroundColor:is_today(day)?todayNameNumberBackgroundColor:dayNameNumberBackgroundColor,color:is_today(day)?todayNameNumberColor:dayNameNumberColor,padding:dayNameNumberPadding,'border-radius':dayNameNumberRadius,'font-size':dayNameNumberFontSize,'display':'inline-block','width':dayNameNumberSize,'height':dayNameNumberSize,'text-align':'center','vertical-align':'middle','line-height':dayNameNumberSize}">{{day}}</span>
+                        <span :style="{backgroundColor:is_today(day,previousMonth,previousYear)?today_name_number_background_color:other_month_day_background_color,color:is_today(day,previousMonth,previousYear)?today_name_number_color:other_month_day_color,padding:day_name_number_padding,'border-radius':day_name_number_radius,'font-size':day_name_number_font_size,'display':'inline-block','width':day_name_number_size,'height':day_name_number_size,'text-align':'center','vertical-align':'middle','line-height':day_name_number_size}">{{day}}</span>
                     </span>
                     
-                        <div v-html="renderTemplate(day)"></div>
+                        <div v-html="renderTemplate(day,month_selected,year_selected)"></div>
+                        
+
+                </div>
+            </template>
+
+            <div 
+            v-for="(day,index) in days" 
+            v-bind:key="'dayday'+index" 
+            :data-selected="isSelected(day)?1:0" 
+            @mouseover="cell_hover($event,day)" 
+            @mouseleave="cell_leave($event,day)"
+            @click="cell_clicked($event,day)"
+
+            :style="{'background-color':isSelected(day)?selected_cell_bg:'','color':isSelected(day)?selected_cell_fg:'', 'width':'14.28%','display':'inline-block'}" 
+            :class="{'display-table-cell':true}" 
+            
+             :data-day="day">
+
+                <template v-if="day>0?true:false">
+                    <span class="daynumber" :style="{'text-align':daynumber_position,'width':'100%','position':'relative','display':'inline-block'}">
+                        <span :style="{backgroundColor:is_today(day,month_selected,year_selected)?today_name_number_background_color:day_name_number_background_color,color:is_today(day,month_selected,year_selected)?today_name_number_color:day_name_number_color,padding:day_name_number_padding,'border-radius':day_name_number_radius,'font-size':day_name_number_font_size,'display':'inline-block','width':day_name_number_size,'height':day_name_number_size,'text-align':'center','vertical-align':'middle','line-height':day_name_number_size}">{{day}}</span>
+                    </span>
+                    
+                        <div v-html="renderTemplate(day,month_selected,year_selected)"></div>
                         
                 </template>
                 <template v-if="day==0?true:false">
@@ -54,6 +84,24 @@
                         </span>
                 </template>
             </div>
+
+            <template v-if="show_other_month_days">
+                <div v-for="(day,index) in next_days"
+                v-bind:key="'nextday'+index"
+                
+                :style="{'background-color':isSelected(day)?selected_cell_bg:'','color':isSelected(day)?selected_cell_fg:'', 'width':'14.28%','display':'inline-block'}" 
+            :class="{'display-table-cell':true}" 
+                >
+                    <span class="daynumber" :style="{'text-align':daynumber_position,'width':'100%','position':'relative','display':'inline-block'}">
+                        <span :style="{backgroundColor:is_today(day,nextMonth,nextYear)?today_name_number_background_color:other_month_day_background_color,color:is_today(day,nextMonth,nextYear)?today_name_number_color:other_month_day_color,padding:day_name_number_padding,'border-radius':day_name_number_radius,'font-size':day_name_number_font_size,'display':'inline-block','width':day_name_number_size,'height':day_name_number_size,'text-align':'center','vertical-align':'middle','line-height':day_name_number_size}">{{day}}</span>
+                    </span>
+                    
+                        <div v-html="renderTemplate(day,month_selected,year_selected)"></div>
+                        
+
+                </div>
+            </template>
+
         </div>
         <div  v-show="loading" style="position:absolute;top:0px;left:0px;width:100%;bottom:0px;vertical-align:middle;text-align:center;background-color:rgb(255,255,255,0.5);">
             <div style="position:relative;top:45%;margin:0 auto;font-size:32px;">
@@ -73,6 +121,11 @@ export default{
             default:function(){
                 return '';
             }
+        },
+        show_other_month_days:{
+            required:false,
+            type:Boolean,
+            default:false
         },
         loading:{
             required:false,
@@ -154,66 +207,76 @@ export default{
             type:String,
             default:''
         },
-        dayNameCellAlign:{
+        day_name_cell_align:{
             required:false,
             type:String,
             default:function(){
                 return 'center';
             }
         },
-        dayNameCellBorderColor:{
+        day_name_cell_border_color:{
             required:false,
             type:String,
             default:function(){
                 return 'transparent';
             }
         },
-        todayNameNumberBackgroundColor:{
+        other_month_day_background_color:{
+            required:false,
+            type:String,
+            default:'#efefef'
+        },
+        other_month_day_color:{
             required:false,
             type:String,
             default:'#000'
         },
-        todayNameNumberColor:{
+        today_name_number_background_color:{
+            required:false,
+            type:String,
+            default:'#888'
+        },
+        today_name_number_color:{
             required:false,
             type:String,
             default:'#fff'
         },
-        dayNameNumberBackgroundColor:{
+        day_name_number_background_color:{
             required:false,
             type:String,
             default:'#000'
         },
-        dayNameNumberColor:{
+        day_name_number_color:{
             required:false,
             type:String,
             default:'#fff'
         },
-        dayNameNumberRadius:{
+        day_name_number_radius:{
             required:false,
             type:String,
             default:'50%'
         },
-        dayNameNumberPadding:{
+        day_name_number_padding:{
             required:false,
             type:String,
             default:'5px 5px'
         },
-        dayNameNumberWidth:{
+        day_name_number_width:{
             required:false,
             type:String,
             default:'auto'
         },
-        dayNameNumberHeight:{
+        day_name_number_height:{
             required:false,
             type:String,
             default:'auto'
         },
-        dayNameNumberSize:{
+        day_name_number_size:{
             required:false,
             type:String,
             default:'18px'
         },
-        dayNameNumberFontSize:{
+        day_name_number_font_size:{
             required:false,
             type:String,
             default:'12px'
@@ -232,28 +295,28 @@ export default{
                 return [];
             }
         },
-        monthNames:{
+        month_names:{
             required:false,
             type:Array,
             default:function(){
                 return ["January","February","March","April","May","June","July","August","September","October","November","December"]
             }
         },
-        monthShortNames:{
+        month_short_names:{
             required:false,
             type:Array,
             default:function(){
                 return ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
             }
         },
-        dayNames:{
+        day_names:{
             required:false,
             type:Array,
             default:function(){
                 return ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
             }
         },
-        dayShortNames:{
+        day_short_names:{
             required:false,
             type:Array,
             default:function(){
@@ -291,12 +354,12 @@ export default{
         dataContainer:function(){
             
         },
-        year:function(){
+        year_selected:function(){
             
             this.cell_day_first_selected = -1;
             this.cell_day_last_selected = -1;
         },
-        month:function(){
+        month_selected:function(){
             
             this.cell_day_first_selected = -1;
             this.cell_day_last_selected = -1;
@@ -314,6 +377,11 @@ export default{
         }
     },
     computed:{
+        /**
+        showOtherMonthDays:function(){
+            return this.show_other_month_days;
+        },
+        **/
         month_year_width:function(){
             var total = 0;
             if(this.navprevious_year_visible){total+=10;}
@@ -342,7 +410,7 @@ export default{
             for(var i=0;i<=11;i++){
                 options.push({
                     key: 'monthdropdown-name-'+i,
-                    name: this.monthNames[i],
+                    name: this.month_names[i],
                     index: i,
                     selected: i==this.month_selected?true:false
                 })
@@ -351,6 +419,9 @@ export default{
         },
         totalDaysOfMonth:function(){
             return new Date(this.year_selected, this.month_selected+1, 0).getDate()
+        },
+        totalDaysOfPreviousMonth:function(){
+            return new Date(this.year_selected, this.month_selected, 0).getDate();
         },
         days_selected:function(){
             var selected_ar = [];
@@ -372,6 +443,28 @@ export default{
             
             return selected_ar;
         },
+        //the previous month days (if 1st day of current month does not start on sunday)
+        previousMonth:function(){
+            var now = new Date(this.year_selected,this.month_selected-1,1);
+            return now.getMonth();
+        },
+        //the year of the previous month (because if current month is january than previous month december has another year)
+        previousYear:function(){
+            var now = new Date(this.year_selected,this.month_selected-1,1);
+            return now.getFullYear();
+        },
+        previous_days:function(){
+            var day = new Date(this.year_selected, this.month_selected, 1).getDay();
+            var previousLastDay = this.totalDaysOfPreviousMonth;
+            
+            var diff = day - 0;
+            var days_ar = [];
+            //for(var ii=0;ii<diff;ii++){
+            for(var ii=diff-1;ii>=0;ii--){
+                days_ar.push(previousLastDay-ii);
+            }
+            return days_ar;
+        },
         days:function(){
             //fix the array here 
             //get the first day of the month what day it is
@@ -379,8 +472,10 @@ export default{
             
             var diff = day - 0;
             var days_ar = [];
-            for(var ii=0;ii<diff;ii++){
-                days_ar.push(0);
+            if(!this.show_other_month_days){
+                for(var ii=0;ii<diff;ii++){
+                    days_ar.push(0);
+                }
             }
             var month_days = this.totalDaysOfMonth;
             for(var i=0;i<month_days;i++){
@@ -388,12 +483,34 @@ export default{
             }
             var last_day = new Date(this.year_selected, this.month_selected, month_days).getDay();
             
-            var last_diff = 6 - last_day;
-            for(var iii=0;iii<last_diff;iii++){
-                days_ar.push(0);
+            if(!this.show_other_month_days){
+                var last_diff = 6 - last_day;
+                for(var iii=0;iii<last_diff;iii++){
+                    days_ar.push(0);
+                }
             }
             return days_ar;
-        }                    
+        },
+        next_days:function(){
+            var month_days = this.totalDaysOfMonth;
+            var last_day = new Date(this.year_selected, this.month_selected, month_days).getDay();
+            
+            var days_ar = [];
+            var last_diff = 6 - last_day;
+            for(var iii=0;iii<last_diff;iii++){
+                days_ar.push(iii+1);
+            }
+            return days_ar;
+        },
+        nextMonth:function(){
+            var now = new Date(this.year_selected,this.month_selected+1,1);
+            return now.getMonth();
+        },
+        //the year of the month (because if the current month is december, than the january as next month will have another year)
+        nextYear:function(){
+            var now = new Date(this.year_selected,this.month_selected+1,1);
+            return now.getFullYear();
+        },                    
     },
     
     methods:{
@@ -421,6 +538,27 @@ export default{
                 this.$emit('loaderEnded');
             }
         },
+        
+        get_previous_month:function(){
+            var date= new Date();
+            date.setFullYear(this.year_selected, this.month_selected, 1);
+            date.setFullYear(date.getFullYear(),date.getMonth()-1,1);
+            return {
+                month: date.getMonth(),
+                year: date.getFullYear()
+            }
+        },
+        
+        get_next_month:function(){
+            var date= new Date();
+            date.setFullYear(this.year_selected, this.month_selected, 1);
+            date.setFullYear(date.getFullYear(),date.getMonth()+1,1);
+            return {
+                month: date.getMonth(),
+                year: date.getFullYear()
+            }
+        },
+        
         get_month:function(){
             return this.month_selected;
         },
@@ -523,9 +661,9 @@ export default{
             }
             return false;
         },
-        is_today:function(day){
+        is_today:function(day,month,year){
             var today = this.get_today();
-            return day==today.date && this.month_selected==today.month && this.year_selected==today.year?true:false;
+            return day==today.date && month==today.month && year==today.year?true:false;
         },
         get_today:function(){
             var d = new Date();

@@ -7,14 +7,15 @@
 
         :renderTemplate="renderDateData" 
 
-        :dayShortNames="calendar.dayShortNames"
-        :monthNames="calendar.monthNames"
+        :day_short_names="calendar.dayShortNames"
+        :month_names="calendar.monthNames"
+        :show_other_month_days="calendar.showOtherMonthDays"
 
         :month="calendar.month" 
         :year="calendar.year"
         :loading="calendar.loading"
 
-        :todayNameNumberBackgroundColor="calendar.todayNameNumberBackgroundColor"
+        :today_name_number_background_color="calendar.todayNameNumberBackgroundColor"
 
         @previousMonth="previous_month"
         @previousYear="previous_year"
@@ -41,6 +42,10 @@
         <button @click="clearSelection">Clear Selection</button>
         &nbsp;
         <button @click="set_month">Set 1st month</button>
+        &nbsp;
+        <button @click="toggleOtherMonths">Show/Hide Other Month Days</button>
+        &nbsp;
+        <button @click="loadData">Load Data</button>
         <br />
         <button @click="update_view">Update View</button>
         <textarea :value="event_log" style="width:50%;min-width:200px;height:300px;"></textarea>
@@ -61,7 +66,11 @@ export default{
                 month: 10,
                 year: 2020,
                 loading:false,
-                todayNameNumberBackgroundColor:'#afafaf',
+                showOtherMonthDays:true,
+                todayNameNumberBackgroundColor:'#888',
+                otherMonthDayBackgroundColor:'#efefef',
+                otherMonthDayColor:'#000',
+
                 dayShortNames:[
                     'Κυρ','Δευ','Τρι','Τετ','Πεμ','Παρ','Σαβ'
                 ],
@@ -131,6 +140,12 @@ export default{
         },
         clearSelection:function(){
             this.$refs['calendarObj'].clearSelection()
+        },
+        toggleOtherMonths:function(){
+            this.calendar.showOtherMonthDays = !this.calendar.showOtherMonthDays;
+        },
+        loadData:function(){
+            alert('false')
         }
     }
 }
