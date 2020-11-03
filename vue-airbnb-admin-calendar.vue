@@ -76,7 +76,7 @@
                         <span :style="{backgroundColor:is_today(day,previousMonth,previousYear)?today_name_number_background_color:other_month_day_background_color,color:is_today(day,previousMonth,previousYear)?today_name_number_color:other_month_day_color,padding:day_name_number_padding,'border-radius':day_name_number_radius,'font-size':day_name_number_font_size,'display':'inline-block','width':day_name_number_size,'height':day_name_number_size,'text-align':'center','vertical-align':'middle','line-height':day_name_number_size}">{{day}}</span>
                     </span>
                     
-                        <div v-html="renderTemplate(day,month_selected,year_selected)"></div>
+                        <div v-html="render_template({current_day: day, current_month: previousMonth, current_year: previousYear, selected_month: month_selected, selected_year:year_selected})"></div>
                         
 
                 </div>
@@ -104,7 +104,7 @@
                         <span :style="{backgroundColor:is_today(day,month_selected,year_selected)?today_name_number_background_color:day_name_number_background_color,color:is_today(day,month_selected,year_selected)?today_name_number_color:day_name_number_color,padding:day_name_number_padding,'border-radius':day_name_number_radius,'font-size':day_name_number_font_size,'display':'inline-block','width':day_name_number_size,'height':day_name_number_size,'text-align':'center','vertical-align':'middle','line-height':day_name_number_size}">{{day}}</span>
                     </span>
                     
-                        <div v-html="renderTemplate(day,month_selected,year_selected)"></div>
+                        <div v-html="render_template({current_day: day, current_month: month_selected, current_year: year_selected, selected_month: month_selected, selected_year:year_selected})"></div>
                         
                 </template>
                 <template v-if="day==0?true:false">
@@ -127,7 +127,7 @@
                         <span :style="{backgroundColor:is_today(day,nextMonth,nextYear)?today_name_number_background_color:other_month_day_background_color,color:is_today(day,nextMonth,nextYear)?today_name_number_color:other_month_day_color,padding:day_name_number_padding,'border-radius':day_name_number_radius,'font-size':day_name_number_font_size,'display':'inline-block','width':day_name_number_size,'height':day_name_number_size,'text-align':'center','vertical-align':'middle','line-height':day_name_number_size}">{{day}}</span>
                     </span>
                     
-                        <div v-html="renderTemplate(day,month_selected,year_selected)"></div>
+                        <div v-html="render_template({current_day: day, current_month: nextMonth, current_year: nextYear, selected_month: month_selected, selected_year:year_selected})"></div>
                         
 
                 </div>
@@ -146,7 +146,7 @@
 export default{
     name:'vue-airbnb-admin-calendar',
     props:{
-        renderTemplate:{
+        render_template:{
             required:false,
             type:Function,
             default:function(){
@@ -179,7 +179,7 @@ export default{
         loading:{
             required:false,
             type:Boolean,
-            default:true
+            default:false
         },
         loader_bg:{
             required:false,
@@ -406,7 +406,7 @@ export default{
             this.cell_day_first_selected = -1;
             this.cell_day_last_selected = -1;
         },
-        loading:function(newval,oldval){
+        loading:function(newval){
             if(newval){
                 //start spinning
                 this.start_loader();
@@ -415,7 +415,7 @@ export default{
                 this.stop_loader();
                 //this.$emit('',{})
             }
-            console.log(newval,oldval);
+            //console.log(newval,oldval);
         }
     },
     computed:{
@@ -558,7 +558,7 @@ export default{
             minDate.setHours(0);minDate.setMinutes(0);minDate.setSeconds(0);
             var current = new Date();
             current.setFullYear(this.year_selected,this.month_selected-1,1);
-            console.log(minDate, current);
+            //console.log(minDate, current);
             return current.getTime()>=minDate.getTime();
         },
         can_nav_previous_year:function(){
@@ -598,7 +598,7 @@ export default{
                         radius= 0;
                     }
                 },24)
-                this.$emit('loaderStarted')
+                this.$emit('loader_started')
             }
 
         },
@@ -606,7 +606,7 @@ export default{
             if(this.$refs['spinner']!=null){
                 clearInterval(this.loading_interval);
                 this.$refs['spinner'].style.transform = 'rotate(0deg)'
-                this.$emit('loaderEnded');
+                this.$emit('loader_ended');
             }
         },
         
@@ -636,31 +636,31 @@ export default{
         set_month:function(month){
             if(month>=0 && month<=11){
                 this.month_selected = month;
-                this.$emit('monthChanged',{instance:this,month:this.month_selected});
-                this.$emit('dateChanged',{instance:this,month:this.month_selected,year:this.year_selected});
+                this.$emit('month_changed',{month:this.month_selected});
+                this.$emit('date_changed',{month:this.month_selected,year:this.year_selected});
             }
         },
         monthDropdown_changed:function(){
             var pmonth = this.month_selected;
             this.month_selected = event.currentTarget.value;
-            this.$emit('monthChanged',{instance:this,month:this.month_selected,pmonth:pmonth})
+            this.$emit('month_changed',{month:this.month_selected,pmonth:pmonth})
             
-            this.$emit('dateChanged',{month:this.month_selected,year:this.year_selected,pmonth:pmonth,pyear:this.year_selected})
+            this.$emit('date_changed',{month:this.month_selected,year:this.year_selected,pmonth:pmonth,pyear:this.year_selected})
         },
         get_year:function(){
             return this.year_selected;
         },
         set_year:function(year){
             this.year_selected = year;
-            this.$emit('yearChanged',{instance:this,year:this.year_selected});
-            this.$emit('dateChanged',{instance:this,month:this.month_selected,year:this.year_selected})
+            this.$emit('year_changed',{year:this.year_selected});
+            this.$emit('date_changed',{month:this.month_selected,year:this.year_selected})
         },
         yearDropdown_changed:function(){
             var pyear = this.year_selected;
             this.year_selected = event.currentTarget.value;
-            this.$emit('yearChanged',{instance:this,year:this.year_selected,pyear:pyear})
+            this.$emit('year_changed',{year:this.year_selected,pyear:pyear})
             
-            this.$emit('dateChanged',{year:this.year_selected,month:this.month_selected, pyear: pyear, pmonth: this.month_selected});
+            this.$emit('date_changed',{year:this.year_selected,month:this.month_selected, pyear: pyear, pmonth: this.month_selected});
         },
         previous_year:function(){
             var can_nav = this.can_nav_previous_year;
@@ -676,8 +676,8 @@ export default{
             date.setFullYear(date.getFullYear()-1,date.getMonth(),1);
             this.month_selected = date.getMonth();
             this.year_selected = date.getFullYear();
-            this.$emit('previousYear',{instance:this, month: this.month_selected, year: this.year_selected, pmonth: cmonth, pyear: cyear})
-            this.$emit('dateChanged',{month:this.month_selected,year:this.year_selected,pmonth:cmonth,pyear:cyear})
+            this.$emit('previous_year',{ month: this.month_selected, year: this.year_selected, pmonth: cmonth, pyear: cyear})
+            this.$emit('date_changed',{month:this.month_selected,year:this.year_selected,pmonth:cmonth,pyear:cyear})
         },
         previous_month:function(){
             var can_nav = this.can_nav_previous_month;
@@ -692,8 +692,8 @@ export default{
             date.setFullYear(date.getFullYear(),date.getMonth()-1,1);
             this.month_selected = date.getMonth();
             this.year_selected = date.getFullYear();
-            this.$emit('previousMonth',{instance:this, month: this.month_selected, year: this.year_selected, pmonth: cmonth, pyear: cyear})
-            this.$emit('dateChanged',{month:this.month_selected,year:this.year_selected,pmonth:cmonth,pyear:cyear})
+            this.$emit('previous_month',{ month: this.month_selected, year: this.year_selected, pmonth: cmonth, pyear: cyear})
+            this.$emit('date_changed',{month:this.month_selected,year:this.year_selected,pmonth:cmonth,pyear:cyear})
         },
         next_month:function(){
             var cmonth = this.month_selected;
@@ -703,8 +703,9 @@ export default{
             date.setFullYear(date.getFullYear(),date.getMonth()+1,1);
             this.month_selected = date.getMonth();
             this.year_selected = date.getFullYear();
-            this.$emit('nextMonth',{instance:this, month: this.month_selected, year: this.year_selected, pmonth: cmonth, pyear: cyear})
-            this.$emit('dateChanged',{month:this.month_selected,year:this.year_selected,pmonth:cmonth,pyear:cyear})
+            this.$emit('next_month',{ month: this.month_selected, year: this.year_selected, pmonth: cmonth, pyear: cyear});
+            this.$emit('date_changed',{month:this.month_selected,year:this.year_selected,pmonth:cmonth,pyear:cyear});
+            
         },
         next_year:function(){
             var cmonth = this.month_selected;
@@ -714,7 +715,7 @@ export default{
             date.setFullYear(date.getFullYear()+1,date.getMonth(),1);
             this.month_selected = date.getMonth();
             this.year_selected = date.getFullYear();
-            this.$emit('nextYear',{instance:this, month: this.month_selected, year: this.year_selected, pmonth: cmonth, pyear: cyear})
+            this.$emit('nextYear',{ month: this.month_selected, year: this.year_selected, pmonth: cmonth, pyear: cyear})
             this.$emit('dateChanged',{month:this.month_selected,year:this.year_selected,pmonth:cmonth,pyear:cyear})
         },
         cell_hover:function(event,day){
@@ -808,16 +809,14 @@ export default{
                     
                     this.cell_day_first_selected = day;
                 }
-                console.log(this.cell_day_first_selected, this.cell_day_last_selected)
-                this.$emit('dayClicked',{
-                    instance:this,
+                //console.log(this.cell_day_first_selected, this.cell_day_last_selected)
+                this.$emit('day_clicked',{
                     month: this.month,//zero based
                     year: this.year_selected,
                     day: day
                 })
                 if(this.cell_day_first_selected>-1 && this.cell_day_last_selected>-1 && this.selection=='range'){
-                    this.$emit('rangeSelected',{
-                        instance:this,
+                    this.$emit('range_selected',{
                         month: this.month_selected,
                         year: this.year_selected,
                         from: this.cell_day_first_selected,
@@ -831,7 +830,7 @@ export default{
             var last_selected = this.cell_day_last_selected;
             this.cell_day_first_selected = -1;
             this.cell_day_last_selected = -1;
-            this.$emit('selectionReset',{from: first_selected, to: last_selected, month: this.month_selected, year: this.year_selected});
+            this.$emit('selection_reset',{from: first_selected, to: last_selected, month: this.month_selected, year: this.year_selected});
         },
         getDaysOfPreviousMonth:function(){
             return new Date(this.year_selected, this.month_selected-1,0).getDate();

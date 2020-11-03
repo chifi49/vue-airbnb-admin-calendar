@@ -3,40 +3,11 @@
         
         <vuecalendar 
         
-        ref="calendarObj"
+        
 
-        :renderTemplate="renderDateData" 
-
-        :day_short_names="calendar.dayShortNames"
-        :month_names="calendar.monthNames"
-        :show_other_month_days="calendar.showOtherMonthDays"
-
-        :month="calendar.month" 
-        :year="calendar.year"
-        :loading="calendar.loading"
-
-        :nav_year_visible="calendar.navYearVisible"
-        :nav_month_visible="calendar.navMonthVisible"
-
-        :today_name_number_background_color="calendar.todayNameNumberBackgroundColor"
-
-        @previousMonth="previous_month"
-        @previousYear="previous_year"
-        @nextYear="next_year"
-        @nextMonth="next_month"
-
-        @monthChanged="month_changed"
-        @yearChanged="year_changed"
 
         @dateChanged="date_changed"
 
-        @dayClicked="day_clicked"
-        @rangeSelected="range_selected"
-
-        @loaderStarted="loader_started"
-        @loaderEnded="loader_ended"
-
-        @selectionReset="selection_reset"
 
         >
         
@@ -62,6 +33,8 @@
 </template>
 <script>
 import vuecalendar from './vue-airbnb-admin-calendar';
+//import vuecalendar from './dist/vue-airbnb-admin-calendar.umd.js';
+//import vuecalendarcss from './dist/vue-airbnb-admin-calendar.css';
 
 export default{
     components:{
@@ -103,27 +76,27 @@ export default{
             this.$refs['calendarObj'].set_month(0);
         },
         previous_month:function(params){
-            delete params['instance'];
+            //delete params['instance'];
             this.event_log += 'previous month clicked'+JSON.stringify(params)+'\n';
         },
         previous_year:function(params){
-            delete params['instance'];
+            //delete params['instance'];
             this.event_log += 'previous year clicked'+JSON.stringify(params)+'\n';
         },
         next_year:function(params){
-            delete params['instance'];
+            //delete params['instance'];
             this.event_log += 'next year clicked'+JSON.stringify(params)+'\n';
         },
         next_month:function(params){
-            delete params['instance'];
+            //delete params['instance'];
             this.event_log += 'next month clicked'+JSON.stringify(params)+'\n';
         },
         day_clicked:function(params){
-            delete params['instance'];
+            //delete params['instance'];
             this.event_log += 'day clicked:'+JSON.stringify(params)+'\n';
         },
         range_selected:function(params){
-            delete params['instance'];
+           // delete params['instance'];
             this.event_log += 'range selected:'+JSON.stringify(params)+'\n';
         },
         date_changed:function(params){
