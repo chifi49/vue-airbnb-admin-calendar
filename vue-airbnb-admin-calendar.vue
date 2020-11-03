@@ -1,6 +1,6 @@
 <template>
     <div class="vaac-calendar"  style="position:relative;">
-        <div class="vaac-month-year-header" v-show="monthyear_header_visible">
+        <div class="vaac-month-year-header" style="display:flex" v-show="monthyear_header_visible">
             <div 
             v-if="nav_year_visible" 
             tabindex="1" 
@@ -365,7 +365,7 @@ export default{
             }
         },
         month:{
-            required:true,
+            required:false,
             type:Number,
             default:function(){
                 var d = new Date();
@@ -373,7 +373,7 @@ export default{
             }
         },
         year:{
-            required:true,
+            required:false,
             type:Number,
             default:function(){
                 var d = new Date();

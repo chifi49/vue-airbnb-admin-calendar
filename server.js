@@ -32,7 +32,7 @@ app.get('/month/:monthindex/year/:yearindex', async (req, res)=>{
             week: week,
             month: monthindex,
             price: '<span>&euro; '+parseInt(Math.random(0,10)*50)+'</span>',
-            minimum_stay: Math.floor(Math.random(0,10)+1),
+            bookings: Math.floor(Math.random(0,10)+1),
             year: yearindex
         })
     }
