@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="/vue-airbnb-admin-calendar.css" type="text/css" />
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+        <script src="/vue-airbnb-admin-calendar.umd.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <admincalendar 
+            :loading="calendar.loading" 
+            :month="calendar.month" 
+            :year="calendar.year"
+            :show_other_month_days="true">
+            </admincalendar>
+        </div>
+        <script>
+        new Vue({
+            components:{
+                'admincalendar':window['vue-airbnb-admin-calendar']
+            },
+            el:'#app',
+            data:function(){
+                return {
+                    calendar:{
+                        month:11,
+                        year:2021,
+                        loading:false
+                    }
+                }
+            }
+        })
+        </script>
+    </body>
+
+</html>

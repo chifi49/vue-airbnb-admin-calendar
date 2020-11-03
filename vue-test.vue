@@ -15,6 +15,9 @@
         :year="calendar.year"
         :loading="calendar.loading"
 
+        :nav_year_visible="calendar.navYearVisible"
+        :nav_month_visible="calendar.navMonthVisible"
+
         :today_name_number_background_color="calendar.todayNameNumberBackgroundColor"
 
         @previousMonth="previous_month"
@@ -24,6 +27,8 @@
 
         @monthChanged="month_changed"
         @yearChanged="year_changed"
+
+        @dateChanged="date_changed"
 
         @dayClicked="day_clicked"
         @rangeSelected="range_selected"
@@ -46,6 +51,10 @@
         <button @click="toggleOtherMonths">Show/Hide Other Month Days</button>
         &nbsp;
         <button @click="loadData">Load Data</button>
+        &nbsp;
+        <button @click="toggleNavMonths">Toggle Nav Months</button>
+        &nbsp;
+        <button @click="toggleNavYears">Toggle Nav Years</button>
         <br />
         <button @click="update_view">Update View</button>
         <textarea :value="event_log" style="width:50%;min-width:200px;height:300px;"></textarea>
@@ -70,6 +79,8 @@ export default{
                 todayNameNumberBackgroundColor:'#888',
                 otherMonthDayBackgroundColor:'#efefef',
                 otherMonthDayColor:'#000',
+                navMonthVisible:true,
+                navYearVisible:true,
 
                 dayShortNames:[
                     'Κυρ','Δευ','Τρι','Τετ','Πεμ','Παρ','Σαβ'
@@ -115,6 +126,10 @@ export default{
             delete params['instance'];
             this.event_log += 'range selected:'+JSON.stringify(params)+'\n';
         },
+        date_changed:function(params){
+            //console.log(JSON.stringify(params));
+            this.event_log += 'date changed'+JSON.stringify(params)+'\n';
+        },
         loader_started:function(){
             this.event_log += 'loader started\n'
         },
@@ -131,9 +146,9 @@ export default{
             this.event_log += 'selection reset'+JSON.stringify(params)+'\n';
         },
         renderDateData:function(day){
-            console.log(day);
+            //console.log(day);
             
-            return '';//'['+day+']';
+            return '['+day+']';
         },
         toggleLoader:function(){
             this.calendar.loading = !this.calendar.loading;
@@ -143,6 +158,12 @@ export default{
         },
         toggleOtherMonths:function(){
             this.calendar.showOtherMonthDays = !this.calendar.showOtherMonthDays;
+        },
+        toggleNavYears:function(){
+            this.calendar.navYearVisible = !this.calendar.navYearVisible;
+        },
+        toggleNavMonths:function(){
+            this.calendar.navMonthVisible = !this.calendar.navMonthVisible;
         },
         loadData:function(){
             alert('false')

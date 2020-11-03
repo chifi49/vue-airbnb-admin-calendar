@@ -1,15 +1,29 @@
 <template>
-    <div class="" style="position:relative;">
-        <div class=" month-year" v-show="monthyear_header_visible">
-            <div class="" @click="previous_year" :style="{'visibility':navprevious_year_visible?'visible':'hidden','display':'inline-block','box-sizing':'border-box','width':'10%','text-align':'center','cursor':'pointer'}">
+    <div class="vaac-calendar"  style="position:relative;">
+        <div class="vaac-month-year-header" v-show="monthyear_header_visible">
+            <div 
+            v-if="nav_year_visible" 
+            tabindex="1" 
+            @keyup.enter="previous_year" 
+            @click="previous_year" 
+            :class="{'nav-disabled':!can_nav_previous_year,'vaac-previousyear':true}" 
+            :style="{'display':'inline-block','box-sizing':'border-box','width':'10%','text-align':'center','cursor':'pointer'}">
                 <span slot="previous_year"><span style="transform:rotate(180deg);display:inline-block;">&#9656;&#9656;</span></span>
             </div>
-            <div class="" @click="previous_month" :style="{'visibility':navprevious_month_visible?'visible':'hidden','display':'inline-block','box-sizing':'border-box','width':'10%','text-align':'center','cursor':'pointer'}">
+
+            <div 
+            tabindex="2" 
+            v-show="nav_month_visible" 
+            @keyup.enter="previous_month" 
+            @click="previous_month" 
+            :class="{'nav-disabled':!can_nav_previous_month,'vaac-previousmonth':true}" 
+            :style="{'display':'inline-block','box-sizing':'border-box','width':'10%','text-align':'center','cursor':'pointer'}">
                 <span slot="previous_month">&#9664;</span>
             </div>
+
             <div class="" :style="{'visibility':monthyear_visible?'visible':'hidden','display':'inline-block','box-sizing':'border-box','width':month_year_width,'text-align':'center'}">
                 <template v-if="month_dropdown" >
-                    <select v-on:change="monthDropdown_changed">
+                    <select tabindex="3" v-on:change="monthDropdown_changed" class="vaac-month-dropdown">
                         <option :value="option.index" v-for="option in monthDropdown" v-bind:key="option.key" :selected="option.selected">
                             {{option.name}}
                         </option>
@@ -18,7 +32,7 @@
                 <template v-if="!month_dropdown">{{month_names[month_selected]}}</template>
                  / 
                  <template v-if="year_dropdown">
-                     <select v-on:change="yearDropdown_changed">
+                     <select tabindex="4" v-on:change="yearDropdown_changed" class="vaac-year-dropdown">
                          <option :value="option.index" v-for="option in yearDropdown" v-bind:key="option.key" :selected="option.selected">
                              {{option.name}}
                             </option>
@@ -26,26 +40,37 @@
                 </template>
                 <template v-if="!year_dropdown">{{year_selected}}</template>
             </div>
-            <div class="" @click="next_month" :style="{'visibility':navnext_month_visible?'visible':'hidden','display':'inline-block','box-sizing':'border-box','width':'10%','text-align':'center','cursor':'pointer'}">
+            <div tabindex="5" 
+            :class="{'nav-disabled':!can_nav_next_month,'vaac-nextmonth':true}" 
+            @keyup.enter="next_month" @click="next_month" v-show="nav_month_visible" :style="{'display':'inline-block','box-sizing':'border-box','width':'10%','text-align':'center','cursor':'pointer'}">
                 <span slot="next_month">&#9654;</span>
             </div>
-            <div class="" @click="next_year" :style="{'visibility':navnext_year_visible?'visible':'hidden','display':'inline-block','box-sizing':'border-box','width':'10%','text-align':'center','cursor':'pointer'}">
+            <div tabindex="6" 
+            :class="{'nav-disabled':!can_nav_next_year,'vaac-nextyear':true}" 
+            @keyup.enter="next_year" @click="next_year" v-show="nav_year_visible" :style="{'display':'inline-block','box-sizing':'border-box','width':'10%','text-align':'center','cursor':'pointer'}">
                 <span slot="next_year">&#9656;&#9656;</span>
             </div>
         </div>
-        <div class="daynames" >
-            <div v-for="(dayname,index) in day_short_names" v-bind:key="'dayname-'+index" :style="{'display':'inline-block','width':'14.28%','text-align':day_name_cell_align,'border-style':'solid','border-width':'1px','border-color':day_name_cell_border_color,'box-sizing':'border-box'}">
+        <div class="vaac-dayname-header" >
+            <div v-for="(dayname,index) in day_short_names" 
+            v-bind:key="'dayname-'+index" 
+            :style="{'display':'inline-block','width':'14.28%','text-align':day_name_cell_align,'border-style':'solid','border-width':'1px','border-color':day_name_cell_border_color,'box-sizing':'border-box'}"
+            :class="{'vaac-dayname':true}">
                 {{dayname}}
             </div>
         </div>
-        <div class=" days display-table" style="display:flex;flex-wrap:wrap;" v-bind:key="'days-view-'+days_view_counter">
+        <div class=" days display-table vaac-daynumber-container" 
+        style="display:flex;flex-wrap:wrap;" 
+        v-bind:key="'daynumber-container-'+days_view_counter">
+        <!-- to daynumber-container-'+days_view_counter we need when we need to re render the calendar because we have loaded data and the only way for callback renderTemplate to be called again is to update the v-bind:key -->
 
             <template v-if="show_other_month_days">
+
                 <div v-for="(day,index) in previous_days"
-                v-bind:key="'previousday'+index"
+                v-bind:key="'previousdaynumber-'+index" :tabindex="tab_index+1"
                 
                 :style="{'background-color':isSelected(day)?selected_cell_bg:'','color':isSelected(day)?selected_cell_fg:'', 'width':'14.28%','display':'inline-block'}" 
-            :class="{'display-table-cell':true}" 
+                :class="{'display-table-cell':true,'vaac-daynumber-cell':true,'vaac-daynumber-previous-cell':true}" 
                 >
                     <span class="daynumber" :style="{'text-align':daynumber_position,'width':'100%','position':'relative','display':'inline-block'}">
                         <span :style="{backgroundColor:is_today(day,previousMonth,previousYear)?today_name_number_background_color:other_month_day_background_color,color:is_today(day,previousMonth,previousYear)?today_name_number_color:other_month_day_color,padding:day_name_number_padding,'border-radius':day_name_number_radius,'font-size':day_name_number_font_size,'display':'inline-block','width':day_name_number_size,'height':day_name_number_size,'text-align':'center','vertical-align':'middle','line-height':day_name_number_size}">{{day}}</span>
@@ -65,8 +90,12 @@
             @mouseleave="cell_leave($event,day)"
             @click="cell_clicked($event,day)"
 
+            :tabindex="tab_index+1"
+
+            @keyup.enter="cell_clicked($event,day)"
+
             :style="{'background-color':isSelected(day)?selected_cell_bg:'','color':isSelected(day)?selected_cell_fg:'', 'width':'14.28%','display':'inline-block'}" 
-            :class="{'display-table-cell':true}" 
+            :class="{'display-table-cell':true,'vaac-daynumber-cell':true,'vaac-daynumber-current-cell':true}" 
             
              :data-day="day">
 
@@ -89,8 +118,10 @@
                 <div v-for="(day,index) in next_days"
                 v-bind:key="'nextday'+index"
                 
+                :tabindex="tab_index+1"
+
                 :style="{'background-color':isSelected(day)?selected_cell_bg:'','color':isSelected(day)?selected_cell_fg:'', 'width':'14.28%','display':'inline-block'}" 
-            :class="{'display-table-cell':true}" 
+            :class="{'display-table-cell':true,'vaac-daynumber-cell':true,'vaac-daynumber-next-cell':true}" 
                 >
                     <span class="daynumber" :style="{'text-align':daynumber_position,'width':'100%','position':'relative','display':'inline-block'}">
                         <span :style="{backgroundColor:is_today(day,nextMonth,nextYear)?today_name_number_background_color:other_month_day_background_color,color:is_today(day,nextMonth,nextYear)?today_name_number_color:other_month_day_color,padding:day_name_number_padding,'border-radius':day_name_number_radius,'font-size':day_name_number_font_size,'display':'inline-block','width':day_name_number_size,'height':day_name_number_size,'text-align':'center','vertical-align':'middle','line-height':day_name_number_size}">{{day}}</span>
@@ -122,6 +153,24 @@ export default{
                 return '';
             }
         },
+        min_date:{
+            required:false,
+            type:Date,
+            default:function(){
+                var d = new Date();
+                d.setFullYear(d.getFullYear()-75,d.getMonth(),1)
+                return d;
+            }
+        },
+        max_date:{
+            required:false,
+            type:Date,
+            default:function(){
+                var d = new Date();
+                d.setFullYear(d.getFullYear()+75,d.getMonth(),1)
+                return d;
+            }
+        },
         show_other_month_days:{
             required:false,
             type:Boolean,
@@ -137,26 +186,18 @@ export default{
             type:String,
             default:'#f1f1f1'
         },
-        navprevious_year_visible:{
+        nav_year_visible:{
             required:false,
             type:Boolean,
             default:true
         },
-        navprevious_month_visible:{
+        
+        nav_month_visible:{
             required:false,
             type:Boolean,
             default:true
         },
-        navnext_month_visible:{
-            required:false,
-            type:Boolean,
-            default:true
-        },
-        navnext_year_visible:{
-            required:false,
-            type:Boolean,
-            default:true
-        },
+        
         monthyear_visible:{
             required:false,
             type:Boolean,
@@ -347,7 +388,8 @@ export default{
             cell_day_last_selected: -1,
             loading_interval:0,
             month_selected: this.month,
-            year_selected: this.year
+            year_selected: this.year,
+            tab_index:6
         };
     },
     watch:{
@@ -384,10 +426,9 @@ export default{
         **/
         month_year_width:function(){
             var total = 0;
-            if(this.navprevious_year_visible){total+=10;}
-            if(this.navprevious_month_visible){total+=10;}
-            if(this.navnext_year_visible){total+=10;}
-            if(this.navnext_month_visible){total+=10;}
+            if(this.nav_year_visible){total+=20;}
+            if(this.nav_month_visible){total+=20;}
+            
             return 100-total+'%';
         },
         yearDropdown: function(){
@@ -510,7 +551,37 @@ export default{
         nextYear:function(){
             var now = new Date(this.year_selected,this.month_selected+1,1);
             return now.getFullYear();
-        },                    
+        },
+        
+        can_nav_previous_month:function(){
+            var minDate = this.min_date;
+            minDate.setHours(0);minDate.setMinutes(0);minDate.setSeconds(0);
+            var current = new Date();
+            current.setFullYear(this.year_selected,this.month_selected-1,1);
+            console.log(minDate, current);
+            return current.getTime()>=minDate.getTime();
+        },
+        can_nav_previous_year:function(){
+            var minDate = this.min_date;
+            minDate.setHours(0);minDate.setMinutes(0);minDate.setSeconds(0);
+            var current = new Date();
+            current.setFullYear(this.year_selected-1,this.month_selected,1);
+            return current.getTime()>=minDate.getTime();
+        },
+        can_nav_next_month:function(){
+            var maxDate = this.max_date;
+            maxDate.setHours(0);maxDate.setMinutes(0);maxDate.setSeconds(0);
+            var current = new Date();
+            current.setFullYear(this.year_selected,this.month_selected+1,1);
+            return current.getTime()>=maxDate.getTime();
+        },
+        can_nav_next_year:function(){
+            var maxDate = this.max_date;
+            maxDate.setHours(0);maxDate.setMinutes(0);maxDate.setSeconds(0);
+            var current = new Date();
+            current.setFullYear(this.year_selected+1,this.month_selected,1);
+            return current.getTime()>=maxDate.getTime();
+        }
     },
     
     methods:{
@@ -574,7 +645,7 @@ export default{
             this.month_selected = event.currentTarget.value;
             this.$emit('monthChanged',{instance:this,month:this.month_selected,pmonth:pmonth})
             
-            this.$emit('dateChanged',{instance:this,month:this.month_selected,year:this.year_selected})
+            this.$emit('dateChanged',{month:this.month_selected,year:this.year_selected,pmonth:pmonth,pyear:this.year_selected})
         },
         get_year:function(){
             return this.year_selected;
@@ -589,9 +660,15 @@ export default{
             this.year_selected = event.currentTarget.value;
             this.$emit('yearChanged',{instance:this,year:this.year_selected,pyear:pyear})
             
-            this.$emit('dateChanged',{instance:this,year:this.year_selected,month:this.month_selected});
+            this.$emit('dateChanged',{year:this.year_selected,month:this.month_selected, pyear: pyear, pmonth: this.month_selected});
         },
         previous_year:function(){
+            var can_nav = this.can_nav_previous_year;
+            if(!can_nav){
+                alert('reached minimum date');
+                return;
+            }
+
             var cmonth = this.month_selected;
             var cyear = this.year_selected;
             var date= new Date();
@@ -600,9 +677,14 @@ export default{
             this.month_selected = date.getMonth();
             this.year_selected = date.getFullYear();
             this.$emit('previousYear',{instance:this, month: this.month_selected, year: this.year_selected, pmonth: cmonth, pyear: cyear})
-            this.$emit('dateChanged',{instance:this,month:this.month_selected,year:this.year_selected})
+            this.$emit('dateChanged',{month:this.month_selected,year:this.year_selected,pmonth:cmonth,pyear:cyear})
         },
         previous_month:function(){
+            var can_nav = this.can_nav_previous_month;
+            if(!can_nav){
+                alert('reached minimum date');
+                return;
+            }
             var cmonth = this.month_selected;
             var cyear = this.year_selected;
             var date= new Date();
@@ -611,7 +693,7 @@ export default{
             this.month_selected = date.getMonth();
             this.year_selected = date.getFullYear();
             this.$emit('previousMonth',{instance:this, month: this.month_selected, year: this.year_selected, pmonth: cmonth, pyear: cyear})
-            this.$emit('dateChanged',{instance:this,month:this.month_selected,year:this.year_selected})
+            this.$emit('dateChanged',{month:this.month_selected,year:this.year_selected,pmonth:cmonth,pyear:cyear})
         },
         next_month:function(){
             var cmonth = this.month_selected;
@@ -622,7 +704,7 @@ export default{
             this.month_selected = date.getMonth();
             this.year_selected = date.getFullYear();
             this.$emit('nextMonth',{instance:this, month: this.month_selected, year: this.year_selected, pmonth: cmonth, pyear: cyear})
-            this.$emit('dateChanged',{instance:this,month:this.month_selected,year:this.year_selected})
+            this.$emit('dateChanged',{month:this.month_selected,year:this.year_selected,pmonth:cmonth,pyear:cyear})
         },
         next_year:function(){
             var cmonth = this.month_selected;
@@ -633,7 +715,7 @@ export default{
             this.month_selected = date.getMonth();
             this.year_selected = date.getFullYear();
             this.$emit('nextYear',{instance:this, month: this.month_selected, year: this.year_selected, pmonth: cmonth, pyear: cyear})
-            this.$emit('dateChanged',{instance:this,month:this.month_selected,year:this.year_selected})
+            this.$emit('dateChanged',{month:this.month_selected,year:this.year_selected,pmonth:cmonth,pyear:cyear})
         },
         cell_hover:function(event,day){
             if(day==0){
@@ -757,6 +839,12 @@ export default{
     },
     mounted:function(){
         this.$emit('mounted')
+        /**
+        this.$el.addEventListener('keyup',()=>{
+            console.log(event.keyCode);
+            console.log(event.srcElement);
+        })
+        **/
     },
     created:function(){
         this.$emit('created')
