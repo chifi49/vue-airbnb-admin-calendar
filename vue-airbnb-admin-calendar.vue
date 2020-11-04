@@ -1,6 +1,6 @@
 <template>
     <div class="vaac-calendar"  style="position:relative;">
-        <div class="vaac-month-year-header" style="display:flex" v-show="monthyear_header_visible">
+        <div class="vaac-month-year-header" style="display:flex" v-show="monthyear_header_visible" :style="{'border-style':'solid',borderColor:monthyear_header_border_color,'border-width':'1px 1px 0px 1px'}">
             <div 
             v-if="nav_year_visible" 
             tabindex="1" 
@@ -8,7 +8,7 @@
             @click="previous_year" 
             :class="{'nav-disabled':!can_nav_previous_year,'vaac-previousyear':true}" 
             :style="{'display':'inline-block','box-sizing':'border-box','width':'10%','text-align':'center','cursor':'pointer'}">
-                <span slot="previous_year"><span style="transform:rotate(180deg);display:inline-block;">&#9656;&#9656;</span></span>
+                <slot name="previous_year"><span style="transform:rotate(180deg);display:inline-block;">&#9656;&#9656;</span></slot>
             </div>
 
             <div 
@@ -18,7 +18,7 @@
             @click="previous_month" 
             :class="{'nav-disabled':!can_nav_previous_month,'vaac-previousmonth':true}" 
             :style="{'display':'inline-block','box-sizing':'border-box','width':'10%','text-align':'center','cursor':'pointer'}">
-                <span slot="previous_month">&#9664;</span>
+                <slot name="previous_month">&#9664;</slot>
             </div>
 
             <div class="" :style="{'visibility':monthyear_visible?'visible':'hidden','display':'inline-block','box-sizing':'border-box','width':month_year_width,'text-align':'center'}">
@@ -43,12 +43,12 @@
             <div tabindex="5" 
             :class="{'nav-disabled':!can_nav_next_month,'vaac-nextmonth':true}" 
             @keyup.enter="next_month" @click="next_month" v-show="nav_month_visible" :style="{'display':'inline-block','box-sizing':'border-box','width':'10%','text-align':'center','cursor':'pointer'}">
-                <span slot="next_month">&#9654;</span>
+                <slot name="next_month">&#9654;</slot>
             </div>
             <div tabindex="6" 
             :class="{'nav-disabled':!can_nav_next_year,'vaac-nextyear':true}" 
             @keyup.enter="next_year" @click="next_year" v-show="nav_year_visible" :style="{'display':'inline-block','box-sizing':'border-box','width':'10%','text-align':'center','cursor':'pointer'}">
-                <span slot="next_year">&#9656;&#9656;</span>
+                <slot name="next_year">&#9656;&#9656;</slot>
             </div>
         </div>
         <div class="vaac-dayname-header" :style="{borderStyle:'solid',borderWidth:'0px 0px 0px 1px',borderColor:day_name_cell_border_color}">
@@ -69,7 +69,7 @@
                 <div v-for="(day,index) in previous_days"
                 v-bind:key="'previousdaynumber-'+index" :tabindex="tab_index+1"
                 
-                :style="{'background-color':isSelected(day)?selected_cell_bg:'','color':isSelected(day)?selected_cell_fg:'', 'width':'14.28%','display':'inline-block','border-style':'solid','border-width':'0px 1px 1px 0px','border-color':day_number_cell_border_color}" 
+                :style="{'background-color':isSelected(day)?selected_cell_bg:'','color':isSelected(day)?selected_cell_fg:'', 'width':'14.28%','display':'inline-block','border-style':'solid','border-width':'0px 1px 1px 0px','border-color':day_number_cell_border_color, 'padding':day_number_cell_padding+'px'}" 
                 :class="{'vaac-daynumber-cell':true,'vaac-daynumber-previous-cell':true}" 
                 >
                     <span class="daynumber" :style="{'text-align':daynumber_position,'width':'100%','position':'relative','display':'inline-block'}">
@@ -94,7 +94,7 @@
 
             @keyup.enter="cell_clicked($event,day)"
 
-            :style="{'background-color':isSelected(day)?selected_cell_bg:'','color':isSelected(day)?selected_cell_fg:'', 'width':'14.28%','display':'inline-block','border-style':'solid','border-width':'0px 1px 1px 0px','border-color':day_number_cell_border_color}" 
+            :style="{'background-color':isSelected(day)?selected_cell_bg:'','color':isSelected(day)?selected_cell_fg:'', 'width':'14.28%','display':'inline-block','border-style':'solid','border-width':'0px 1px 1px 0px','border-color':day_number_cell_border_color,'padding':day_number_cell_padding+'px'}" 
             :class="{'vaac-daynumber-cell':true,'vaac-daynumber-current-cell':true}" 
             
              :data-day="day">
@@ -120,7 +120,7 @@
                 
                 :tabindex="tab_index+1"
 
-                :style="{'background-color':isSelected(day)?selected_cell_bg:'','color':isSelected(day)?selected_cell_fg:'', 'width':'14.28%','display':'inline-block','border-style':'solid','border-width':'0px 1px 1px 0px','border-color':day_number_cell_border_color}" 
+                :style="{'background-color':isSelected(day)?selected_cell_bg:'','color':isSelected(day)?selected_cell_fg:'', 'width':'14.28%','display':'inline-block','border-style':'solid','border-width':'0px 1px 1px 0px','border-color':day_number_cell_border_color,'padding':day_number_cell_padding+'px'}" 
             :class="{'vaac-daynumber-cell':true,'vaac-daynumber-next-cell':true}" 
                 >
                     <span class="daynumber" :style="{'text-align':daynumber_position,'width':'100%','position':'relative','display':'inline-block'}">
@@ -136,7 +136,9 @@
         </div>
         <div  v-show="loading" style="position:absolute;top:0px;left:0px;width:100%;bottom:0px;vertical-align:middle;text-align:center;background-color:rgb(255,255,255,0.5);">
             <div style="position:relative;top:45%;margin:0 auto;font-size:32px;">
-                <div slot="loader" ref="spinner" style="display:inline-block;">&#8635;</div>
+                
+                <div slot="loader" ref="spinner" style="display:inline-block;"><slot name="loader">&#8635;</slot></div>
+                
             </div>
         </div>
     </div>
@@ -198,6 +200,16 @@ export default{
             default:true
         },
         
+        monthyear_header_border_color:{
+            required:false,
+            type:String,
+            default:'#afafaf'
+        },
+        monthyear_header_padding:{
+            required:false,
+            type:Number,
+            default:5
+        },
         monthyear_visible:{
             required:false,
             type:Boolean,
@@ -258,7 +270,7 @@ export default{
         day_name_cell_border_color:{
             required:false,
             type:String,
-            default:'transparent'
+            default:'#afafaf'
         },
         day_name_cell_padding:{
             required:false,
@@ -267,6 +279,11 @@ export default{
         },
 
 
+        day_number_cell_padding:{
+            required:false,
+            type:Number,
+            default:5
+        },
         day_number_cell_border_color:{
             required:false,
             type:String,
