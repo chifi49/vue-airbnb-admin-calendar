@@ -69,7 +69,7 @@
                 <div v-for="(day,index) in previous_days"
                 v-bind:key="'previousdaynumber-'+index" :tabindex="tab_index+1"
                 
-                :style="{'background-color':isSelected(day)?selected_cell_bg:'','color':isSelected(day)?selected_cell_fg:'', 'width':'14.28%','display':'inline-block','border-style':'solid','border-width':'0px 1px 1px 0px','border-color':day_number_cell_border_color, 'padding':day_number_cell_padding+'px'}" 
+                :style="{'background-color':isSelected(day,previousMonth,previousYear)?selected_cell_bg:'','color':isSelected(day,previousMonth,previousYear)?selected_cell_fg:'', 'width':'14.28%','display':'inline-block','border-style':'solid','border-width':'0px 1px 1px 0px','border-color':day_number_cell_border_color, 'padding':day_number_cell_padding+'px'}" 
                 :class="{'vaac-daynumber-cell':true,'vaac-daynumber-previous-cell':true}" 
                 >
                     <span class="daynumber" :style="{'text-align':daynumber_position,'width':'100%','position':'relative','display':'inline-block'}">
@@ -85,7 +85,7 @@
             <div 
             v-for="(day,index) in days" 
             v-bind:key="'dayday'+index" 
-            :data-selected="isSelected(day)?1:0" 
+            :data-selected="isSelected(day, month_selected, year_selected)?1:0" 
             @mouseover="cell_hover($event,day)" 
             @mouseleave="cell_leave($event,day)"
             @click="cell_clicked($event,day)"
@@ -94,7 +94,7 @@
 
             @keyup.enter="cell_clicked($event,day)"
 
-            :style="{'background-color':isSelected(day)?selected_cell_bg:'','color':isSelected(day)?selected_cell_fg:'', 'width':'14.28%','display':'inline-block','border-style':'solid','border-width':'0px 1px 1px 0px','border-color':day_number_cell_border_color,'padding':day_number_cell_padding+'px'}" 
+            :style="{'background-color':isSelected(day,month_selected,year_selected)?selected_cell_bg:'','color':isSelected(day,month_selected,year_selected)?selected_cell_fg:'', 'width':'14.28%','display':'inline-block','border-style':'solid','border-width':'0px 1px 1px 0px','border-color':day_number_cell_border_color,'padding':day_number_cell_padding+'px'}" 
             :class="{'vaac-daynumber-cell':true,'vaac-daynumber-current-cell':true}" 
             
              :data-day="day">
@@ -120,7 +120,7 @@
                 
                 :tabindex="tab_index+1"
 
-                :style="{'background-color':isSelected(day)?selected_cell_bg:'','color':isSelected(day)?selected_cell_fg:'', 'width':'14.28%','display':'inline-block','border-style':'solid','border-width':'0px 1px 1px 0px','border-color':day_number_cell_border_color,'padding':day_number_cell_padding+'px'}" 
+                :style="{'background-color':isSelected(day,nextMonth,nextYear)?selected_cell_bg:'','color':isSelected(day,nextMonth,nextYear)?selected_cell_fg:'', 'width':'14.28%','display':'inline-block','border-style':'solid','border-width':'0px 1px 1px 0px','border-color':day_number_cell_border_color,'padding':day_number_cell_padding+'px'}" 
             :class="{'vaac-daynumber-cell':true,'vaac-daynumber-next-cell':true}" 
                 >
                     <span class="daynumber" :style="{'text-align':daynumber_position,'width':'100%','position':'relative','display':'inline-block'}">
@@ -177,6 +177,11 @@ export default{
             required:false,
             type:Boolean,
             default:false
+        },
+        loading_spin:{
+            required:false,
+            type:Boolean,
+            default:true
         },
         loading:{
             required:false,
@@ -616,6 +621,9 @@ export default{
             this.days_view_counter++;
         },
         start_loader:function(){
+            if(!this.loading_spin){
+                return;
+            }
             var radius = 0;
             if(this.$refs['spinner']!=null){
                 this.loading_interval = setInterval(()=>{
@@ -783,14 +791,14 @@ export default{
                 year: d.getFullYear()
             };
         },
-        isSelected:function(day){
+        isSelected:function(day,month,year){
             if(day>0){
                 if(this.cell_day_last_selected>-1){
-                    if(day>=this.cell_day_first_selected && day<=this.cell_day_last_selected){
+                    if(day>=this.cell_day_first_selected && day<=this.cell_day_last_selected && month==this.month_selected && year==this.year_selected){
                         return true;
                     }
                 }else{
-                    if(day==this.cell_day_first_selected){
+                    if(day==this.cell_day_first_selected && month==this.month_selected && year==this.year_selected){
                         return true;
                     }
                 }
@@ -852,7 +860,7 @@ export default{
                 }
             }
         },
-        clearSelection:function(){
+        clear_selection:function(){
             var first_selected = this.cell_day_first_selected;
             var last_selected = this.cell_day_last_selected;
             this.cell_day_first_selected = -1;
