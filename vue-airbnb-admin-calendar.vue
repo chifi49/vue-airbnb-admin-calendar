@@ -639,6 +639,7 @@ export default{
     methods:{
         update_view:function(){
             this.days_view_counter++;
+            this.$emit('view_updated',{name:'view_updated'});
         },
         start_loader:function(){
             if(!this.loading_spin){
@@ -653,7 +654,7 @@ export default{
                         radius= 0;
                     }
                 },24)
-                this.$emit('loader_started')
+                this.$emit('loader_started',{source:'start_loader'})
             }
 
         },
@@ -661,7 +662,7 @@ export default{
             if(this.$refs['spinner']!=null){
                 clearInterval(this.loading_interval);
                 this.$refs['spinner'].style.transform = 'rotate(0deg)'
-                this.$emit('loader_ended');
+                this.$emit('loader_ended',{source:'stop_loader'});
             }
         },
         
@@ -690,32 +691,34 @@ export default{
         },
         set_month:function(month){
             if(month>=0 && month<=11){
+                var pmonth = this.month_selected;
                 this.month_selected = month;
-                this.$emit('month_changed',{month:this.month_selected});
-                this.$emit('date_changed',{month:this.month_selected,year:this.year_selected});
+                this.$emit('month_changed',{month:this.month_selected,pmonth: pmonth, year: this.year_selected, source:'set_month'});
+                this.$emit('date_changed',{month:this.month_selected, pmonth: pmonth , year:this.year_selected, source:'set_month'});
             }
         },
         monthDropdown_changed:function(){
             var pmonth = this.month_selected;
             this.month_selected = event.currentTarget.value;
-            this.$emit('month_changed',{month:this.month_selected,pmonth:pmonth})
+            this.$emit('month_changed',{month:this.month_selected,pmonth:pmonth, year: this.year_selected, source:'month_dropdown'})
             
-            this.$emit('date_changed',{month:this.month_selected,year:this.year_selected,pmonth:pmonth,pyear:this.year_selected})
+            this.$emit('date_changed',{month:this.month_selected, pmonth: pmonth,year:this.year_selected,pyear:this.year_selected,source:'month_dropdown'})
         },
         get_year:function(){
             return this.year_selected;
         },
         set_year:function(year){
+            var pyear = this.year_selected;
             this.year_selected = year;
-            this.$emit('year_changed',{year:this.year_selected});
-            this.$emit('date_changed',{month:this.month_selected,year:this.year_selected})
+            this.$emit('year_changed',{year:this.year_selected, pyear: pyear, month: this.month_selected,source:'set_year'});
+            this.$emit('date_changed',{month:this.month_selected, pyear: pyear ,year:this.year_selected, source:'set_year'})
         },
         yearDropdown_changed:function(){
             var pyear = this.year_selected;
             this.year_selected = event.currentTarget.value;
-            this.$emit('year_changed',{year:this.year_selected,pyear:pyear})
+            this.$emit('year_changed',{year:this.year_selected,pyear:pyear, month: this.month_selected, source:'year_dropdown'})
             
-            this.$emit('date_changed',{year:this.year_selected,month:this.month_selected, pyear: pyear, pmonth: this.month_selected});
+            this.$emit('date_changed',{year:this.year_selected,month:this.month_selected, pyear: pyear, pmonth: this.month_selected, source:'year_dropdown'});
         },
         previous_year:function(){
             var can_nav = this.can_nav_previous_year;
@@ -731,8 +734,8 @@ export default{
             date.setFullYear(date.getFullYear()-1,date.getMonth(),1);
             this.month_selected = date.getMonth();
             this.year_selected = date.getFullYear();
-            this.$emit('previous_year',{ month: this.month_selected, year: this.year_selected, pmonth: cmonth, pyear: cyear})
-            this.$emit('date_changed',{month:this.month_selected,year:this.year_selected,pmonth:cmonth,pyear:cyear})
+            this.$emit('previous_year',{ month: this.month_selected, year: this.year_selected, pmonth: cmonth, pyear: cyear, source:'previous_year'})
+            this.$emit('date_changed',{month:this.month_selected,year:this.year_selected,pmonth:cmonth,pyear:cyear, source:'previous_year'})
         },
         previous_month:function(){
             var can_nav = this.can_nav_previous_month;
@@ -747,8 +750,8 @@ export default{
             date.setFullYear(date.getFullYear(),date.getMonth()-1,1);
             this.month_selected = date.getMonth();
             this.year_selected = date.getFullYear();
-            this.$emit('previous_month',{ month: this.month_selected, year: this.year_selected, pmonth: cmonth, pyear: cyear})
-            this.$emit('date_changed',{month:this.month_selected,year:this.year_selected,pmonth:cmonth,pyear:cyear})
+            this.$emit('previous_month',{ month: this.month_selected, year: this.year_selected, pmonth: cmonth, pyear: cyear, source:'previous_month'})
+            this.$emit('date_changed',{month:this.month_selected,year:this.year_selected,pmonth:cmonth,pyear:cyear, source:'previous_month'})
         },
         next_month:function(){
             var cmonth = this.month_selected;
@@ -758,8 +761,8 @@ export default{
             date.setFullYear(date.getFullYear(),date.getMonth()+1,1);
             this.month_selected = date.getMonth();
             this.year_selected = date.getFullYear();
-            this.$emit('next_month',{ month: this.month_selected, year: this.year_selected, pmonth: cmonth, pyear: cyear});
-            this.$emit('date_changed',{month:this.month_selected,year:this.year_selected,pmonth:cmonth,pyear:cyear});
+            this.$emit('next_month',{ month: this.month_selected, year: this.year_selected, pmonth: cmonth, pyear: cyear, source:'next_month'});
+            this.$emit('date_changed',{month:this.month_selected,year:this.year_selected,pmonth:cmonth,pyear:cyear, source:'next_month'});
             
         },
         next_year:function(){
@@ -770,8 +773,8 @@ export default{
             date.setFullYear(date.getFullYear()+1,date.getMonth(),1);
             this.month_selected = date.getMonth();
             this.year_selected = date.getFullYear();
-            this.$emit('nextYear',{ month: this.month_selected, year: this.year_selected, pmonth: cmonth, pyear: cyear})
-            this.$emit('dateChanged',{month:this.month_selected,year:this.year_selected,pmonth:cmonth,pyear:cyear})
+            this.$emit('nextYear',{ month: this.month_selected, year: this.year_selected, pmonth: cmonth, pyear: cyear, source:'next_year'})
+            this.$emit('dateChanged',{month:this.month_selected,year:this.year_selected,pmonth:cmonth,pyear:cyear, source:'next_year'})
         },
         cell_hover:function(event,day){
             if(day==0){
@@ -866,16 +869,20 @@ export default{
                 }
                 //console.log(this.cell_day_first_selected, this.cell_day_last_selected)
                 this.$emit('day_clicked',{
+                    name:'day_clicked',
                     month: this.month,//zero based
                     year: this.year_selected,
-                    day: day
+                    day: day,
+                    'source':'cell_clicked'
                 })
                 if(this.cell_day_first_selected>-1 && this.cell_day_last_selected>-1 && this.selection=='range'){
                     this.$emit('range_selected',{
+                        name:'range_selected',
                         month: this.month_selected,
                         year: this.year_selected,
                         from: this.cell_day_first_selected,
-                        to: this.cell_day_last_selected
+                        to: this.cell_day_last_selected,
+                        source:'cell_clicked'
                     })
                 }
             }
@@ -885,7 +892,7 @@ export default{
             var last_selected = this.cell_day_last_selected;
             this.cell_day_first_selected = -1;
             this.cell_day_last_selected = -1;
-            this.$emit('selection_reset',{from: first_selected, to: last_selected, month: this.month_selected, year: this.year_selected});
+            this.$emit('selection_reset',{from: first_selected, to: last_selected, month: this.month_selected, year: this.year_selected, source:'clear_selection'});
         },
         getDaysOfPreviousMonth:function(){
             return new Date(this.year_selected, this.month_selected-1,0).getDate();

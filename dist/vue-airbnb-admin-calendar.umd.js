@@ -424,12 +424,12 @@ if (typeof window !== 'undefined') {
 // Indicate to webpack that this file can be concatenated
 /* harmony default export */ var setPublicPath = (null);
 
-// CONCATENATED MODULE: /Users/fisigma/.nvm/versions/node/v12.16.1/lib/node_modules/@vue/cli-service-global/node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"70a9dc29-vue-loader-template"}!/Users/fisigma/.nvm/versions/node/v12.16.1/lib/node_modules/@vue/cli-service-global/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!/Users/fisigma/.nvm/versions/node/v12.16.1/lib/node_modules/@vue/cli-service-global/node_modules/cache-loader/dist/cjs.js??ref--0-0!/Users/fisigma/.nvm/versions/node/v12.16.1/lib/node_modules/@vue/cli-service-global/node_modules/vue-loader/lib??vue-loader-options!./vue-airbnb-admin-calendar.vue?vue&type=template&id=a3f3af2c&scoped=true&
+// CONCATENATED MODULE: /Users/fisigma/.nvm/versions/node/v12.16.1/lib/node_modules/@vue/cli-service-global/node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"70a9dc29-vue-loader-template"}!/Users/fisigma/.nvm/versions/node/v12.16.1/lib/node_modules/@vue/cli-service-global/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!/Users/fisigma/.nvm/versions/node/v12.16.1/lib/node_modules/@vue/cli-service-global/node_modules/cache-loader/dist/cjs.js??ref--0-0!/Users/fisigma/.nvm/versions/node/v12.16.1/lib/node_modules/@vue/cli-service-global/node_modules/vue-loader/lib??vue-loader-options!./vue-airbnb-admin-calendar.vue?vue&type=template&id=0ce056f4&scoped=true&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"vaac-calendar",staticStyle:{"position":"relative"}},[_c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.monthyear_header_visible),expression:"monthyear_header_visible"}],staticClass:"vaac-month-year-header",staticStyle:{"display":"flex"},style:({'border-style':'solid',borderColor:_vm.monthyear_header_border_color, backgroundColor:_vm.monthyear_header_background_color, 'padding':_vm.monthyear_header_padding+'px','border-width':'1px 1px 0px 1px'})},[(_vm.nav_year_visible)?_c('div',{class:{'nav-disabled':!_vm.can_nav_previous_year,'vaac-previousyear':true},style:({'display':'inline-block','box-sizing':'border-box','width':'10%','text-align':'center','cursor':'pointer','color':_vm.monthyear_header_color}),attrs:{"tabindex":"1"},on:{"keyup":function($event){if(!$event.type.indexOf('key')&&_vm._k($event.keyCode,"enter",13,$event.key,"Enter")){ return null; }return _vm.previous_year($event)},"click":_vm.previous_year}},[_vm._t("previous_year",[_c('span',{staticStyle:{"transform":"rotate(180deg)","display":"inline-block"}},[_vm._v("▸▸")])])],2):_vm._e(),_c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.nav_month_visible),expression:"nav_month_visible"}],class:{'nav-disabled':!_vm.can_nav_previous_month,'vaac-previousmonth':true},style:({'display':'inline-block','box-sizing':'border-box','width':'10%','text-align':'center','cursor':'pointer','color':_vm.monthyear_header_color}),attrs:{"tabindex":"2"},on:{"keyup":function($event){if(!$event.type.indexOf('key')&&_vm._k($event.keyCode,"enter",13,$event.key,"Enter")){ return null; }return _vm.previous_month($event)},"click":_vm.previous_month}},[_vm._t("previous_month",[_vm._v("◀")])],2),_c('div',{style:({'visibility':_vm.monthyear_visible?'visible':'hidden','display':'inline-block','box-sizing':'border-box','width':_vm.month_year_width,'text-align':'center','color':_vm.monthyear_header_color})},[(_vm.month_dropdown)?[_c('select',{staticClass:"vaac-month-dropdown",attrs:{"tabindex":"3"},on:{"change":_vm.monthDropdown_changed}},_vm._l((_vm.monthDropdown),function(option){return _c('option',{key:option.key,domProps:{"value":option.index,"selected":option.selected}},[_vm._v(" "+_vm._s(option.name)+" ")])}),0)]:_vm._e(),(!_vm.month_dropdown)?[_vm._v(_vm._s(_vm.month_names[_vm.month_selected]))]:_vm._e(),_vm._v(" / "),(_vm.year_dropdown)?[_c('select',{staticClass:"vaac-year-dropdown",attrs:{"tabindex":"4"},on:{"change":_vm.yearDropdown_changed}},_vm._l((_vm.yearDropdown),function(option){return _c('option',{key:option.key,domProps:{"value":option.index,"selected":option.selected}},[_vm._v(" "+_vm._s(option.name)+" ")])}),0)]:_vm._e(),(!_vm.year_dropdown)?[_vm._v(_vm._s(_vm.year_selected))]:_vm._e()],2),_c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.nav_month_visible),expression:"nav_month_visible"}],class:{'nav-disabled':!_vm.can_nav_next_month,'vaac-nextmonth':true},style:({'display':'inline-block','box-sizing':'border-box','width':'10%','text-align':'center','cursor':'pointer','color':_vm.monthyear_header_color}),attrs:{"tabindex":"5"},on:{"keyup":function($event){if(!$event.type.indexOf('key')&&_vm._k($event.keyCode,"enter",13,$event.key,"Enter")){ return null; }return _vm.next_month($event)},"click":_vm.next_month}},[_vm._t("next_month",[_vm._v("▶")])],2),_c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.nav_year_visible),expression:"nav_year_visible"}],class:{'nav-disabled':!_vm.can_nav_next_year,'vaac-nextyear':true},style:({'display':'inline-block','box-sizing':'border-box','width':'10%','text-align':'center','cursor':'pointer','color':_vm.monthyear_header_color}),attrs:{"tabindex":"6"},on:{"keyup":function($event){if(!$event.type.indexOf('key')&&_vm._k($event.keyCode,"enter",13,$event.key,"Enter")){ return null; }return _vm.next_year($event)},"click":_vm.next_year}},[_vm._t("next_year",[_vm._v("▸▸")])],2)]),_c('div',{staticClass:"vaac-dayname-header",style:({borderStyle:'solid',borderWidth:'0px 0px 0px 1px',borderColor:_vm.day_name_cell_border_color})},_vm._l((_vm.day_short_names),function(dayname,index){return _c('div',{key:'dayname-'+index,class:{'vaac-dayname':true},style:({'display':'inline-block','width':'14.28%','text-align':_vm.day_name_cell_align,'border-style':'solid','border-width':'1px 1px 0px 0px','border-color':_vm.day_name_cell_border_color,'box-sizing':'border-box','padding':_vm.day_name_cell_padding+'px', backgroundColor: _vm.day_name_background_color, color: _vm.day_name_color})},[_vm._v(" "+_vm._s(dayname)+" ")])}),0),_c('div',{key:'daynumber-container-'+_vm.days_view_counter,staticClass:" days display-table vaac-daynumber-container",style:({'display':'flex','flex-wrap':'wrap','border-style':'solid','border-color':_vm.day_number_cell_border_color,'border-width':'1px 0px 0px 1px'})},[(_vm.show_other_month_days)?_vm._l((_vm.previous_days),function(day,index){return _c('div',{key:'previousdaynumber-'+index,class:{'vaac-daynumber-cell':true,'vaac-daynumber-previous-cell':true},style:({'background-color':_vm.isSelected(day,_vm.previousMonth,_vm.previousYear)?_vm.selected_cell_bg:'','color':_vm.isSelected(day,_vm.previousMonth,_vm.previousYear)?_vm.selected_cell_fg:'', 'width':'14.28%','display':'inline-block','border-style':'solid','border-width':'0px 1px 1px 0px','border-color':_vm.day_number_cell_border_color, 'padding':_vm.day_number_cell_padding+'px'}),attrs:{"tabindex":_vm.tab_index+1}},[_c('span',{staticClass:"daynumber",style:({'text-align':_vm.daynumber_position,'width':'100%','position':'relative','display':'inline-block'})},[_c('span',{style:({backgroundColor:_vm.is_today(day,_vm.previousMonth,_vm.previousYear)?_vm.today_name_number_background_color:_vm.other_month_day_background_color,color:_vm.is_today(day,_vm.previousMonth,_vm.previousYear)?_vm.today_name_number_color:_vm.other_month_day_color,padding:_vm.day_name_number_padding,'border-radius':_vm.day_name_number_radius,'font-size':_vm.day_name_number_font_size,'display':'inline-block','width':_vm.day_name_number_size,'height':_vm.day_name_number_size,'text-align':'center','vertical-align':'middle','line-height':_vm.day_name_number_size})},[_vm._v(_vm._s(day))])]),_c('div',{domProps:{"innerHTML":_vm._s(_vm.render_template({current_day: day, current_month: _vm.previousMonth, current_year: _vm.previousYear, selected_month: _vm.month_selected, selected_year:_vm.year_selected}))}})])}):_vm._e(),_vm._l((_vm.days),function(day,index){return _c('div',{key:'dayday'+index,class:{'vaac-daynumber-cell':true,'vaac-daynumber-current-cell':true},style:({'background-color':_vm.isSelected(day,_vm.month_selected,_vm.year_selected)?_vm.selected_cell_bg:'','color':_vm.isSelected(day,_vm.month_selected,_vm.year_selected)?_vm.selected_cell_fg:'', 'width':'14.28%','display':'inline-block','border-style':'solid','border-width':'0px 1px 1px 0px','border-color':_vm.day_number_cell_border_color,'padding':_vm.day_number_cell_padding+'px'}),attrs:{"data-selected":_vm.isSelected(day, _vm.month_selected, _vm.year_selected)?1:0,"tabindex":_vm.tab_index+1,"data-day":day},on:{"mouseover":function($event){return _vm.cell_hover($event,day)},"mouseleave":function($event){return _vm.cell_leave($event,day)},"click":function($event){return _vm.cell_clicked($event,day)},"keyup":function($event){if(!$event.type.indexOf('key')&&_vm._k($event.keyCode,"enter",13,$event.key,"Enter")){ return null; }return _vm.cell_clicked($event,day)}}},[(day>0?true:false)?[_c('span',{staticClass:"daynumber",style:({'text-align':_vm.daynumber_position,'width':'100%','position':'relative','display':'inline-block'})},[_c('span',{style:({backgroundColor:_vm.is_today(day,_vm.month_selected,_vm.year_selected)?_vm.today_name_number_background_color:_vm.day_name_number_background_color,color:_vm.is_today(day,_vm.month_selected,_vm.year_selected)?_vm.today_name_number_color:_vm.day_name_number_color,padding:_vm.day_name_number_padding,'border-radius':_vm.day_name_number_radius,'font-size':_vm.day_name_number_font_size,'display':'inline-block','width':_vm.day_name_number_size,'height':_vm.day_name_number_size,'text-align':'center','vertical-align':'middle','line-height':_vm.day_name_number_size})},[_vm._v(_vm._s(day))])]),_c('div',{domProps:{"innerHTML":_vm._s(_vm.render_template({current_day: day, current_month: _vm.month_selected, current_year: _vm.year_selected, selected_month: _vm.month_selected, selected_year:_vm.year_selected}))}})]:_vm._e(),(day==0?true:false)?[_c('span',{style:({'text-align':_vm.daynumber_position,'width':'100%','position':'relative','display':'inline-block','visibility':'hidden'})},[_c('span',[_vm._v(_vm._s(day))])])]:_vm._e()],2)}),(_vm.show_other_month_days)?_vm._l((_vm.next_days),function(day,index){return _c('div',{key:'nextday'+index,class:{'vaac-daynumber-cell':true,'vaac-daynumber-next-cell':true},style:({'background-color':_vm.isSelected(day,_vm.nextMonth,_vm.nextYear)?_vm.selected_cell_bg:'','color':_vm.isSelected(day,_vm.nextMonth,_vm.nextYear)?_vm.selected_cell_fg:'', 'width':'14.28%','display':'inline-block','border-style':'solid','border-width':'0px 1px 1px 0px','border-color':_vm.day_number_cell_border_color,'padding':_vm.day_number_cell_padding+'px'}),attrs:{"tabindex":_vm.tab_index+1}},[_c('span',{staticClass:"daynumber",style:({'text-align':_vm.daynumber_position,'width':'100%','position':'relative','display':'inline-block'})},[_c('span',{style:({backgroundColor:_vm.is_today(day,_vm.nextMonth,_vm.nextYear)?_vm.today_name_number_background_color:_vm.other_month_day_background_color,color:_vm.is_today(day,_vm.nextMonth,_vm.nextYear)?_vm.today_name_number_color:_vm.other_month_day_color,padding:_vm.day_name_number_padding,'border-radius':_vm.day_name_number_radius,'font-size':_vm.day_name_number_font_size,'display':'inline-block','width':_vm.day_name_number_size,'height':_vm.day_name_number_size,'text-align':'center','vertical-align':'middle','line-height':_vm.day_name_number_size})},[_vm._v(_vm._s(day))])]),_c('div',{domProps:{"innerHTML":_vm._s(_vm.render_template({current_day: day, current_month: _vm.nextMonth, current_year: _vm.nextYear, selected_month: _vm.month_selected, selected_year:_vm.year_selected}))}})])}):_vm._e()],2),_c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.loading),expression:"loading"}],staticStyle:{"position":"absolute","top":"0px","left":"0px","width":"100%","bottom":"0px","vertical-align":"middle","text-align":"center","background-color":"rgb(255,255,255,0.5)"}},[_c('div',{staticStyle:{"position":"relative","top":"45%","margin":"0 auto","font-size":"32px"}},[_c('div',{ref:"spinner",staticStyle:{"display":"inline-block"},attrs:{"slot":"loader"},slot:"loader"},[_vm._t("loader",[_vm._v("↻")])],2)])])])}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./vue-airbnb-admin-calendar.vue?vue&type=template&id=a3f3af2c&scoped=true&
+// CONCATENATED MODULE: ./vue-airbnb-admin-calendar.vue?vue&type=template&id=0ce056f4&scoped=true&
 
 // EXTERNAL MODULE: /Users/fisigma/.nvm/versions/node/v12.16.1/lib/node_modules/@vue/cli-service-global/node_modules/core-js/modules/es.date.to-string.js
 var es_date_to_string = __webpack_require__("5f5d");
@@ -1102,6 +1102,9 @@ var web_timers = __webpack_require__("a11f");
   methods: {
     update_view: function update_view() {
       this.days_view_counter++;
+      this.$emit('view_updated', {
+        name: 'view_updated'
+      });
     },
     start_loader: function start_loader() {
       var _this = this;
@@ -1121,14 +1124,18 @@ var web_timers = __webpack_require__("a11f");
             radius = 0;
           }
         }, 24);
-        this.$emit('loader_started');
+        this.$emit('loader_started', {
+          source: 'start_loader'
+        });
       }
     },
     stop_loader: function stop_loader() {
       if (this.$refs['spinner'] != null) {
         clearInterval(this.loading_interval);
         this.$refs['spinner'].style.transform = 'rotate(0deg)';
-        this.$emit('loader_ended');
+        this.$emit('loader_ended', {
+          source: 'stop_loader'
+        });
       }
     },
     get_previous_month: function get_previous_month() {
@@ -1154,13 +1161,19 @@ var web_timers = __webpack_require__("a11f");
     },
     set_month: function set_month(month) {
       if (month >= 0 && month <= 11) {
+        var pmonth = this.month_selected;
         this.month_selected = month;
         this.$emit('month_changed', {
-          month: this.month_selected
+          month: this.month_selected,
+          pmonth: pmonth,
+          year: this.year_selected,
+          source: 'set_month'
         });
         this.$emit('date_changed', {
           month: this.month_selected,
-          year: this.year_selected
+          pmonth: pmonth,
+          year: this.year_selected,
+          source: 'set_month'
         });
       }
     },
@@ -1169,26 +1182,35 @@ var web_timers = __webpack_require__("a11f");
       this.month_selected = event.currentTarget.value;
       this.$emit('month_changed', {
         month: this.month_selected,
-        pmonth: pmonth
+        pmonth: pmonth,
+        year: this.year_selected,
+        source: 'month_dropdown'
       });
       this.$emit('date_changed', {
         month: this.month_selected,
-        year: this.year_selected,
         pmonth: pmonth,
-        pyear: this.year_selected
+        year: this.year_selected,
+        pyear: this.year_selected,
+        source: 'month_dropdown'
       });
     },
     get_year: function get_year() {
       return this.year_selected;
     },
     set_year: function set_year(year) {
+      var pyear = this.year_selected;
       this.year_selected = year;
       this.$emit('year_changed', {
-        year: this.year_selected
+        year: this.year_selected,
+        pyear: pyear,
+        month: this.month_selected,
+        source: 'set_year'
       });
       this.$emit('date_changed', {
         month: this.month_selected,
-        year: this.year_selected
+        pyear: pyear,
+        year: this.year_selected,
+        source: 'set_year'
       });
     },
     yearDropdown_changed: function yearDropdown_changed() {
@@ -1196,13 +1218,16 @@ var web_timers = __webpack_require__("a11f");
       this.year_selected = event.currentTarget.value;
       this.$emit('year_changed', {
         year: this.year_selected,
-        pyear: pyear
+        pyear: pyear,
+        month: this.month_selected,
+        source: 'year_dropdown'
       });
       this.$emit('date_changed', {
         year: this.year_selected,
         month: this.month_selected,
         pyear: pyear,
-        pmonth: this.month_selected
+        pmonth: this.month_selected,
+        source: 'year_dropdown'
       });
     },
     previous_year: function previous_year() {
@@ -1224,13 +1249,15 @@ var web_timers = __webpack_require__("a11f");
         month: this.month_selected,
         year: this.year_selected,
         pmonth: cmonth,
-        pyear: cyear
+        pyear: cyear,
+        source: 'previous_year'
       });
       this.$emit('date_changed', {
         month: this.month_selected,
         year: this.year_selected,
         pmonth: cmonth,
-        pyear: cyear
+        pyear: cyear,
+        source: 'previous_year'
       });
     },
     previous_month: function previous_month() {
@@ -1252,13 +1279,15 @@ var web_timers = __webpack_require__("a11f");
         month: this.month_selected,
         year: this.year_selected,
         pmonth: cmonth,
-        pyear: cyear
+        pyear: cyear,
+        source: 'previous_month'
       });
       this.$emit('date_changed', {
         month: this.month_selected,
         year: this.year_selected,
         pmonth: cmonth,
-        pyear: cyear
+        pyear: cyear,
+        source: 'previous_month'
       });
     },
     next_month: function next_month() {
@@ -1273,13 +1302,15 @@ var web_timers = __webpack_require__("a11f");
         month: this.month_selected,
         year: this.year_selected,
         pmonth: cmonth,
-        pyear: cyear
+        pyear: cyear,
+        source: 'next_month'
       });
       this.$emit('date_changed', {
         month: this.month_selected,
         year: this.year_selected,
         pmonth: cmonth,
-        pyear: cyear
+        pyear: cyear,
+        source: 'next_month'
       });
     },
     next_year: function next_year() {
@@ -1294,13 +1325,15 @@ var web_timers = __webpack_require__("a11f");
         month: this.month_selected,
         year: this.year_selected,
         pmonth: cmonth,
-        pyear: cyear
+        pyear: cyear,
+        source: 'next_year'
       });
       this.$emit('dateChanged', {
         month: this.month_selected,
         year: this.year_selected,
         pmonth: cmonth,
-        pyear: cyear
+        pyear: cyear,
+        source: 'next_year'
       });
     },
     cell_hover: function cell_hover(event, day) {
@@ -1402,18 +1435,22 @@ var web_timers = __webpack_require__("a11f");
 
 
         this.$emit('day_clicked', {
+          name: 'day_clicked',
           month: this.month,
           //zero based
           year: this.year_selected,
-          day: day
+          day: day,
+          'source': 'cell_clicked'
         });
 
         if (this.cell_day_first_selected > -1 && this.cell_day_last_selected > -1 && this.selection == 'range') {
           this.$emit('range_selected', {
+            name: 'range_selected',
             month: this.month_selected,
             year: this.year_selected,
             from: this.cell_day_first_selected,
-            to: this.cell_day_last_selected
+            to: this.cell_day_last_selected,
+            source: 'cell_clicked'
           });
         }
       }
@@ -1427,7 +1464,8 @@ var web_timers = __webpack_require__("a11f");
         from: first_selected,
         to: last_selected,
         month: this.month_selected,
-        year: this.year_selected
+        year: this.year_selected,
+        source: 'clear_selection'
       });
     },
     getDaysOfPreviousMonth: function getDaysOfPreviousMonth() {
@@ -1563,7 +1601,7 @@ var component = normalizeComponent(
   staticRenderFns,
   false,
   null,
-  "a3f3af2c",
+  "0ce056f4",
   null
   
 )
