@@ -51,16 +51,16 @@
                 <span slot="next_year">&#9656;&#9656;</span>
             </div>
         </div>
-        <div class="vaac-dayname-header" >
+        <div class="vaac-dayname-header" :style="{borderStyle:'solid',borderWidth:'0px 0px 0px 1px',borderColor:day_name_cell_border_color}">
             <div v-for="(dayname,index) in day_short_names" 
             v-bind:key="'dayname-'+index" 
-            :style="{'display':'inline-block','width':'14.28%','text-align':day_name_cell_align,'border-style':'solid','border-width':'1px','border-color':day_name_cell_border_color,'box-sizing':'border-box'}"
+            :style="{'display':'inline-block','width':'14.28%','text-align':day_name_cell_align,'border-style':'solid','border-width':'1px 1px 0px 0px','border-color':day_name_cell_border_color,'box-sizing':'border-box','padding':day_name_cell_padding+'px'}"
             :class="{'vaac-dayname':true}">
                 {{dayname}}
             </div>
         </div>
         <div class=" days display-table vaac-daynumber-container" 
-        style="display:flex;flex-wrap:wrap;" 
+        :style="{'display':'flex','flex-wrap':'wrap','border-style':'solid','border-color':day_number_cell_border_color,'border-width':'1px 0px 0px 1px'}" 
         v-bind:key="'daynumber-container-'+days_view_counter">
         <!-- to daynumber-container-'+days_view_counter we need when we need to re render the calendar because we have loaded data and the only way for callback renderTemplate to be called again is to update the v-bind:key -->
 
@@ -69,8 +69,8 @@
                 <div v-for="(day,index) in previous_days"
                 v-bind:key="'previousdaynumber-'+index" :tabindex="tab_index+1"
                 
-                :style="{'background-color':isSelected(day)?selected_cell_bg:'','color':isSelected(day)?selected_cell_fg:'', 'width':'14.28%','display':'inline-block'}" 
-                :class="{'display-table-cell':true,'vaac-daynumber-cell':true,'vaac-daynumber-previous-cell':true}" 
+                :style="{'background-color':isSelected(day)?selected_cell_bg:'','color':isSelected(day)?selected_cell_fg:'', 'width':'14.28%','display':'inline-block','border-style':'solid','border-width':'0px 1px 1px 0px','border-color':day_number_cell_border_color}" 
+                :class="{'vaac-daynumber-cell':true,'vaac-daynumber-previous-cell':true}" 
                 >
                     <span class="daynumber" :style="{'text-align':daynumber_position,'width':'100%','position':'relative','display':'inline-block'}">
                         <span :style="{backgroundColor:is_today(day,previousMonth,previousYear)?today_name_number_background_color:other_month_day_background_color,color:is_today(day,previousMonth,previousYear)?today_name_number_color:other_month_day_color,padding:day_name_number_padding,'border-radius':day_name_number_radius,'font-size':day_name_number_font_size,'display':'inline-block','width':day_name_number_size,'height':day_name_number_size,'text-align':'center','vertical-align':'middle','line-height':day_name_number_size}">{{day}}</span>
@@ -94,8 +94,8 @@
 
             @keyup.enter="cell_clicked($event,day)"
 
-            :style="{'background-color':isSelected(day)?selected_cell_bg:'','color':isSelected(day)?selected_cell_fg:'', 'width':'14.28%','display':'inline-block'}" 
-            :class="{'display-table-cell':true,'vaac-daynumber-cell':true,'vaac-daynumber-current-cell':true}" 
+            :style="{'background-color':isSelected(day)?selected_cell_bg:'','color':isSelected(day)?selected_cell_fg:'', 'width':'14.28%','display':'inline-block','border-style':'solid','border-width':'0px 1px 1px 0px','border-color':day_number_cell_border_color}" 
+            :class="{'vaac-daynumber-cell':true,'vaac-daynumber-current-cell':true}" 
             
              :data-day="day">
 
@@ -120,8 +120,8 @@
                 
                 :tabindex="tab_index+1"
 
-                :style="{'background-color':isSelected(day)?selected_cell_bg:'','color':isSelected(day)?selected_cell_fg:'', 'width':'14.28%','display':'inline-block'}" 
-            :class="{'display-table-cell':true,'vaac-daynumber-cell':true,'vaac-daynumber-next-cell':true}" 
+                :style="{'background-color':isSelected(day)?selected_cell_bg:'','color':isSelected(day)?selected_cell_fg:'', 'width':'14.28%','display':'inline-block','border-style':'solid','border-width':'0px 1px 1px 0px','border-color':day_number_cell_border_color}" 
+            :class="{'vaac-daynumber-cell':true,'vaac-daynumber-next-cell':true}" 
                 >
                     <span class="daynumber" :style="{'text-align':daynumber_position,'width':'100%','position':'relative','display':'inline-block'}">
                         <span :style="{backgroundColor:is_today(day,nextMonth,nextYear)?today_name_number_background_color:other_month_day_background_color,color:is_today(day,nextMonth,nextYear)?today_name_number_color:other_month_day_color,padding:day_name_number_padding,'border-radius':day_name_number_radius,'font-size':day_name_number_font_size,'display':'inline-block','width':day_name_number_size,'height':day_name_number_size,'text-align':'center','vertical-align':'middle','line-height':day_name_number_size}">{{day}}</span>
@@ -258,9 +258,19 @@ export default{
         day_name_cell_border_color:{
             required:false,
             type:String,
-            default:function(){
-                return 'transparent';
-            }
+            default:'transparent'
+        },
+        day_name_cell_padding:{
+            required:false,
+            type:Number,
+            default:3
+        },
+
+
+        day_number_cell_border_color:{
+            required:false,
+            type:String,
+            default:'#afafaf'
         },
         other_month_day_background_color:{
             required:false,
@@ -851,15 +861,5 @@ export default{
 }
 </script>
 <style scoped>
-.display-table{
-        border: 1px solid #afafaf;
-    border-width: 1px 0px 0px 1px;
-}
-.display-table-cell{
-    border: 1px solid #afafaf;
-    border-width: 0px 1px 1px 0px;
-    padding: 10px;
-    cursor: pointer;
-    box-sizing: border-box;
-}
+
 </style>
