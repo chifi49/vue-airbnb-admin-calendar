@@ -1,13 +1,13 @@
 <template>
     <div class="vaac-calendar"  style="position:relative;">
-        <div class="vaac-month-year-header" style="display:flex" v-show="monthyear_header_visible" :style="{'border-style':'solid',borderColor:monthyear_header_border_color,'border-width':'1px 1px 0px 1px'}">
+        <div class="vaac-month-year-header" style="display:flex" v-show="monthyear_header_visible" :style="{'border-style':'solid',borderColor:monthyear_header_border_color, backgroundColor:monthyear_header_background_color, 'padding':monthyear_header_padding+'px','border-width':'1px 1px 0px 1px'}">
             <div 
             v-if="nav_year_visible" 
             tabindex="1" 
             @keyup.enter="previous_year" 
             @click="previous_year" 
             :class="{'nav-disabled':!can_nav_previous_year,'vaac-previousyear':true}" 
-            :style="{'display':'inline-block','box-sizing':'border-box','width':'10%','text-align':'center','cursor':'pointer'}">
+            :style="{'display':'inline-block','box-sizing':'border-box','width':'10%','text-align':'center','cursor':'pointer','color':monthyear_header_color}">
                 <slot name="previous_year"><span style="transform:rotate(180deg);display:inline-block;">&#9656;&#9656;</span></slot>
             </div>
 
@@ -17,11 +17,11 @@
             @keyup.enter="previous_month" 
             @click="previous_month" 
             :class="{'nav-disabled':!can_nav_previous_month,'vaac-previousmonth':true}" 
-            :style="{'display':'inline-block','box-sizing':'border-box','width':'10%','text-align':'center','cursor':'pointer'}">
+            :style="{'display':'inline-block','box-sizing':'border-box','width':'10%','text-align':'center','cursor':'pointer','color':monthyear_header_color}">
                 <slot name="previous_month">&#9664;</slot>
             </div>
 
-            <div class="" :style="{'visibility':monthyear_visible?'visible':'hidden','display':'inline-block','box-sizing':'border-box','width':month_year_width,'text-align':'center'}">
+            <div class="" :style="{'visibility':monthyear_visible?'visible':'hidden','display':'inline-block','box-sizing':'border-box','width':month_year_width,'text-align':'center','color':monthyear_header_color}">
                 <template v-if="month_dropdown" >
                     <select tabindex="3" v-on:change="monthDropdown_changed" class="vaac-month-dropdown">
                         <option :value="option.index" v-for="option in monthDropdown" v-bind:key="option.key" :selected="option.selected">
@@ -42,19 +42,19 @@
             </div>
             <div tabindex="5" 
             :class="{'nav-disabled':!can_nav_next_month,'vaac-nextmonth':true}" 
-            @keyup.enter="next_month" @click="next_month" v-show="nav_month_visible" :style="{'display':'inline-block','box-sizing':'border-box','width':'10%','text-align':'center','cursor':'pointer'}">
+            @keyup.enter="next_month" @click="next_month" v-show="nav_month_visible" :style="{'display':'inline-block','box-sizing':'border-box','width':'10%','text-align':'center','cursor':'pointer','color':monthyear_header_color}">
                 <slot name="next_month">&#9654;</slot>
             </div>
             <div tabindex="6" 
             :class="{'nav-disabled':!can_nav_next_year,'vaac-nextyear':true}" 
-            @keyup.enter="next_year" @click="next_year" v-show="nav_year_visible" :style="{'display':'inline-block','box-sizing':'border-box','width':'10%','text-align':'center','cursor':'pointer'}">
+            @keyup.enter="next_year" @click="next_year" v-show="nav_year_visible" :style="{'display':'inline-block','box-sizing':'border-box','width':'10%','text-align':'center','cursor':'pointer','color':monthyear_header_color}">
                 <slot name="next_year">&#9656;&#9656;</slot>
             </div>
         </div>
         <div class="vaac-dayname-header" :style="{borderStyle:'solid',borderWidth:'0px 0px 0px 1px',borderColor:day_name_cell_border_color}">
             <div v-for="(dayname,index) in day_short_names" 
             v-bind:key="'dayname-'+index" 
-            :style="{'display':'inline-block','width':'14.28%','text-align':day_name_cell_align,'border-style':'solid','border-width':'1px 1px 0px 0px','border-color':day_name_cell_border_color,'box-sizing':'border-box','padding':day_name_cell_padding+'px'}"
+            :style="{'display':'inline-block','width':'14.28%','text-align':day_name_cell_align,'border-style':'solid','border-width':'1px 1px 0px 0px','border-color':day_name_cell_border_color,'box-sizing':'border-box','padding':day_name_cell_padding+'px', backgroundColor: day_name_background_color, color: day_name_color}"
             :class="{'vaac-dayname':true}">
                 {{dayname}}
             </div>
@@ -205,6 +205,16 @@ export default{
             default:true
         },
         
+        monthyear_header_background_color:{
+            required:false,
+            type:String,
+            default:'#fff'
+        },
+        monthyear_header_color:{
+            required:false,
+            type:String,
+            default:'#000'
+        },
         monthyear_header_border_color:{
             required:false,
             type:String,
@@ -264,6 +274,16 @@ export default{
             required:false,
             type:String,
             default:''
+        },
+        day_name_background_color:{
+            required:false,
+            type:String,
+            default:'#fff'
+        },
+        day_name_color:{
+            required:false,
+            type:String,
+            default:'#000'
         },
         day_name_cell_align:{
             required:false,
