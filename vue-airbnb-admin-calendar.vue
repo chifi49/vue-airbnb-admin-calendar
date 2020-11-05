@@ -67,22 +67,24 @@
             <template v-if="show_other_month_days">
 
                 <div v-for="(day,index) in previous_days"
-                v-bind:key="'previousdaynumber-'+index" :tabindex="tab_index+1"
+                v-bind:key="'previousdaynumber-'+index" 
+                :tabindex="tab_index+1"
+
+                @click="cell_clicked($event,day,previousMonth,previousYear)"
                 
                 :style="{'background-color':isSelected(day,previousMonth,previousYear)?selected_cell_bg:'','color':isSelected(day,previousMonth,previousYear)?selected_cell_fg:'', 'width':'14.28%','display':'inline-block','border-style':'solid','border-width':'0px 1px 1px 0px','border-color':day_number_cell_border_color, 'padding':day_number_cell_padding+'px'}" 
                 :class="{'vaac-daynumber-cell':true,'vaac-daynumber-previous-cell':true}" 
+                :data-day="day" :data-month="previousMonth" :data-year="previousYear"
                 >
-                    <span class="daynumber" :style="{'text-align':daynumber_position,'width':'100%','position':'relative','display':'inline-block'}">
+                    <span v-if="day_number_visible" class="daynumber" :style="{'text-align':daynumber_position,'width':'100%','position':'relative','display':'inline-block'}">
                         <span :style="{backgroundColor:is_today(day,previousMonth,previousYear)?today_name_number_background_color:other_month_day_background_color,color:is_today(day,previousMonth,previousYear)?today_name_number_color:other_month_day_color,padding:day_name_number_padding,'border-radius':day_name_number_radius,'font-size':day_name_number_font_size,'display':'inline-block','width':day_name_number_size,'height':day_name_number_size,'text-align':'center','vertical-align':'middle','line-height':day_name_number_size}">{{day}}</span>
                     </span>
-                    
-                        <div v-html="render_template({current_day: day, current_month: previousMonth, current_year: previousYear, selected_month: month_selected, selected_year:year_selected})"></div>
-                        
-
+                    <div v-html="render_template({current_day: day, current_month: previousMonth, current_year: previousYear, selected_month: month_selected, selected_year:year_selected, selected: isSelected(day,previousMonth,previousYear)})"></div>
                 </div>
             </template>
 
             <div 
+            
             v-for="(day,index) in days" 
             v-bind:key="'dayday'+index" 
             :data-selected="isSelected(day, month_selected, year_selected)?1:0" 
@@ -97,18 +99,20 @@
             :style="{'background-color':isSelected(day,month_selected,year_selected)?selected_cell_bg:'','color':isSelected(day,month_selected,year_selected)?selected_cell_fg:'', 'width':'14.28%','display':'inline-block','border-style':'solid','border-width':'0px 1px 1px 0px','border-color':day_number_cell_border_color,'padding':day_number_cell_padding+'px'}" 
             :class="{'vaac-daynumber-cell':true,'vaac-daynumber-current-cell':true}" 
             
-             :data-day="day">
+             :data-day="day" :data-month="month_selected" :data-year="year_selected">
 
                 <template v-if="day>0?true:false">
-                    <span class="daynumber" :style="{'text-align':daynumber_position,'width':'100%','position':'relative','display':'inline-block'}">
+                    <span 
+                    v-if="day_number_visible" 
+                    class="daynumber" :style="{'text-align':daynumber_position,'width':'100%','position':'relative','display':'inline-block'}">
                         <span :style="{backgroundColor:is_today(day,month_selected,year_selected)?today_name_number_background_color:day_name_number_background_color,color:is_today(day,month_selected,year_selected)?today_name_number_color:day_name_number_color,padding:day_name_number_padding,'border-radius':day_name_number_radius,'font-size':day_name_number_font_size,'display':'inline-block','width':day_name_number_size,'height':day_name_number_size,'text-align':'center','vertical-align':'middle','line-height':day_name_number_size}">{{day}}</span>
                     </span>
                     
-                        <div v-html="render_template({current_day: day, current_month: month_selected, current_year: year_selected, selected_month: month_selected, selected_year:year_selected})"></div>
+                        <div v-html="render_template({current_day: day, current_month: month_selected, current_year: year_selected, selected_month: month_selected, selected_year:year_selected, selected: isSelected(day,month_selected,year_selected)})"></div>
                         
                 </template>
                 <template v-if="day==0?true:false">
-                        <span :style="{'text-align':daynumber_position,'width':'100%','position':'relative','display':'inline-block','visibility':'hidden'}">
+                        <span v-if="day_number_visible" :style="{'text-align':daynumber_position,'width':'100%','position':'relative','display':'inline-block','visibility':'hidden'}">
                             <span>{{day}}</span>
                         </span>
                 </template>
@@ -120,19 +124,21 @@
                 
                 :tabindex="tab_index+1"
 
+                @click="cell_clicked($event,day,nextMonth,nextYear)"
+
                 :style="{'background-color':isSelected(day,nextMonth,nextYear)?selected_cell_bg:'','color':isSelected(day,nextMonth,nextYear)?selected_cell_fg:'', 'width':'14.28%','display':'inline-block','border-style':'solid','border-width':'0px 1px 1px 0px','border-color':day_number_cell_border_color,'padding':day_number_cell_padding+'px'}" 
             :class="{'vaac-daynumber-cell':true,'vaac-daynumber-next-cell':true}" 
+
+                :data-day="day" :data-month="nextMonth" :data-year="nextYear"
                 >
-                    <span class="daynumber" :style="{'text-align':daynumber_position,'width':'100%','position':'relative','display':'inline-block'}">
+                    <span 
+                    v-if="day_number_visible"
+                    class="daynumber" :style="{'text-align':daynumber_position,'width':'100%','position':'relative','display':'inline-block'}">
                         <span :style="{backgroundColor:is_today(day,nextMonth,nextYear)?today_name_number_background_color:other_month_day_background_color,color:is_today(day,nextMonth,nextYear)?today_name_number_color:other_month_day_color,padding:day_name_number_padding,'border-radius':day_name_number_radius,'font-size':day_name_number_font_size,'display':'inline-block','width':day_name_number_size,'height':day_name_number_size,'text-align':'center','vertical-align':'middle','line-height':day_name_number_size}">{{day}}</span>
                     </span>
-                    
-                        <div v-html="render_template({current_day: day, current_month: nextMonth, current_year: nextYear, selected_month: month_selected, selected_year:year_selected})"></div>
-                        
-
+                    <div v-html="render_template({current_day: day, current_month: nextMonth, current_year: nextYear, selected_month: month_selected, selected_year:year_selected, selected: isSelected(day,nextMonth,nextYear)})"></div>
                 </div>
             </template>
-
         </div>
         <div  v-show="loading" style="position:absolute;top:0px;left:0px;width:100%;bottom:0px;vertical-align:middle;text-align:center;background-color:rgb(255,255,255,0.5);">
             <div style="position:relative;top:45%;margin:0 auto;font-size:32px;">
@@ -303,7 +309,11 @@ export default{
             default:3
         },
 
-
+        day_number_visible:{
+            required:false,
+            type:Boolean,
+            default:true
+        },
         day_number_cell_padding:{
             required:false,
             type:Number,
@@ -702,7 +712,7 @@ export default{
             this.month_selected = event.currentTarget.value;
             this.$emit('month_changed',{month:this.month_selected,pmonth:pmonth, year: this.year_selected, source:'month_dropdown'})
             
-            this.$emit('date_changed',{month:this.month_selected, pmonth: pmonth,year:this.year_selected,pyear:this.year_selected,source:'month_dropdown'})
+            this.$emit('date_changed',{month:this.month_selected,year:this.year_selected,pmonth:pmonth,pyear:this.year_selected,source:'month_dropdown'})
         },
         get_year:function(){
             return this.year_selected;
@@ -828,7 +838,10 @@ export default{
             }
             return false;
         },
-        cell_clicked:function(event,dayindex){
+        cell_clicked:function(event,dayindex,month,year){
+            if(month>100 && year<0){
+                return;
+            }
             if(dayindex==0){
                 return;
             }
@@ -878,10 +891,10 @@ export default{
                 if(this.cell_day_first_selected>-1 && this.cell_day_last_selected>-1 && this.selection=='range'){
                     this.$emit('range_selected',{
                         name:'range_selected',
-                        month: this.month_selected,
-                        year: this.year_selected,
-                        from: this.cell_day_first_selected,
-                        to: this.cell_day_last_selected,
+                        fmonth: this.month_selected,
+                        fyear: this.year_selected,
+                        fday: this.cell_day_first_selected,
+                        tday: this.cell_day_last_selected,
                         source:'cell_clicked'
                     })
                 }
