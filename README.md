@@ -7,6 +7,9 @@ or
 
 `<script src="vue-airbnb-admin-calendar.umd.min.js"></script>`
 
+## Interactive Demo
+[Click here](https://vue-airbnb-admin-calendar-demo.vercel.app/)
+
 ## Usage
 Imported as vue component
 ```
@@ -206,5 +209,3 @@ as script
 
 </html>
 ````
-### Interactive Demo
-[Click here](https://vue-airbnb-admin-calendar-demo.vercel.app/)
