@@ -206,3 +206,5 @@ as script
 
 </html>
 ````
+### Interactive Demo
+[Click here](https://vue-airbnb-admin-calendar-demo.vercel.app/)
