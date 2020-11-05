@@ -184,6 +184,11 @@ export default{
             type:Boolean,
             default:false
         },
+        other_month_days_selectable:{
+            required:false,
+            type:Boolean,
+            default:true
+        },
         loading_spin:{
             required:false,
             type:Boolean,
@@ -869,6 +874,10 @@ export default{
         },
         cell_clicked:function(event,dayindex,month,year){
             //console.log(dayindex,month,year);
+            if(month!=this.month_selected && !this.other_month_days_selectable){
+                return;
+            }
+
             if(month>100 && year<0){
                 return;
             }
