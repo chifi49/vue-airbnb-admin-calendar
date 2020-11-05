@@ -424,12 +424,12 @@ if (typeof window !== 'undefined') {
 // Indicate to webpack that this file can be concatenated
 /* harmony default export */ var setPublicPath = (null);
 
-// CONCATENATED MODULE: /Users/fisigma/.nvm/versions/node/v12.16.1/lib/node_modules/@vue/cli-service-global/node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"70a9dc29-vue-loader-template"}!/Users/fisigma/.nvm/versions/node/v12.16.1/lib/node_modules/@vue/cli-service-global/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!/Users/fisigma/.nvm/versions/node/v12.16.1/lib/node_modules/@vue/cli-service-global/node_modules/cache-loader/dist/cjs.js??ref--0-0!/Users/fisigma/.nvm/versions/node/v12.16.1/lib/node_modules/@vue/cli-service-global/node_modules/vue-loader/lib??vue-loader-options!./vue-airbnb-admin-calendar.vue?vue&type=template&id=5e6e2ece&scoped=true&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"vaac-calendar",staticStyle:{"position":"relative"}},[_c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.monthyear_header_visible),expression:"monthyear_header_visible"}],staticClass:"vaac-month-year-header",staticStyle:{"display":"flex"},style:({'border-style':'solid',borderColor:_vm.monthyear_header_border_color, backgroundColor:_vm.monthyear_header_background_color, 'padding':_vm.monthyear_header_padding+'px','border-width':'1px 1px 0px 1px'})},[(_vm.nav_year_visible)?_c('div',{class:{'nav-disabled':!_vm.can_nav_previous_year,'vaac-previousyear':true},style:({'display':'inline-block','box-sizing':'border-box','width':'10%','text-align':'center','cursor':'pointer','color':_vm.monthyear_header_color}),attrs:{"tabindex":"1"},on:{"keyup":function($event){if(!$event.type.indexOf('key')&&_vm._k($event.keyCode,"enter",13,$event.key,"Enter")){ return null; }return _vm.previous_year($event)},"click":_vm.previous_year}},[_vm._t("previous_year",[_c('span',{staticStyle:{"transform":"rotate(180deg)","display":"inline-block"}},[_vm._v("▸▸")])])],2):_vm._e(),_c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.nav_month_visible),expression:"nav_month_visible"}],class:{'nav-disabled':!_vm.can_nav_previous_month,'vaac-previousmonth':true},style:({'display':'inline-block','box-sizing':'border-box','width':'10%','text-align':'center','cursor':'pointer','color':_vm.monthyear_header_color}),attrs:{"tabindex":"2"},on:{"keyup":function($event){if(!$event.type.indexOf('key')&&_vm._k($event.keyCode,"enter",13,$event.key,"Enter")){ return null; }return _vm.previous_month($event)},"click":_vm.previous_month}},[_vm._t("previous_month",[_vm._v("◀")])],2),_c('div',{style:({'visibility':_vm.monthyear_visible?'visible':'hidden','display':'inline-block','box-sizing':'border-box','width':_vm.month_year_width,'text-align':'center','color':_vm.monthyear_header_color})},[(_vm.month_dropdown)?[_c('select',{staticClass:"vaac-month-dropdown",attrs:{"tabindex":"3"},on:{"change":_vm.monthDropdown_changed}},_vm._l((_vm.monthDropdown),function(option){return _c('option',{key:option.key,domProps:{"value":option.index,"selected":option.selected}},[_vm._v(" "+_vm._s(option.name)+" ")])}),0)]:_vm._e(),(!_vm.month_dropdown)?[_vm._v(_vm._s(_vm.month_names[_vm.month_selected]))]:_vm._e(),_vm._v(" / "),(_vm.year_dropdown)?[_c('select',{staticClass:"vaac-year-dropdown",attrs:{"tabindex":"4"},on:{"change":_vm.yearDropdown_changed}},_vm._l((_vm.yearDropdown),function(option){return _c('option',{key:option.key,domProps:{"value":option.index,"selected":option.selected}},[_vm._v(" "+_vm._s(option.name)+" ")])}),0)]:_vm._e(),(!_vm.year_dropdown)?[_vm._v(_vm._s(_vm.year_selected))]:_vm._e()],2),_c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.nav_month_visible),expression:"nav_month_visible"}],class:{'nav-disabled':!_vm.can_nav_next_month,'vaac-nextmonth':true},style:({'display':'inline-block','box-sizing':'border-box','width':'10%','text-align':'center','cursor':'pointer','color':_vm.monthyear_header_color}),attrs:{"tabindex":"5"},on:{"keyup":function($event){if(!$event.type.indexOf('key')&&_vm._k($event.keyCode,"enter",13,$event.key,"Enter")){ return null; }return _vm.next_month($event)},"click":_vm.next_month}},[_vm._t("next_month",[_vm._v("▶")])],2),_c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.nav_year_visible),expression:"nav_year_visible"}],class:{'nav-disabled':!_vm.can_nav_next_year,'vaac-nextyear':true},style:({'display':'inline-block','box-sizing':'border-box','width':'10%','text-align':'center','cursor':'pointer','color':_vm.monthyear_header_color}),attrs:{"tabindex":"6"},on:{"keyup":function($event){if(!$event.type.indexOf('key')&&_vm._k($event.keyCode,"enter",13,$event.key,"Enter")){ return null; }return _vm.next_year($event)},"click":_vm.next_year}},[_vm._t("next_year",[_vm._v("▸▸")])],2)]),_c('div',{staticClass:"vaac-dayname-header",style:({borderStyle:'solid',borderWidth:'0px 0px 0px 1px',borderColor:_vm.day_name_cell_border_color})},_vm._l((_vm.day_short_names),function(dayname,index){return _c('div',{key:'dayname-'+index,class:{'vaac-dayname':true},style:({'display':'inline-block','width':'14.28%','text-align':_vm.day_name_cell_align,'border-style':'solid','border-width':'1px 1px 0px 0px','border-color':_vm.day_name_cell_border_color,'box-sizing':'border-box','padding':_vm.day_name_cell_padding+'px', backgroundColor: _vm.day_name_background_color, color: _vm.day_name_color})},[_vm._v(" "+_vm._s(dayname)+" ")])}),0),_c('div',{key:'daynumber-container-'+_vm.days_view_counter,staticClass:" days display-table vaac-daynumber-container",style:({'display':'flex','flex-wrap':'wrap','border-style':'solid','border-color':_vm.day_number_cell_border_color,'border-width':'1px 0px 0px 1px'})},[(_vm.show_other_month_days)?_vm._l((_vm.previous_days),function(day,index){return _c('div',{key:'previousdaynumber-'+index,class:{'vaac-daynumber-cell':true,'vaac-daynumber-previous-cell':true},style:({'background-color':_vm.isSelected(day,_vm.previousMonth,_vm.previousYear)?_vm.selected_cell_bg:'','color':_vm.isSelected(day,_vm.previousMonth,_vm.previousYear)?_vm.selected_cell_fg:'', 'width':'14.28%','display':'inline-block','border-style':'solid','border-width':'0px 1px 1px 0px','border-color':_vm.day_number_cell_border_color, 'padding':_vm.day_number_cell_padding+'px'}),attrs:{"tabindex":_vm.tab_index+1,"data-day":day,"data-month":_vm.previousMonth,"data-year":_vm.previousYear},on:{"click":function($event){return _vm.cell_clicked($event,day,_vm.previousMonth,_vm.previousYear)}}},[(_vm.day_number_visible)?_c('span',{staticClass:"daynumber",style:({'text-align':_vm.daynumber_position,'width':'100%','position':'relative','display':'inline-block'})},[_c('span',{style:({backgroundColor:_vm.is_today(day,_vm.previousMonth,_vm.previousYear)?_vm.today_name_number_background_color:_vm.other_month_day_background_color,color:_vm.is_today(day,_vm.previousMonth,_vm.previousYear)?_vm.today_name_number_color:_vm.other_month_day_color,padding:_vm.day_name_number_padding,'border-radius':_vm.day_name_number_radius,'font-size':_vm.day_name_number_font_size,'display':'inline-block','width':_vm.day_name_number_size,'height':_vm.day_name_number_size,'text-align':'center','vertical-align':'middle','line-height':_vm.day_name_number_size})},[_vm._v(_vm._s(day))])]):_vm._e(),_c('div',{domProps:{"innerHTML":_vm._s(_vm.render_template({current_day: day, current_month: _vm.previousMonth, current_year: _vm.previousYear, selected_month: _vm.month_selected, selected_year:_vm.year_selected, selected: _vm.isSelected(day,_vm.previousMonth,_vm.previousYear)}))}})])}):_vm._e(),_vm._l((_vm.days),function(day,index){return _c('div',{key:'dayday'+index,class:{'vaac-daynumber-cell':true,'vaac-daynumber-current-cell':true},style:({'background-color':_vm.isSelected(day,_vm.month_selected,_vm.year_selected)?_vm.selected_cell_bg:'','color':_vm.isSelected(day,_vm.month_selected,_vm.year_selected)?_vm.selected_cell_fg:'', 'width':'14.28%','display':'inline-block','border-style':'solid','border-width':'0px 1px 1px 0px','border-color':_vm.day_number_cell_border_color,'padding':_vm.day_number_cell_padding+'px'}),attrs:{"data-selected":_vm.isSelected(day, _vm.month_selected, _vm.year_selected)?1:0,"tabindex":_vm.tab_index+1,"data-day":day,"data-month":_vm.month_selected,"data-year":_vm.year_selected},on:{"mouseover":function($event){return _vm.cell_hover($event,day)},"mouseleave":function($event){return _vm.cell_leave($event,day)},"click":function($event){return _vm.cell_clicked($event,day)},"keyup":function($event){if(!$event.type.indexOf('key')&&_vm._k($event.keyCode,"enter",13,$event.key,"Enter")){ return null; }return _vm.cell_clicked($event,day)}}},[(day>0?true:false)?[(_vm.day_number_visible)?_c('span',{staticClass:"daynumber",style:({'text-align':_vm.daynumber_position,'width':'100%','position':'relative','display':'inline-block'})},[_c('span',{style:({backgroundColor:_vm.is_today(day,_vm.month_selected,_vm.year_selected)?_vm.today_name_number_background_color:_vm.day_name_number_background_color,color:_vm.is_today(day,_vm.month_selected,_vm.year_selected)?_vm.today_name_number_color:_vm.day_name_number_color,padding:_vm.day_name_number_padding,'border-radius':_vm.day_name_number_radius,'font-size':_vm.day_name_number_font_size,'display':'inline-block','width':_vm.day_name_number_size,'height':_vm.day_name_number_size,'text-align':'center','vertical-align':'middle','line-height':_vm.day_name_number_size})},[_vm._v(_vm._s(day))])]):_vm._e(),_c('div',{domProps:{"innerHTML":_vm._s(_vm.render_template({current_day: day, current_month: _vm.month_selected, current_year: _vm.year_selected, selected_month: _vm.month_selected, selected_year:_vm.year_selected, selected: _vm.isSelected(day,_vm.month_selected,_vm.year_selected)}))}})]:_vm._e(),(day==0?true:false)?[(_vm.day_number_visible)?_c('span',{style:({'text-align':_vm.daynumber_position,'width':'100%','position':'relative','display':'inline-block','visibility':'hidden'})},[_c('span',[_vm._v(_vm._s(day))])]):_vm._e()]:_vm._e()],2)}),(_vm.show_other_month_days)?_vm._l((_vm.next_days),function(day,index){return _c('div',{key:'nextday'+index,class:{'vaac-daynumber-cell':true,'vaac-daynumber-next-cell':true},style:({'background-color':_vm.isSelected(day,_vm.nextMonth,_vm.nextYear)?_vm.selected_cell_bg:'','color':_vm.isSelected(day,_vm.nextMonth,_vm.nextYear)?_vm.selected_cell_fg:'', 'width':'14.28%','display':'inline-block','border-style':'solid','border-width':'0px 1px 1px 0px','border-color':_vm.day_number_cell_border_color,'padding':_vm.day_number_cell_padding+'px'}),attrs:{"tabindex":_vm.tab_index+1,"data-day":day,"data-month":_vm.nextMonth,"data-year":_vm.nextYear},on:{"click":function($event){return _vm.cell_clicked($event,day,_vm.nextMonth,_vm.nextYear)}}},[(_vm.day_number_visible)?_c('span',{staticClass:"daynumber",style:({'text-align':_vm.daynumber_position,'width':'100%','position':'relative','display':'inline-block'})},[_c('span',{style:({backgroundColor:_vm.is_today(day,_vm.nextMonth,_vm.nextYear)?_vm.today_name_number_background_color:_vm.other_month_day_background_color,color:_vm.is_today(day,_vm.nextMonth,_vm.nextYear)?_vm.today_name_number_color:_vm.other_month_day_color,padding:_vm.day_name_number_padding,'border-radius':_vm.day_name_number_radius,'font-size':_vm.day_name_number_font_size,'display':'inline-block','width':_vm.day_name_number_size,'height':_vm.day_name_number_size,'text-align':'center','vertical-align':'middle','line-height':_vm.day_name_number_size})},[_vm._v(_vm._s(day))])]):_vm._e(),_c('div',{domProps:{"innerHTML":_vm._s(_vm.render_template({current_day: day, current_month: _vm.nextMonth, current_year: _vm.nextYear, selected_month: _vm.month_selected, selected_year:_vm.year_selected, selected: _vm.isSelected(day,_vm.nextMonth,_vm.nextYear)}))}})])}):_vm._e()],2),_c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.loading),expression:"loading"}],staticStyle:{"position":"absolute","top":"0px","left":"0px","width":"100%","bottom":"0px","vertical-align":"middle","text-align":"center","background-color":"rgb(255,255,255,0.5)"}},[_c('div',{staticStyle:{"position":"relative","top":"45%","margin":"0 auto","font-size":"32px"}},[_c('div',{ref:"spinner",staticStyle:{"display":"inline-block"},attrs:{"slot":"loader"},slot:"loader"},[_vm._t("loader",[_vm._v("↻")])],2)])])])}
+// CONCATENATED MODULE: /Users/fisigma/.nvm/versions/node/v12.16.1/lib/node_modules/@vue/cli-service-global/node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"70a9dc29-vue-loader-template"}!/Users/fisigma/.nvm/versions/node/v12.16.1/lib/node_modules/@vue/cli-service-global/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!/Users/fisigma/.nvm/versions/node/v12.16.1/lib/node_modules/@vue/cli-service-global/node_modules/cache-loader/dist/cjs.js??ref--0-0!/Users/fisigma/.nvm/versions/node/v12.16.1/lib/node_modules/@vue/cli-service-global/node_modules/vue-loader/lib??vue-loader-options!./vue-airbnb-admin-calendar.vue?vue&type=template&id=08f54af1&scoped=true&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"vaac-calendar",staticStyle:{"position":"relative"}},[_c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.monthyear_header_visible),expression:"monthyear_header_visible"}],staticClass:"vaac-month-year-header",staticStyle:{"display":"flex"},style:({'border-style':'solid',borderColor:_vm.monthyear_header_border_color, backgroundColor:_vm.monthyear_header_background_color, 'padding':_vm.monthyear_header_padding+'px','border-width':'1px 1px 0px 1px'})},[(_vm.nav_year_visible)?_c('div',{class:{'nav-disabled':!_vm.can_nav_previous_year,'vaac-previousyear':true},style:({'display':'inline-block','box-sizing':'border-box','width':'10%','text-align':'center','cursor':'pointer','color':_vm.monthyear_header_color}),attrs:{"tabindex":"1"},on:{"keyup":function($event){if(!$event.type.indexOf('key')&&_vm._k($event.keyCode,"enter",13,$event.key,"Enter")){ return null; }return _vm.previous_year($event)},"click":_vm.previous_year}},[_vm._t("previous_year",[_c('span',{staticStyle:{"transform":"rotate(180deg)","display":"inline-block"}},[_vm._v("▸▸")])])],2):_vm._e(),_c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.nav_month_visible),expression:"nav_month_visible"}],class:{'nav-disabled':!_vm.can_nav_previous_month,'vaac-previousmonth':true},style:({'display':'inline-block','box-sizing':'border-box','width':'10%','text-align':'center','cursor':'pointer','color':_vm.monthyear_header_color}),attrs:{"tabindex":"2"},on:{"keyup":function($event){if(!$event.type.indexOf('key')&&_vm._k($event.keyCode,"enter",13,$event.key,"Enter")){ return null; }return _vm.previous_month($event)},"click":_vm.previous_month}},[_vm._t("previous_month",[_vm._v("◀")])],2),_c('div',{style:({'visibility':_vm.monthyear_visible?'visible':'hidden','display':'inline-block','box-sizing':'border-box','width':_vm.month_year_width,'text-align':'center','color':_vm.monthyear_header_color})},[(_vm.month_dropdown)?[_c('select',{staticClass:"vaac-month-dropdown",attrs:{"tabindex":"3"},on:{"change":_vm.monthDropdown_changed}},_vm._l((_vm.monthDropdown),function(option){return _c('option',{key:option.key,domProps:{"value":option.index,"selected":option.selected}},[_vm._v(" "+_vm._s(option.name)+" ")])}),0)]:_vm._e(),(!_vm.month_dropdown)?[_vm._v(_vm._s(_vm.month_names[_vm.month_selected]))]:_vm._e(),_vm._v(" / "),(_vm.year_dropdown)?[_c('select',{staticClass:"vaac-year-dropdown",attrs:{"tabindex":"4"},on:{"change":_vm.yearDropdown_changed}},_vm._l((_vm.yearDropdown),function(option){return _c('option',{key:option.key,domProps:{"value":option.index,"selected":option.selected}},[_vm._v(" "+_vm._s(option.name)+" ")])}),0)]:_vm._e(),(!_vm.year_dropdown)?[_vm._v(_vm._s(_vm.year_selected))]:_vm._e()],2),_c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.nav_month_visible),expression:"nav_month_visible"}],class:{'nav-disabled':!_vm.can_nav_next_month,'vaac-nextmonth':true},style:({'display':'inline-block','box-sizing':'border-box','width':'10%','text-align':'center','cursor':'pointer','color':_vm.monthyear_header_color}),attrs:{"tabindex":"5"},on:{"keyup":function($event){if(!$event.type.indexOf('key')&&_vm._k($event.keyCode,"enter",13,$event.key,"Enter")){ return null; }return _vm.next_month($event)},"click":_vm.next_month}},[_vm._t("next_month",[_vm._v("▶")])],2),_c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.nav_year_visible),expression:"nav_year_visible"}],class:{'nav-disabled':!_vm.can_nav_next_year,'vaac-nextyear':true},style:({'display':'inline-block','box-sizing':'border-box','width':'10%','text-align':'center','cursor':'pointer','color':_vm.monthyear_header_color}),attrs:{"tabindex":"6"},on:{"keyup":function($event){if(!$event.type.indexOf('key')&&_vm._k($event.keyCode,"enter",13,$event.key,"Enter")){ return null; }return _vm.next_year($event)},"click":_vm.next_year}},[_vm._t("next_year",[_vm._v("▸▸")])],2)]),_c('div',{staticClass:"vaac-dayname-header",style:({borderStyle:'solid',borderWidth:'0px 0px 0px 1px',borderColor:_vm.day_name_cell_border_color})},_vm._l((_vm.day_short_names),function(dayname,index){return _c('div',{key:'dayname-'+index,class:{'vaac-dayname':true},style:({'display':'inline-block','width':'14.28%','text-align':_vm.day_name_cell_align,'border-style':'solid','border-width':'1px 1px 0px 0px','border-color':_vm.day_name_cell_border_color,'box-sizing':'border-box','padding':_vm.day_name_cell_padding+'px', backgroundColor: _vm.day_name_background_color, color: _vm.day_name_color})},[_vm._v(" "+_vm._s(dayname)+" ")])}),0),_c('div',{key:'daynumber-container-'+_vm.days_view_counter,staticClass:" days display-table vaac-daynumber-container",style:({'display':'flex','flex-wrap':'wrap','border-style':'solid','border-color':_vm.day_number_cell_border_color,'border-width':'1px 0px 0px 1px'})},[(_vm.show_other_month_days)?_vm._l((_vm.previous_days),function(day,index){return _c('div',{key:'previousdaynumber-'+index,class:{'vaac-daynumber-cell':true,'vaac-daynumber-previous-cell':true},style:({'background-color':_vm.isSelected(day,_vm.previousMonth,_vm.previousYear)?_vm.selected_cell_bg:'','color':_vm.isSelected(day,_vm.previousMonth,_vm.previousYear)?_vm.selected_cell_fg:'', 'width':'14.28%','display':'inline-block','border-style':'solid','border-width':'0px 1px 1px 0px','border-color':_vm.day_number_cell_border_color, 'padding':_vm.day_number_cell_padding+'px'}),attrs:{"tabindex":_vm.tab_index+1,"data-selected":_vm.isSelected(day, _vm.previousMonth, _vm.previousYear)?1:0,"data-day":day,"data-month":_vm.previousMonth,"data-year":_vm.previousYear},on:{"click":function($event){return _vm.cell_clicked($event,day,_vm.previousMonth,_vm.previousYear)}}},[(_vm.day_number_visible)?_c('span',{staticClass:"daynumber",style:({'text-align':_vm.day_number_position,'width':'100%','position':'relative','display':'inline-block'})},[_c('span',{style:({backgroundColor:_vm.is_today(day,_vm.previousMonth,_vm.previousYear)?_vm.today_number_background_color:_vm.other_month_day_background_color,color:_vm.is_today(day,_vm.previousMonth,_vm.previousYear)?_vm.today_number_color:_vm.other_month_day_color,padding:_vm.day_number_padding,'border-radius':_vm.day_number_radius,'font-size':_vm.day_number_font_size,'display':'inline-block','width':_vm.day_number_size,'height':_vm.day_number_size,'text-align':'center','vertical-align':'middle','line-height':_vm.day_number_size})},[_vm._v(_vm._s(day))])]):_vm._e(),_c('div',{domProps:{"innerHTML":_vm._s(_vm.render_template({current_day: day, current_month: _vm.previousMonth, current_year: _vm.previousYear, selected_month: _vm.month_selected, selected_year:_vm.year_selected, selected: _vm.isSelected(day,_vm.previousMonth,_vm.previousYear)}))}})])}):_vm._e(),_vm._l((_vm.days),function(day,index){return _c('div',{key:'dayday'+index,class:{'vaac-daynumber-cell':true,'vaac-daynumber-current-cell':true},style:({'background-color':_vm.isSelected(day,_vm.month_selected,_vm.year_selected)?_vm.selected_cell_bg:'','color':_vm.isSelected(day,_vm.month_selected,_vm.year_selected)?_vm.selected_cell_fg:'', 'width':'14.28%','display':'inline-block','border-style':'solid','border-width':'0px 1px 1px 0px','border-color':_vm.day_number_cell_border_color,'padding':_vm.day_number_cell_padding+'px'}),attrs:{"data-selected":_vm.isSelected(day, _vm.month_selected, _vm.year_selected)?1:0,"tabindex":_vm.tab_index+1,"data-day":day,"data-month":_vm.month_selected,"data-year":_vm.year_selected},on:{"mouseover":function($event){return _vm.cell_hover($event,day, _vm.month_selected, _vm.year_selected)},"mouseleave":function($event){return _vm.cell_leave($event,day, _vm.month_selected, _vm.year_selected)},"click":function($event){return _vm.cell_clicked($event,day, _vm.month_selected, _vm.year_selected)},"keyup":function($event){if(!$event.type.indexOf('key')&&_vm._k($event.keyCode,"enter",13,$event.key,"Enter")){ return null; }return _vm.cell_clicked($event,day, _vm.month_selected, _vm.year_selected)}}},[(day>0?true:false)?[(_vm.day_number_visible)?_c('span',{staticClass:"daynumber",style:({'text-align':_vm.day_number_position,'width':'100%','position':'relative','display':'inline-block'})},[_c('span',{style:({backgroundColor:_vm.is_today(day,_vm.month_selected,_vm.year_selected)?_vm.today_number_background_color:_vm.day_number_background_color,color:_vm.is_today(day,_vm.month_selected,_vm.year_selected)?_vm.today_number_color:_vm.day_number_color,padding:_vm.day_number_padding,'border-radius':_vm.day_number_radius,'font-size':_vm.day_number_font_size,'display':'inline-block','width':_vm.day_number_size,'height':_vm.day_number_size,'text-align':'center','vertical-align':'middle','line-height':_vm.day_number_size})},[_vm._v(_vm._s(day))])]):_vm._e(),_c('div',{domProps:{"innerHTML":_vm._s(_vm.render_template({current_day: day, current_month: _vm.month_selected, current_year: _vm.year_selected, selected_month: _vm.month_selected, selected_year:_vm.year_selected, selected: _vm.isSelected(day,_vm.month_selected,_vm.year_selected)}))}})]:_vm._e(),(day==0?true:false)?[(_vm.day_number_visible)?_c('span',{style:({'text-align':_vm.day_number_position,'width':'100%','position':'relative','display':'inline-block','visibility':'hidden'})},[_c('span',[_vm._v(_vm._s(day))])]):_vm._e()]:_vm._e()],2)}),(_vm.show_other_month_days)?_vm._l((_vm.next_days),function(day,index){return _c('div',{key:'nextday'+index,class:{'vaac-daynumber-cell':true,'vaac-daynumber-next-cell':true},style:({'background-color':_vm.isSelected(day,_vm.nextMonth,_vm.nextYear)?_vm.selected_cell_bg:'','color':_vm.isSelected(day,_vm.nextMonth,_vm.nextYear)?_vm.selected_cell_fg:'', 'width':'14.28%','display':'inline-block','border-style':'solid','border-width':'0px 1px 1px 0px','border-color':_vm.day_number_cell_border_color,'padding':_vm.day_number_cell_padding+'px'}),attrs:{"data-selected":_vm.isSelected(day, _vm.nextMonth, _vm.nextYear)?1:0,"tabindex":_vm.tab_index+1,"data-day":day,"data-month":_vm.nextMonth,"data-year":_vm.nextYear},on:{"click":function($event){return _vm.cell_clicked($event,day,_vm.nextMonth,_vm.nextYear)}}},[(_vm.day_number_visible)?_c('span',{staticClass:"daynumber",style:({'text-align':_vm.day_number_position,'width':'100%','position':'relative','display':'inline-block'})},[_c('span',{style:({backgroundColor:_vm.is_today(day,_vm.nextMonth,_vm.nextYear)?_vm.today_number_background_color:_vm.other_month_day_background_color,color:_vm.is_today(day,_vm.nextMonth,_vm.nextYear)?_vm.today_number_color:_vm.other_month_day_color,padding:_vm.day_number_padding,'border-radius':_vm.day_number_radius,'font-size':_vm.day_number_font_size,'display':'inline-block','width':_vm.day_number_size,'height':_vm.day_number_size,'text-align':'center','vertical-align':'middle','line-height':_vm.day_number_size})},[_vm._v(_vm._s(day))])]):_vm._e(),_c('div',{domProps:{"innerHTML":_vm._s(_vm.render_template({current_day: day, current_month: _vm.nextMonth, current_year: _vm.nextYear, selected_month: _vm.month_selected, selected_year:_vm.year_selected, selected: _vm.isSelected(day,_vm.nextMonth,_vm.nextYear)}))}})])}):_vm._e()],2),_c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.loading),expression:"loading"}],staticStyle:{"position":"absolute","top":"0px","left":"0px","width":"100%","bottom":"0px","vertical-align":"middle","text-align":"center","background-color":"rgb(255,255,255,0.5)"}},[_c('div',{staticStyle:{"position":"relative","top":"45%","margin":"0 auto","font-size":"32px"}},[_c('div',{ref:"spinner",staticStyle:{"display":"inline-block"},attrs:{"slot":"loader"},slot:"loader"},[_vm._t("loader",[_vm._v("↻")])],2)])])])}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./vue-airbnb-admin-calendar.vue?vue&type=template&id=5e6e2ece&scoped=true&
+// CONCATENATED MODULE: ./vue-airbnb-admin-calendar.vue?vue&type=template&id=08f54af1&scoped=true&
 
 // EXTERNAL MODULE: /Users/fisigma/.nvm/versions/node/v12.16.1/lib/node_modules/@vue/cli-service-global/node_modules/core-js/modules/es.date.to-string.js
 var es_date_to_string = __webpack_require__("5f5d");
@@ -697,7 +697,7 @@ var web_timers = __webpack_require__("a11f");
       type: Boolean,
       "default": true
     },
-    daynumber_position: {
+    day_number_position: {
       required: false,
       type: String,
       "default": 'right'
@@ -779,52 +779,52 @@ var web_timers = __webpack_require__("a11f");
       type: String,
       "default": '#000'
     },
-    today_name_number_background_color: {
+    today_number_background_color: {
       required: false,
       type: String,
       "default": '#888'
     },
-    today_name_number_color: {
+    today_number_color: {
       required: false,
       type: String,
       "default": '#fff'
     },
-    day_name_number_background_color: {
+    day_number_background_color: {
       required: false,
       type: String,
       "default": '#000'
     },
-    day_name_number_color: {
+    day_number_color: {
       required: false,
       type: String,
       "default": '#fff'
     },
-    day_name_number_radius: {
+    day_number_radius: {
       required: false,
       type: String,
       "default": '50%'
     },
-    day_name_number_padding: {
+    day_number_padding: {
       required: false,
       type: String,
       "default": '5px 5px'
     },
-    day_name_number_width: {
+    day_number_width: {
       required: false,
       type: String,
       "default": 'auto'
     },
-    day_name_number_height: {
+    day_number_height: {
       required: false,
       type: String,
       "default": 'auto'
     },
-    day_name_number_size: {
+    day_number_size: {
       required: false,
       type: String,
       "default": '18px'
     },
-    day_name_number_font_size: {
+    day_number_font_size: {
       required: false,
       type: String,
       "default": '12px'
@@ -893,6 +893,11 @@ var web_timers = __webpack_require__("a11f");
       days_view_counter: 0,
       cell_day_first_selected: -1,
       cell_day_last_selected: -1,
+      //the month is enought (we do not need year)
+      cell_day_first_selected_month: -1,
+      cell_day_last_selected_month: -1,
+      cell_day_first_selected_year: -1,
+      cell_day_last_selected_year: -1,
       loading_interval: 0,
       month_selected: this.month,
       year_selected: this.year,
@@ -1394,11 +1399,29 @@ var web_timers = __webpack_require__("a11f");
     isSelected: function isSelected(day, month, year) {
       if (day > 0) {
         if (this.cell_day_last_selected > -1) {
-          if (day >= this.cell_day_first_selected && day <= this.cell_day_last_selected && month == this.month_selected && year == this.year_selected) {
+          /**
+          if(day>=this.cell_day_first_selected && day<=this.cell_day_last_selected 
+          //&& month==this.month_selected && year==this.year_selected
+          && month==this.cell_day_first_selected_month && year==this.cell_day_first_selected_year
+          ){
+              return true;
+          }
+          **/
+          var firstday = this.cell_day_first_selected < 10 ? '0' + this.cell_day_first_selected : this.cell_day_first_selected;
+          var firstmonth = this.cell_day_first_selected_month < 10 ? '0' + this.cell_day_first_selected_month : this.cell_day_first_selected_month;
+          var firstselection = parseInt(this.cell_day_first_selected_year + '' + firstmonth + '' + firstday);
+          var lastday = this.cell_day_last_selected < 10 ? '0' + this.cell_day_last_selected : this.cell_day_last_selected;
+          var lastmonth = this.cell_day_last_selected_month < 10 ? '0' + this.cell_day_last_selected_month : this.cell_day_last_selected_month;
+          var lastselection = parseInt(this.cell_day_last_selected_year + '' + lastmonth + '' + lastday);
+          var current_selection = parseInt(year + '' + (month < 10 ? '0' + month : month) + '' + (day < 10 ? '0' + day : day));
+
+          if (current_selection >= firstselection && current_selection <= lastselection) {
+            //console.log(current_selection, firstselection, lastselection);
             return true;
           }
         } else {
-          if (day == this.cell_day_first_selected && month == this.month_selected && year == this.year_selected) {
+          if (day == this.cell_day_first_selected //&& month==this.month_selected && year==this.year_selected
+          && month == this.cell_day_first_selected_month && year == this.cell_day_first_selected_year) {
             return true;
           }
         }
@@ -1407,6 +1430,7 @@ var web_timers = __webpack_require__("a11f");
       return false;
     },
     cell_clicked: function cell_clicked(event, dayindex, month, year) {
+      //console.log(dayindex,month,year);
       if (month > 100 && year < 0) {
         return;
       }
@@ -1421,11 +1445,20 @@ var web_timers = __webpack_require__("a11f");
 
       var t = event.currentTarget;
       var day = parseInt(t.getAttribute('data-day'));
+      var mm = parseInt(t.getAttribute('data-month'));
+      var yy = parseInt(t.getAttribute('data-year'));
+      console.log(day, mm, yy);
 
       if (day > 0) {
-        if ((event.ctrlKey || event.metaKey) && day == this.cell_day_first_selected) {
+        if ((event.ctrlKey || event.metaKey) && day == this.cell_day_first_selected && mm == this.cell_day_first_selected_month) {
           this.cell_day_first_selected = -1;
-          this.cell_day_last_selected = -1;
+          this.cell_day_last_selected = -1; //new
+
+          this.cell_day_first_selected_month = -1;
+          this.cell_day_last_selected_month = -1;
+          this.cell_day_first_selected_year = -1;
+          this.cell_day_last_selected_year = -1;
+          console.log('return from cell_clicked');
           return;
         } //if we have already selected the last date, then reset and start from the beginning
 
@@ -1433,27 +1466,42 @@ var web_timers = __webpack_require__("a11f");
         if (this.cell_day_last_selected > -1) {
           //reset
           this.cell_day_first_selected = -1;
-          this.cell_day_last_selected = -1;
+          this.cell_day_last_selected = -1; //new
+
+          this.cell_day_first_selected_month = -1;
+          this.cell_day_last_selected_month = -1;
+          this.cell_day_first_selected_year = -1;
+          this.cell_day_last_selected_year = -1;
         } //if we have already selected one time then we move to the last date
 
 
         if (this.cell_day_first_selected > -1 && this.selection == 'range') {
           //but if the day is less than first day selected do not make range, select again first day selected
-          if (day < this.cell_day_first_selected) {
-            this.cell_day_first_selected = day;
+          //or if the month is less then the first selected then we go back
+          if (day < this.cell_day_first_selected && mm == this.cell_day_first_selected_month || mm < this.cell_day_first_selected_month && yy == this.cell_day_first_selected_year || yy < this.cell_day_first_selected_year) {
+            this.cell_day_first_selected = day; //new
+
+            this.cell_day_first_selected_month = mm;
+            this.cell_day_first_selected_year = yy;
           } else {
-            this.cell_day_last_selected = day;
+            this.cell_day_last_selected = day; //new
+
+            this.cell_day_last_selected_month = mm;
+            this.cell_day_last_selected_year = yy;
           }
         } else {
           this.cell_day_first_selected = day;
+          this.cell_day_first_selected_month = mm;
+          this.cell_day_first_selected_year = yy;
         } //console.log(this.cell_day_first_selected, this.cell_day_last_selected)
 
 
         this.$emit('day_clicked', {
           name: 'day_clicked',
-          month: this.month,
-          //zero based
-          year: this.year_selected,
+          month: mm,
+          //this.month,//zero based
+          year: yy,
+          //this.year_selected,
           day: day,
           'source': 'cell_clicked'
         });
@@ -1461,10 +1509,14 @@ var web_timers = __webpack_require__("a11f");
         if (this.cell_day_first_selected > -1 && this.cell_day_last_selected > -1 && this.selection == 'range') {
           this.$emit('range_selected', {
             name: 'range_selected',
-            fmonth: this.month_selected,
-            fyear: this.year_selected,
+            fmonth: this.cell_day_first_selected_month,
+            //this.month_selected,
+            fyear: this.cell_day_first_selected_year,
+            //this.year_selected,
             fday: this.cell_day_first_selected,
             tday: this.cell_day_last_selected,
+            tmonth: this.cell_day_last_selected_month,
+            tyear: this.cell_day_last_selected_year,
             source: 'cell_clicked'
           });
         }
@@ -1616,7 +1668,7 @@ var component = normalizeComponent(
   staticRenderFns,
   false,
   null,
-  "5e6e2ece",
+  "08f54af1",
   null
   
 )

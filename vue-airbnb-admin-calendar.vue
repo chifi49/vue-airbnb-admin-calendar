@@ -69,15 +69,15 @@
                 <div v-for="(day,index) in previous_days"
                 v-bind:key="'previousdaynumber-'+index" 
                 :tabindex="tab_index+1"
-
+                :data-selected="isSelected(day, previousMonth, previousYear)?1:0" 
                 @click="cell_clicked($event,day,previousMonth,previousYear)"
                 
                 :style="{'background-color':isSelected(day,previousMonth,previousYear)?selected_cell_bg:'','color':isSelected(day,previousMonth,previousYear)?selected_cell_fg:'', 'width':'14.28%','display':'inline-block','border-style':'solid','border-width':'0px 1px 1px 0px','border-color':day_number_cell_border_color, 'padding':day_number_cell_padding+'px'}" 
                 :class="{'vaac-daynumber-cell':true,'vaac-daynumber-previous-cell':true}" 
                 :data-day="day" :data-month="previousMonth" :data-year="previousYear"
                 >
-                    <span v-if="day_number_visible" class="daynumber" :style="{'text-align':daynumber_position,'width':'100%','position':'relative','display':'inline-block'}">
-                        <span :style="{backgroundColor:is_today(day,previousMonth,previousYear)?today_name_number_background_color:other_month_day_background_color,color:is_today(day,previousMonth,previousYear)?today_name_number_color:other_month_day_color,padding:day_name_number_padding,'border-radius':day_name_number_radius,'font-size':day_name_number_font_size,'display':'inline-block','width':day_name_number_size,'height':day_name_number_size,'text-align':'center','vertical-align':'middle','line-height':day_name_number_size}">{{day}}</span>
+                    <span v-if="day_number_visible" class="daynumber" :style="{'text-align':day_number_position,'width':'100%','position':'relative','display':'inline-block'}">
+                        <span :style="{backgroundColor:is_today(day,previousMonth,previousYear)?today_number_background_color:other_month_day_background_color,color:is_today(day,previousMonth,previousYear)?today_number_color:other_month_day_color,padding:day_number_padding,'border-radius':day_number_radius,'font-size':day_number_font_size,'display':'inline-block','width':day_number_size,'height':day_number_size,'text-align':'center','vertical-align':'middle','line-height':day_number_size}">{{day}}</span>
                     </span>
                     <div v-html="render_template({current_day: day, current_month: previousMonth, current_year: previousYear, selected_month: month_selected, selected_year:year_selected, selected: isSelected(day,previousMonth,previousYear)})"></div>
                 </div>
@@ -88,13 +88,13 @@
             v-for="(day,index) in days" 
             v-bind:key="'dayday'+index" 
             :data-selected="isSelected(day, month_selected, year_selected)?1:0" 
-            @mouseover="cell_hover($event,day)" 
-            @mouseleave="cell_leave($event,day)"
-            @click="cell_clicked($event,day)"
+            @mouseover="cell_hover($event,day, month_selected, year_selected)" 
+            @mouseleave="cell_leave($event,day, month_selected, year_selected)"
+            @click="cell_clicked($event,day, month_selected, year_selected)"
 
             :tabindex="tab_index+1"
 
-            @keyup.enter="cell_clicked($event,day)"
+            @keyup.enter="cell_clicked($event,day, month_selected, year_selected)"
 
             :style="{'background-color':isSelected(day,month_selected,year_selected)?selected_cell_bg:'','color':isSelected(day,month_selected,year_selected)?selected_cell_fg:'', 'width':'14.28%','display':'inline-block','border-style':'solid','border-width':'0px 1px 1px 0px','border-color':day_number_cell_border_color,'padding':day_number_cell_padding+'px'}" 
             :class="{'vaac-daynumber-cell':true,'vaac-daynumber-current-cell':true}" 
@@ -104,15 +104,15 @@
                 <template v-if="day>0?true:false">
                     <span 
                     v-if="day_number_visible" 
-                    class="daynumber" :style="{'text-align':daynumber_position,'width':'100%','position':'relative','display':'inline-block'}">
-                        <span :style="{backgroundColor:is_today(day,month_selected,year_selected)?today_name_number_background_color:day_name_number_background_color,color:is_today(day,month_selected,year_selected)?today_name_number_color:day_name_number_color,padding:day_name_number_padding,'border-radius':day_name_number_radius,'font-size':day_name_number_font_size,'display':'inline-block','width':day_name_number_size,'height':day_name_number_size,'text-align':'center','vertical-align':'middle','line-height':day_name_number_size}">{{day}}</span>
+                    class="daynumber" :style="{'text-align':day_number_position,'width':'100%','position':'relative','display':'inline-block'}">
+                        <span :style="{backgroundColor:is_today(day,month_selected,year_selected)?today_number_background_color:day_number_background_color,color:is_today(day,month_selected,year_selected)?today_number_color:day_number_color,padding:day_number_padding,'border-radius':day_number_radius,'font-size':day_number_font_size,'display':'inline-block','width':day_number_size,'height':day_number_size,'text-align':'center','vertical-align':'middle','line-height':day_number_size}">{{day}}</span>
                     </span>
                     
                         <div v-html="render_template({current_day: day, current_month: month_selected, current_year: year_selected, selected_month: month_selected, selected_year:year_selected, selected: isSelected(day,month_selected,year_selected)})"></div>
                         
                 </template>
                 <template v-if="day==0?true:false">
-                        <span v-if="day_number_visible" :style="{'text-align':daynumber_position,'width':'100%','position':'relative','display':'inline-block','visibility':'hidden'}">
+                        <span v-if="day_number_visible" :style="{'text-align':day_number_position,'width':'100%','position':'relative','display':'inline-block','visibility':'hidden'}">
                             <span>{{day}}</span>
                         </span>
                 </template>
@@ -121,7 +121,7 @@
             <template v-if="show_other_month_days">
                 <div v-for="(day,index) in next_days"
                 v-bind:key="'nextday'+index"
-                
+                :data-selected="isSelected(day, nextMonth, nextYear)?1:0" 
                 :tabindex="tab_index+1"
 
                 @click="cell_clicked($event,day,nextMonth,nextYear)"
@@ -133,8 +133,8 @@
                 >
                     <span 
                     v-if="day_number_visible"
-                    class="daynumber" :style="{'text-align':daynumber_position,'width':'100%','position':'relative','display':'inline-block'}">
-                        <span :style="{backgroundColor:is_today(day,nextMonth,nextYear)?today_name_number_background_color:other_month_day_background_color,color:is_today(day,nextMonth,nextYear)?today_name_number_color:other_month_day_color,padding:day_name_number_padding,'border-radius':day_name_number_radius,'font-size':day_name_number_font_size,'display':'inline-block','width':day_name_number_size,'height':day_name_number_size,'text-align':'center','vertical-align':'middle','line-height':day_name_number_size}">{{day}}</span>
+                    class="daynumber" :style="{'text-align':day_number_position,'width':'100%','position':'relative','display':'inline-block'}">
+                        <span :style="{backgroundColor:is_today(day,nextMonth,nextYear)?today_number_background_color:other_month_day_background_color,color:is_today(day,nextMonth,nextYear)?today_number_color:other_month_day_color,padding:day_number_padding,'border-radius':day_number_radius,'font-size':day_number_font_size,'display':'inline-block','width':day_number_size,'height':day_number_size,'text-align':'center','vertical-align':'middle','line-height':day_number_size}">{{day}}</span>
                     </span>
                     <div v-html="render_template({current_day: day, current_month: nextMonth, current_year: nextYear, selected_month: month_selected, selected_year:year_selected, selected: isSelected(day,nextMonth,nextYear)})"></div>
                 </div>
@@ -251,7 +251,7 @@ export default{
             type:Boolean,
             default: true
         },
-        daynumber_position:{
+        day_number_position:{
             required:false,
             type:String,
             default:'right'
@@ -334,52 +334,52 @@ export default{
             type:String,
             default:'#000'
         },
-        today_name_number_background_color:{
+        today_number_background_color:{
             required:false,
             type:String,
             default:'#888'
         },
-        today_name_number_color:{
+        today_number_color:{
             required:false,
             type:String,
             default:'#fff'
         },
-        day_name_number_background_color:{
+        day_number_background_color:{
             required:false,
             type:String,
             default:'#000'
         },
-        day_name_number_color:{
+        day_number_color:{
             required:false,
             type:String,
             default:'#fff'
         },
-        day_name_number_radius:{
+        day_number_radius:{
             required:false,
             type:String,
             default:'50%'
         },
-        day_name_number_padding:{
+        day_number_padding:{
             required:false,
             type:String,
             default:'5px 5px'
         },
-        day_name_number_width:{
+        day_number_width:{
             required:false,
             type:String,
             default:'auto'
         },
-        day_name_number_height:{
+        day_number_height:{
             required:false,
             type:String,
             default:'auto'
         },
-        day_name_number_size:{
+        day_number_size:{
             required:false,
             type:String,
             default:'18px'
         },
-        day_name_number_font_size:{
+        day_number_font_size:{
             required:false,
             type:String,
             default:'12px'
@@ -448,6 +448,12 @@ export default{
             days_view_counter:0,
             cell_day_first_selected: -1,
             cell_day_last_selected: -1,
+            //the month is enought (we do not need year)
+            cell_day_first_selected_month:-1,
+            cell_day_last_selected_month:-1,
+            cell_day_first_selected_year:-1,
+            cell_day_last_selected_year:-1,
+
             loading_interval:0,
             month_selected: this.month,
             year_selected: this.year,
@@ -827,11 +833,34 @@ export default{
         isSelected:function(day,month,year){
             if(day>0){
                 if(this.cell_day_last_selected>-1){
-                    if(day>=this.cell_day_first_selected && day<=this.cell_day_last_selected && month==this.month_selected && year==this.year_selected){
+                    /**
+                    if(day>=this.cell_day_first_selected && day<=this.cell_day_last_selected 
+                    //&& month==this.month_selected && year==this.year_selected
+                    && month==this.cell_day_first_selected_month && year==this.cell_day_first_selected_year
+                    ){
+                        return true;
+                    }
+                    **/
+                   var firstday = this.cell_day_first_selected<10?'0'+this.cell_day_first_selected:this.cell_day_first_selected;
+                   var firstmonth = this.cell_day_first_selected_month<10?'0'+this.cell_day_first_selected_month:this.cell_day_first_selected_month;
+
+                   var firstselection = parseInt( this.cell_day_first_selected_year+''+firstmonth+''+firstday );
+
+                   var lastday = this.cell_day_last_selected<10?'0'+this.cell_day_last_selected:this.cell_day_last_selected;
+                   var lastmonth = this.cell_day_last_selected_month<10?'0'+this.cell_day_last_selected_month:this.cell_day_last_selected_month;
+
+                   var lastselection = parseInt( this.cell_day_last_selected_year+''+lastmonth+''+lastday );
+                
+                    var current_selection = parseInt( year+''+(month<10?'0'+month:month)+''+(day<10?'0'+day:day) );
+                    if(current_selection>=firstselection && current_selection<=lastselection){
+                        //console.log(current_selection, firstselection, lastselection);
                         return true;
                     }
                 }else{
-                    if(day==this.cell_day_first_selected && month==this.month_selected && year==this.year_selected){
+                    if(day==this.cell_day_first_selected 
+                    //&& month==this.month_selected && year==this.year_selected
+                    && month==this.cell_day_first_selected_month && year==this.cell_day_first_selected_year
+                    ){
                         return true;
                     }
                 }
@@ -839,6 +868,7 @@ export default{
             return false;
         },
         cell_clicked:function(event,dayindex,month,year){
+            //console.log(dayindex,month,year);
             if(month>100 && year<0){
                 return;
             }
@@ -850,12 +880,24 @@ export default{
             }
             var t = event.currentTarget;
             var day = parseInt(t.getAttribute('data-day'));
+            var mm = parseInt(t.getAttribute('data-month'));
+            var yy = parseInt(t.getAttribute('data-year'));
+            console.log(day, mm, yy);
+            
             if(day>0){
                 
 
-                if((event.ctrlKey || event.metaKey) && day==this.cell_day_first_selected ){
+                if((event.ctrlKey || event.metaKey) && day==this.cell_day_first_selected && mm==this.cell_day_first_selected_month ){
                     this.cell_day_first_selected = -1;
                     this.cell_day_last_selected = -1;
+
+                    //new
+                    this.cell_day_first_selected_month = -1;
+                    this.cell_day_last_selected_month = -1;
+                    this.cell_day_first_selected_year = -1;
+                    this.cell_day_last_selected_year = -1;
+
+                    console.log('return from cell_clicked');
                     return;
                 }
                 //if we have already selected the last date, then reset and start from the beginning
@@ -863,38 +905,56 @@ export default{
                     //reset
                     this.cell_day_first_selected = -1;
                     this.cell_day_last_selected = -1;
-                 
+                    
+                    //new
+                    this.cell_day_first_selected_month = -1;
+                    this.cell_day_last_selected_month = -1;
+                    this.cell_day_first_selected_year = -1;
+                    this.cell_day_last_selected_year = -1;
                 }
 
                 //if we have already selected one time then we move to the last date
                 if(this.cell_day_first_selected > -1 && this.selection=='range'){
                     //but if the day is less than first day selected do not make range, select again first day selected
-                    if(day<this.cell_day_first_selected){
+                    //or if the month is less then the first selected then we go back
+                    if((day<this.cell_day_first_selected && mm==this.cell_day_first_selected_month)  || ( mm<this.cell_day_first_selected_month && yy==this.cell_day_first_selected_year) || yy<this.cell_day_first_selected_year){
                         
                         this.cell_day_first_selected = day;
+
+                        //new
+                        this.cell_day_first_selected_month = mm;
+                        this.cell_day_first_selected_year = yy;
                     }else{
                         
                         this.cell_day_last_selected = day;
+
+                        //new
+                        this.cell_day_last_selected_month = mm;
+                        this.cell_day_last_selected_year = yy;
                     }
                 }else{
                     
                     this.cell_day_first_selected = day;
+                    this.cell_day_first_selected_month = mm;
+                    this.cell_day_first_selected_year = yy;
                 }
                 //console.log(this.cell_day_first_selected, this.cell_day_last_selected)
                 this.$emit('day_clicked',{
                     name:'day_clicked',
-                    month: this.month,//zero based
-                    year: this.year_selected,
+                    month: mm, //this.month,//zero based
+                    year: yy, //this.year_selected,
                     day: day,
                     'source':'cell_clicked'
                 })
                 if(this.cell_day_first_selected>-1 && this.cell_day_last_selected>-1 && this.selection=='range'){
                     this.$emit('range_selected',{
                         name:'range_selected',
-                        fmonth: this.month_selected,
-                        fyear: this.year_selected,
+                        fmonth: this.cell_day_first_selected_month,//this.month_selected,
+                        fyear: this.cell_day_first_selected_year,//this.year_selected,
                         fday: this.cell_day_first_selected,
                         tday: this.cell_day_last_selected,
+                        tmonth: this.cell_day_last_selected_month,
+                        tyear: this.cell_day_last_selected_year,
                         source:'cell_clicked'
                     })
                 }
