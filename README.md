@@ -1,7 +1,7 @@
 # vue-airbnb-admin-calendar
 a calendar (single, or range selection) made with vuejs that can render custom content on cells
 ## Installation
-`npm install @chifi49/vue-airbnb-admin-calendar`
+`npm install vue-airbnb-admin-calendar`
 
 or
 
