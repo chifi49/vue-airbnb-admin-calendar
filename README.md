@@ -55,7 +55,11 @@ export default{
 
         },
         renderMyTemplate:function(params){
-
+            var current_day = params.current_day;
+            var current_month = params.current_month;
+            var current_year = params.current_year;
+            var selected = params.selected;
+            return "[day="+current_day+"]("+(selected?'yes':'no')+")";
         },
 
         previous_month:function(){
